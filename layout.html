@@ -1,12 +1,275 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hants">
+
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- <link rel="stylesheet" type="text/css" href="reset.css"> -->
+    <title>SHOPLINE 全球智慧開店平台｜完整開店功能讓你的生意不斷成長</title>
+
+    <style type="text/css">
+        body {
+            padding-top: 100px;
+            margin: 0;
+        }
+
+        .top_header {
+            background-color: darkblue;
+            text-align: right;
+            position: fixed;
+            opacity: 0.8;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .top_header a {
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            padding: 10px 20px;
+        }
+
+        .header {
+            background-color: white;
+            position: fixed;
+            display: flex;
+            width: 100%;
+            top: 36px;
+            padding: 0px 10px;
+        }
+
+        .header .logo {
+            display: inline-block;
+            padding: 6px 0px;
+        }
+
+        .header nav {
+            text-align: center;
+            width: 100%;
+            font-size: 0;
+        }
+
+        .header nav a {
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+            line-height: 52px;
+            padding: 0 10px;
+        }
+
+        .header nav a:hover {
+            background-color: aquamarine;
+        }
+
+        .banner img {
+            width: 100%;
+        }
+
+        .path {
+            display: flex;
+        }
+
+        .path li {
+            position: relative;
+            padding: 6px 8px;
+        }
+
+        .path li a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .path li+li::before {
+            content: "/";
+            color: #aaa;
+            position: absolute;
+            left: 0;
+        }
+
+        .wrap {
+            width: 960px;
+            margin: auto;
+        }
+
+        .about {
+            padding: 40px 0 60 px;
+        }
+
+        .about .wrap {
+            display: flex;
+        }
+
+        .about .wrap .item {
+            width: 300px;
+            margin: 0 10px;
+            text-align: center;
+        }
+
+        .about>h2 {
+            width: 960px;
+            font-size: 36px;
+            margin: auto;
+            text-align: center;
+            padding: 20px 0;
+            line-height: 1.5;
+        }
+
+        .about>p {
+            width: 760px;
+            font-size: 16px;
+            margin: auto;
+            text-align: center;
+            padding: 20px 0;
+            line-height: 1.5;
+        }
+
+        .about>img {
+            width: 100%;
+        }
+
+        .products {
+            background-color: gray;
+        }
+
+        .products .ul_text {
+
+            /* justify-content: flex-start; */
+            display: flex;
+        }
+
+        .products .ul_text>ul {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .products .ul_text>h3 {
+            font-size: 36px;
+        }
+
+        .products .wrap {
+            display: flex;
+        }
+
+        .products .item {
+            width: 50%;
+        }
+
+        .products .item img {
+            width: 100%;
+        }
+
+        .products .pic {}
+
+        .products .text {
+            padding: 0 20px;
+            text-align: center;
+            line-height: 1.5;
+        }
+    </style>
 </head>
+
 <body>
-    <div>  </div>
+    <div class="top_header">
+        <a href="#">地球</a>
+        <a href="#">|</a>
+        <a href="#">幫助中心</a>
+        <a href="#">登入商店</a>
+    </div>
+    <div class="header">
+        <a href="#" class="logo">
+            <!-- <h1 >SHOPLINE</h1> -->
+            <img src="https://picsum.photos/80/40/?random=10">
+        </a>
+        <nav>
+            <a href="#">開店服務</a>
+            <a href="#">方案費用</a>
+            <a href="#">客戶案例</a>
+            <a href="#">開店說明會</a>
+            <a href="#">開店諮詢</a>
+            <a href="#">更多解決方案</a>
+            <a href="#">其他資源</a>
+        </nav>
+    </div>
+
+    <div class="banner">
+
+        <img src="https://picsum.photos/1200/600/?random=1">
+    </div>
+
+
+    <!-- <ul class="path">
+        <li><a href="#">6</a></li>
+        <li><a href="#">7</a></li>
+        <li><a href="#">8</a></li>
+    </ul> -->
+
+
+    <div class="about">
+        <h2>單一平台就能助你<br />
+            在全通路輕鬆開店創業
+        </h2>
+        <p>
+            從網路商店架站到實體門市管理，只需要一個平台，就能輕鬆實現開店創業，<br />並能同步管理所有銷售管道，SHOPLINE 助你賣得更多、賣得更好！
+        </p>
+        <!-- <img src="https://picsum.photos/1200/600/?random=4">
+        <div class="wrap">
+            <div class="item"><img src="https://picsum.photos/50/50/?random=10">
+                <h2>title</h2>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis soluta consequatur, dolorem
+                    laudantium mollitia, iste enim dicta praesentium explicabo aliquid rem dolorum, necessitatibus eos
+                    aspernatur nihil dolores. Animi, necessitatibus dignissimos.
+                </p>
+            </div>
+            <div class="item"><img src="https://picsum.photos/50/50/?random=10">
+                <h2>title</h2>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis soluta consequatur, dolorem
+                    laudantium mollitia, iste enim dicta praesentium explicabo aliquid rem dolorum, necessitatibus eos
+                    aspernatur nihil dolores. Animi, necessitatibus dignissimos.
+                </p>
+            </div>
+            <div class="item"><img src="https://picsum.photos/50/50/?random=10">
+                <h2>title</h2>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis soluta consequatur, dolorem
+                    laudantium mollitia, iste enim dicta praesentium explicabo aliquid rem dolorum, necessitatibus eos
+                    aspernatur nihil dolores. Animi, necessitatibus dignissimos.
+                </p>
+            </div>
+        </div> -->
+    </div>
+
+
+    <div class="products">
+        <div class="wrap">
+            <div class="item text">
+                <h3>免寫程式、多款版型<br />
+                    輕鬆打造全能電商網站</h3>
+                <hr>
+                <p>
+                    不會寫程式也能輕鬆架設品牌電商官網！任何產業都能找到合適的專業設計版型，以滑鼠拖曳就能完成網頁編輯，讓架設網站就像堆積木一樣簡單。
+                </p>
+                <div class="ul_text">
+                    <ul>豐富版型主題與字型搭配</ul>
+                    <ul>RWD 響應式網頁設計</ul>
+                    <ul>獨有網址 ＆ SSL 安全憑證</ul>
+                    <ul>SEO 搜尋引擎優化</ul>
+                    <ul>一頁商店</ul>
+                    <ul>開放 HTML ／CSS 編輯</ul>
+                </div>
+            </div>
+            <div class="item pic">
+                <img src="https://picsum.photos/300/200/?random=7">
+            </div>
+        </div>
+    </div>
+
 </body>
+
 </html>
