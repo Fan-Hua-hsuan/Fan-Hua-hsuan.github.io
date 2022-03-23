@@ -1,7 +1,6 @@
 
 body {
-    padding-top: 100px;
-    margin: 0;
+    padding-top: 200px;
 }
 
 h1,
@@ -107,9 +106,14 @@ a {
     background-color: aquamarine;
 }
 
-.banner img {
-    width: 100%;
+.banner{
+    background-image: url("https://img.shoplineapp.com/media/image_clips/5f069a12dc4d9a00335656c2/original.png?1594268177");
+    width: 960px;
 }
+.banner article{
+    background-color: rgba(86, 187, 182, 0);
+}
+
 
 /* .path {
     display: flex;
