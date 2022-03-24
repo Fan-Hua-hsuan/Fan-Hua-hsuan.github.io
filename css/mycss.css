@@ -139,6 +139,7 @@ a {
 
 .wrap {
     width: 960px;
+    font-weight: 100;
     margin: auto;
 }
 
