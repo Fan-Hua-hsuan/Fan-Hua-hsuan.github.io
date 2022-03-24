@@ -59,7 +59,6 @@ a {
     display: flex;
     width: 100%;
     top: 65px;
-    /* left: 0; */
     align-items: center;
     justify-content:center;
     
@@ -118,8 +117,6 @@ a {
 }
 .banner article{
     padding-right: 5%;
-    /* width: 50%; */
-    /* padding: 0 0 0 12%; */
 }
 .banner h1{
     line-height: 1.7;
@@ -132,10 +129,6 @@ a {
     font-size: 10px;
     padding-bottom: 30px;
 }
-.banner img{
-    /* width: 45%; */
-}
-
 .banner span{
     color:#00c66a;
 }
@@ -192,11 +185,6 @@ display: flex;
     margin: auto;
 }
 
-.mid_text {
-    /* 跟about 一樣 只是我把每一段都分開你比較好看  只差在背景顏色*/
-    padding: 40px 0 60 px;
-}
-
 .mid_text>p {
     /* 跟.about > p 一樣  */
     width: 760px;
@@ -213,7 +201,6 @@ display: flex;
     font-size: 36px;
     margin: auto;
     text-align: center;
-    padding: 20px 0;
     line-height: 1.5;
     padding: 10px 0 60px;
 }
@@ -288,7 +275,6 @@ display: flex;
     font-size: 36px;
     margin: auto;
     text-align: center;
-    padding: 20px 0;
     line-height: 1.5;
     padding: 10px 0 60px;
 }
@@ -449,7 +435,6 @@ display: flex;
 }
 
 .footer .fwrap {
-    /* justify-content:center; */
     padding: 80px 5%;
     margin: auto;
     display: flex;
