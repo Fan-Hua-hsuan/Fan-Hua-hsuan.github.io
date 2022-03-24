@@ -1,19 +1,13 @@
 
 body {
-    padding-top: 200px;
+    padding-top: 130px;
 }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-
+hr{
+color: gray;
+}
 a {
     line-height: 1.35;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 .ad_header {
@@ -24,6 +18,7 @@ a {
     left: 0;
     width: 100%;
     padding: 4px 0;
+    z-index: 2;
 }
 
 .ad_header>p {
@@ -64,35 +59,20 @@ a {
     display: flex;
     width: 100%;
     top: 65px;
-    left: 0;
-    padding: 0px 10px;
-    z-index: 2;
-}
-
-.bluebutton {
-    text-decoration: none;
-    color: white;
-    background: #0061FF;
-    padding: 10px 20px 10px 20px;
-    font-size: 15px;
-    border-radius: 25px;
-    display: inline-block;
-    position: absolute;
-    top: 5px;
-    right: 140px;
-
+    /* left: 0; */
+    align-items: center;
+    justify-content:center;
+    
 }
 
 .header .logo {
-    display: inline-block;
     padding: 10px 20px;
 }
 
 .header nav {
-    display: inline-block;
-    text-align: center;
-    width: 100%;
+    text-align: left;
     font-size: 0;
+    width: 100%;
 }
 
 .header nav a {
@@ -102,18 +82,87 @@ a {
     padding: 0 10px;
 }
 
-.header nav a:hover {
-    background-color: aquamarine;
+.btn{
+    text-decoration: none;
+    color: white;
+    background: #0061FF;
+    padding: 10px 20px;
+    font-size: 15px;
+    border-radius: 25px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn:hover{
+    background-color: rgb(8, 24, 116);
+    cursor: pointer;
+}
+
+.btn_location {
+    display: inline-block;
+    
+    position: absolute;
+    top: 15px;
+    right: 20px;
 }
 
 .banner{
     background-image: url("https://img.shoplineapp.com/media/image_clips/5f069a12dc4d9a00335656c2/original.png?1594268177");
-    width: 960px;
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: center ;
+   padding: 5% 0;
+   margin-bottom: 5%;
 }
 .banner article{
-    background-color: rgba(86, 187, 182, 0);
+    padding-right: 5%;
+    /* width: 50%; */
+    /* padding: 0 0 0 12%; */
+}
+.banner h1{
+    line-height: 1.7;
+    font-size: 28px;
+    font-weight: bold;
+    padding-bottom: 15px;
+}
+.banner p{
+    line-height: 1.2;
+    font-size: 10px;
+    padding-bottom: 30px;
+}
+.banner img{
+    /* width: 45%; */
 }
 
+.banner span{
+    color:#00c66a;
+}
+.banner .inline{
+display: flex;
+}
+
+.banner .inline input{
+    width: 55%;
+    margin: 0 30px 0 0;
+    background:transparent;
+    border-width: 1px ;
+    border-color: transparent transparent white transparent;
+    outline: 0;
+    color: white;
+    /* border-width: 0 0 1; */
+}
+.banner .inline input::placeholder{
+   color: white;
+}
+/* .banner_btn{
+    display: inline-block;
+    background-color: blue;
+    color: aliceblue;
+    padding: 10px 20px;
+    border-radius: 5px;
+} */
 
 /* .path {
     display: flex;
@@ -189,7 +238,7 @@ a {
 
 .products .item .text_btn {
     text-decoration: none;
-    font-size: 16px;
+    font-size: 10px;
 }
 
 .products .item .text_btn>a {
@@ -373,11 +422,12 @@ a {
 }
 
 .footer h4 {
-    font-size: 24px;
+    font-size: 40px;
     color: white;
     font-weight: lighter;
     line-height: 2;
     text-align: left;
+    padding-bottom: 5%;
 }
 
 .footer .line {
@@ -390,7 +440,7 @@ a {
     color: white;
     background: #0061FF;
     padding: 10px 100px;
-    font-size: 15px;
+    font-size: 20px;
     border-radius: 25px;
 }
 
@@ -399,9 +449,12 @@ a {
 }
 
 .footer .fwrap {
+    /* justify-content:center; */
+    padding: 80px 5%;
     margin: auto;
     display: flex;
     margin-bottom: 50px;
+    justify-content: space-around;
 }
 
 .footer .item {
@@ -411,10 +464,10 @@ a {
 }
 
 .footer .fwrap h4 {
+    padding-bottom: 5%;
     display: inline-block;
     color: white;
     font-size: 17px;
-    padding: 0px;
     line-height: 1.2;
     white-space: nowrap;
 }
