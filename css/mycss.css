@@ -2,9 +2,6 @@
 body {
     padding-top: 130px;
 }
-hr{
-color: gray;
-}
 a {
     line-height: 1.35;
     letter-spacing: 1px;
@@ -145,41 +142,10 @@ display: flex;
     border-color: transparent transparent white transparent;
     outline: 0;
     color: white;
-    /* border-width: 0 0 1; */
 }
 .banner .inline input::placeholder{
    color: white;
 }
-/* .banner_btn{
-    display: inline-block;
-    background-color: blue;
-    color: aliceblue;
-    padding: 10px 20px;
-    border-radius: 5px;
-} */
-
-/* .path {
-    display: flex;
-}
-
-.path li {
-    position: relative;
-    padding: 6px 8px;
-}
-
-.path li a {
-    color: #aaa;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-.path li+li::before {
-    content: "/";
-    color: #aaa;
-    position: absolute;
-    left: 0;
-} */
-
 .wrap {
     width: 960px;
     font-weight: 100;
@@ -443,7 +409,6 @@ display: flex;
 }
 
 .footer .fwrap {
-    /* justify-content:center; */
     padding: 80px 5%;
     margin: auto;
     display: flex;
