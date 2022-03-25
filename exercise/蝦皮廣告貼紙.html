@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        div{
+            display: block;
+        }
+
+        .card {
+            width: 300px;
+            border: 2px solid red;
+            margin: 30px;
+            position: relative;
+        }
+
+        .tag {
+            background-color: #fa0;
+            color: #fff;
+            position: absolute;
+            font-size: 20px;
+            top: 10px;
+            left: -10px;
+            z-index: 2;
+        }
+        .arrow{
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-top: 10px solid #f00 ;
+            position: absolute;
+            top: 36px;
+            left: -10px;
+            z-index: 0;
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="tag"> 蝦皮店到店 </div>
+        <img src="https://picsum.photos/300/200/?random=10">
+        <h3>title</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa blanditiis dignissimos vero eos praesentium
+            voluptate hic debitis. Aut enim consequuntur esse tempore delectus voluptas commodi ipsam, nostrum vero
+            tempora! Voluptatem.</p>
+    <div class="arrow"></div>
+    </div>
+</body>
+

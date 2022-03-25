@@ -293,6 +293,18 @@ display: flex;
     padding: 40px 0 60px;
 }
 
+header>div ,header>nav{
+    padding: 0px 100px 0px;
+}
+
+header>div{
+    padding: 0px 100px 0px;
+}
+
+header>nav{
+    padding: 0px 100px 0px;
+}
+
 .five_icon>h2 {
     font-size: 28px;
     text-align: center;
@@ -408,7 +420,7 @@ display: flex;
     text-align: right;
 }
 
-.footer .fwrap {
+.footer .footer-wrap {
     padding: 80px 5%;
     margin: auto;
     display: flex;
@@ -422,7 +434,7 @@ display: flex;
     padding-left: 50px;
 }
 
-.footer .fwrap h4 {
+.footer .footer-wrap h4 {
     padding-bottom: 5%;
     display: inline-block;
     color: white;
@@ -431,14 +443,14 @@ display: flex;
     white-space: nowrap;
 }
 
-.footer .fwrap li {
+.footer .footer-wrap li {
     white-space: nowrap;
     display: inline-block;
     margin-bottom: 10px;
     text-align: left;
 }
 
-.footer .fwrap a {
+.footer .footer-wrap a {
     color: #748094;
     display: inline-block;
     text-decoration: none;
