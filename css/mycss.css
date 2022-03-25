@@ -153,12 +153,12 @@ display: flex;
 }
 
 .mid_text {
-    /* 跟about 一樣 只是我把每一段都分開你比較好看  只差在背景顏色*/
+  
     padding: 40px 0 60 px;
 }
 
 .mid_text>p {
-    /* 跟.about > p 一樣  */
+   
     width: 760px;
     font-size: 16px;
     margin: auto;
@@ -168,7 +168,7 @@ display: flex;
 }
 
 .mid_text>h2 {
-    /* 跟.about > h2 一樣  */
+   
     width: 960px;
     font-size: 36px;
     margin: auto;
