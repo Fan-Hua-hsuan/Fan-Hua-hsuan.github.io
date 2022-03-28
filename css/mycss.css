@@ -7,7 +7,7 @@ a {
     letter-spacing: 1px;
 }
 
-.ad_header {
+.over_header {
     background-color: #fe7200;
     text-align: center;
     position: fixed;
@@ -18,7 +18,7 @@ a {
     z-index: 2;
 }
 
-.ad_header>p {
+.over_header>p {
     position: absolute;
     right: 0;
     top: 0;
@@ -29,7 +29,7 @@ a {
 
 }
 
-.ad_header>a {
+.over_header>a {
     text-decoration: none;
     color: white;
 }
@@ -43,11 +43,21 @@ a {
     width: 100%;
 }
 
-.top_header a {
+.top_header a{
     color: white;
     text-decoration: none;
     display: inline-block;
-    padding: 10px 20px;
+    padding: 10px 2px;
+}
+
+.top_header p{
+    display: inline-block;
+    color: white;
+    padding: 10px 11px;
+}
+
+.top_header .script{
+    color: white;
 }
 
 .header {
@@ -103,14 +113,20 @@ a {
 }
 
 .banner{
-    background-image: url("https://img.shoplineapp.com/media/image_clips/5f069a12dc4d9a00335656c2/original.png?1594268177");
-    color: white;
-    width: 100%;
+     color: white;
+    width: 960px;
     display: flex;
-    justify-content:center;
-    align-items: center ;
+    /* justify-content:center;
+    align-items: center ; */
+    margin: auto;
    padding: 5% 0;
    margin-bottom: 5%;
+   
+}
+.banner_bkimg {
+    width: 100%;
+    background-image: url("https://img.shoplineapp.com/media/image_clips/5f069a12dc4d9a00335656c2/original.png?1594268177");
+   
 }
 .banner article{
     padding-right: 5%;
@@ -180,12 +196,17 @@ display: flex;
 
 .products {
     background-color: white;
-    margin-bottom: 100px;
     text-align: left;
 }
 
 .products .wrap {
     display: flex;
+    border-bottom:  1px solid;
+    border-width: 0 0 1px 0;
+    border-color: #ccc;
+    padding-bottom: 100px ;
+    margin-bottom: 100px ;
+    
 }
 
 .products .item {
@@ -236,6 +257,20 @@ display: flex;
     padding-inline-start: 0px;
     width: 45%;
     margin: 0 10px 10px;
+}
+
+.hr_short{
+    width: 30%;
+    border: 1px solid; 
+    border-color: #fe7200;
+    margin: 10px 0;
+}
+.hr{
+    border: 1px solid; 
+    border-width: 1px 0;
+    width: 100%;
+    border-color: #fe7200;
+    margin: 10px 0;
 }
 
 .about {
@@ -367,10 +402,9 @@ header>nav{
 
 .footer {
     width: 100%;
-    text-align: center;
     background-color: #00142D;
-    color: #888;
     padding-bottom: 20px;
+
 }
 
 .footer .top {
@@ -378,15 +412,14 @@ header>nav{
     display: flex;
     width: 100%;
     padding: 20px 0;
+    justify-content: center;
 }
 
 .footer .top_left {
-    width: 70%;
     margin-left: 80px;
 }
 
 .footer .top_right {
-    width: 30%;
 }
 
 .footer img {
@@ -407,6 +440,7 @@ header>nav{
     text-align: left;
 }
 
+
 .footer_bluebutton {
     text-decoration: none;
     color: white;
@@ -422,19 +456,26 @@ header>nav{
 
 .footer .footer-wrap {
     padding: 80px 5%;
-    margin: auto;
     display: flex;
     margin-bottom: 50px;
-    justify-content: space-around;
+    justify-content: center;
+    
 }
 
-.footer .item {
+.footer .item{
     display: flex;
     flex-direction: column;
+    border-top: 1px solid;
+    border-color: #ccc;
+    padding-top: 20px;
+}
+
+.footer .push:not(:first-child){
     padding-left: 50px;
 }
 
 .footer .footer-wrap h4 {
+    padding-top: 25px;
     padding-bottom: 5%;
     display: inline-block;
     color: white;
