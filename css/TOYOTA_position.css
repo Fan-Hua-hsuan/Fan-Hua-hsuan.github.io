@@ -56,7 +56,8 @@
 .title .theme {
     display: flex;
     background-color: #b80d21;
-    padding: 15px 0;
+    margin: 0 0 -2% 0;
+    padding-top: 1%;
 }
 
 .title .narrative {
@@ -70,19 +71,21 @@
 
 .title h1 {
     margin: 0;
+    font-size: 3.5em;
+    font-weight: lighter;
 }
 
 .product .title span {
-    position: relative;
-    left: 0;
+    font-weight: lighter;
     font-size: 100px;
-     
     writing-mode: vertical-lr;
+    margin-left: -8%;
+    font-family:PMingLiU;
 }
 
 .detail h1 {
-    width: 40%;
-    display: inline;
+    /* width: auto; */
+    /* display: inline; */
     font-size: 24px;
     font-weight: bold;
     color: #b80d21;
