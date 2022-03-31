@@ -69,9 +69,16 @@
     font-size: 18px;
 }
 
-.title h1 {
+.narrative h1{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.product .title .theme h1 {
+    width: 100%;
+    text-justify: distribute-all-lines;
     margin: 0;
-    font-size: 3.5em;
+    font-size: 3em;
     font-weight: lighter;
 }
 
@@ -142,7 +149,7 @@
     margin-bottom: -500px;
     width: 440px;
     height: 300px;
-    background-color: rgb(211, 211, 211);
+    background-color: rgb(247, 244, 244);
 }
 
 .product:nth-child(even) .video {
