@@ -49,7 +49,7 @@
     position: relative;
 }
 
-.title {
+.product .title {
     color: white;
 }
 
@@ -58,6 +58,7 @@
     background-color: #b80d21;
     margin: 0 0 -2% 0;
     padding-top: 1%;
+    
 }
 
 .title .narrative {
@@ -75,16 +76,24 @@
 }
 
 .product .title .theme h1 {
+    display: inline;
     width: 100%;
-    text-justify: distribute-all-lines;
-    margin: 0;
+    margin: auto 0 ;
     font-size: 3em;
     font-weight: lighter;
 }
 
-.product .title span {
+/* .product .title .theme h1::before{
+    content: '01';
     font-weight: lighter;
     font-size: 100px;
+    writing-mode: vertical-lr;
+    font-family:PMingLiU;
+} */
+
+.product .title span {
+    font-weight: lighter;
+    font-size: 7rem;
     writing-mode: vertical-lr;
     margin-left: -8%;
     font-family:PMingLiU;
@@ -117,33 +126,35 @@
 .detail li:nth-child(even) {}
 
 .product:nth-child(odd) .video {
+    background-image: "Toyota/red_car.png";
     float: right;
     margin-top: 200px;
     padding-right: 100px;
     width: 700px;
     height: 430px;
+    cursor: pointer;
 }
 
 .product:nth-child(odd) .title {
     float: left;
     margin-top: -559px;
-    width: 360px;
-    height: 390px;
+    width: 33%;
+    cursor: pointer;
 }
 
 .product:nth-child(odd) .detail {
     background-color: rgb(207, 207, 207);
     position: absolute;
-
     max-width: 680px;
     width: auto;
     /* height: 270px; */
     padding: 20px 50px;
     margin-top: 590px;
-
+    cursor: pointer;
 }
 
 .product:nth-child(odd) .shadow {
+    user-select: none;
     float: right;
     margin-top: 100px;
     margin-bottom: -500px;
@@ -181,4 +192,36 @@
     width: 440px;
     height: 300px;
     background-color: rgb(211, 211, 211);
+}
+
+
+
+/*         ICON           */
+
+.draw{
+    position: relative;
+    cursor: pointer;
+}
+
+.draw_youtube{
+    width: 0;
+    height: 0;
+    border-left: 15px solid #ffffff;
+    border-top:  9px solid transparent;
+    border-bottom: 12px solid transparent;
+    position: absolute;
+    right: 105px;
+    top: 413px;
+    z-index: 1;
+}
+
+.draw_youtube_bg{
+    width:  60px;
+    height: 35px;
+    background-color: #f51a33;
+    position: absolute;
+    right: 87px;
+    top: 405px;
+    z-index: 0;
+    border-radius: 2px;
 }
