@@ -5,14 +5,16 @@
 
 .w_die h2 {
     padding-top: 100px;
+    padding-bottom: 10px;
     justify-self: center;
     text-align: center;
-    font-size: 26px;
+    font-size: 30px;
     font-weight: bold;
+    margin: 0;
 }
 
 .h2_under_line {
-    padding-top: 15px;
+    /* padding-top: 15px; */
     width: 30px;
     margin: auto;
     border-bottom: 1px solid;
@@ -20,19 +22,21 @@
 }
 
 .wrap {
-    padding: 50px;
+    width: 100%;
+    padding: 50px 0;
     display: flex;
 }
 
 .wrap .item {
-    width: 20%;
+    width: 25%;
     border: 1px solid #ccc;
-    margin: 0 15px;
-    border-width: 1px;
-    border-bottom-width: 3px;
+    margin-right: 8PX;
+    /* border-width: 1px; */
+    border-bottom-width: 2px;
     border-bottom-color: rgb(230, 33, 33);
     text-align: center;
     cursor: pointer;
+    /* justify-content: space-between; */
 }
 
 .wrap .item:hover {
@@ -41,10 +45,8 @@
 }
 
 .product {
-    width: 960px;
     margin: auto;
     position: relative;
-    padding-top: 100px;
 }
 
 .title {
@@ -67,11 +69,14 @@
 }
 
 .title h1 {
-    margin: auto 0;
+    margin: 0;
 }
 
 .product .title span {
+    position: relative;
+    left: 0;
     font-size: 100px;
+     
     writing-mode: vertical-lr;
 }
 
@@ -119,7 +124,9 @@
 .product:nth-child(odd) .detail {
     background-color: rgb(207, 207, 207);
     position: absolute;
-    width: 680px;
+
+    max-width: 680px;
+    width: auto;
     /* height: 270px; */
     padding: 20px 50px;
     margin-top: 590px;

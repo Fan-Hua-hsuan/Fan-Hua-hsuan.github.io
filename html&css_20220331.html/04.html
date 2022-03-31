@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            background-color: #ccc;
+            width: 300px;
+            height: 300px;
+        }
+
+        /* @media 裝置類型 and (條件) and (條件){
+            符合上述條件時會執行的CSS
+        } */
+
+        /* 平板的直、橫、桌機 */
+        @media screen and (min-width:768px) {
+            .box {
+                background-color: blue;
+            }
+        }
+
+        /* 平板的直、橫、桌機 */
+        @media screen and (min-width:992px) {
+            .box {
+                background-color: orange;
+            }
+        }
+
+          /* 桌機 */
+        @media screen and (min-width:1200px) {
+            .box {
+                background-color: #f0f;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+</body>
+
+</html>

@@ -1,7 +1,7 @@
+
 body {
     padding-top: 130px;
 }
-
 a {
     line-height: 1.35;
     letter-spacing: 1px;
@@ -43,20 +43,20 @@ a {
     width: 100%;
 }
 
-.top_header a {
+.top_header a{
     color: white;
     text-decoration: none;
     display: inline-block;
     padding: 10px 2px;
 }
 
-.top_header p {
+.top_header p{
     display: inline-block;
     color: white;
     padding: 10px 11px;
 }
 
-.top_header .script {
+.top_header .script{
     color: white;
 }
 
@@ -67,8 +67,8 @@ a {
     width: 100%;
     top: 65px;
     align-items: center;
-    justify-content: center;
-
+    justify-content:center;
+    
 }
 
 .header .logo {
@@ -88,7 +88,7 @@ a {
     padding: 0 10px;
 }
 
-.btn {
+.btn{
     text-decoration: none;
     color: white;
     background: #0061FF;
@@ -99,75 +99,68 @@ a {
     text-decoration: none;
 }
 
-.btn:hover {
+.btn:hover{
     background-color: rgb(8, 24, 116);
     cursor: pointer;
 }
 
 .btn_location {
     display: inline-block;
-
+    
     position: absolute;
     top: 15px;
     right: 20px;
 }
 
-.banner {
-    color: white;
+.banner{
+     color: white;
     width: 960px;
     display: flex;
     margin: auto;
-    padding: 5% 0;
-    margin-bottom: 5%;
-
+   padding: 5% 0;
+   margin-bottom: 5%;
+   
 }
-
 .banner_bkimg {
     width: 100%;
     background-image: url("https://img.shoplineapp.com/media/image_clips/5f069a12dc4d9a00335656c2/original.png?1594268177");
-
+   
 }
-
-.banner article {
+.banner article{
     padding-right: 5%;
     padding-top: 50px;
 }
-
-.banner h1 {
+.banner h1{
     line-height: 1.7;
     font-size: 28px;
     font-weight: bold;
     padding-bottom: 15px;
 }
-
-.banner p {
+.banner p{
     line-height: 1.2;
     font-size: 10px;
     padding-bottom: 30px;
 }
 
-.banner span {
-    color: #00c66a;
+.banner span{
+    color:#00c66a;
+}
+.banner .inline{
+display: flex;
 }
 
-.banner .inline {
-    display: flex;
-}
-
-.banner .inline input {
+.banner .inline input{
     width: 55%;
     margin: 0 30px 0 0;
-    background: transparent;
-    border-width: 1px;
+    background:transparent;
+    border-width: 1px ;
     border-color: transparent transparent white transparent;
     outline: 0;
     color: white;
 }
-
-.banner .inline input::placeholder {
-    color: white;
+.banner .inline input::placeholder{
+   color: white;
 }
-
 .wrap {
     width: 960px;
     font-weight: 100;
@@ -175,12 +168,12 @@ a {
 }
 
 .mid_text {
-
+  
     padding: 40px 0 60 px;
 }
 
 .mid_text>p {
-
+   
     width: 760px;
     font-size: 16px;
     margin: auto;
@@ -190,7 +183,7 @@ a {
 }
 
 .mid_text>h2 {
-
+   
     width: 960px;
     font-size: 36px;
     margin: auto;
@@ -207,12 +200,12 @@ a {
 
 .products .wrap {
     display: flex;
-    border-bottom: 1px solid;
+    border-bottom:  1px solid;
     border-width: 0 0 1px 0;
     border-color: #ccc;
-    padding-bottom: 100px;
-    margin-bottom: 100px;
-
+    padding-bottom: 100px ;
+    margin-bottom: 100px ;
+    
 }
 
 .products .item {
@@ -265,15 +258,14 @@ a {
     margin: 0 10px 10px;
 }
 
-.hr_short {
+.hr_short{
     width: 30%;
-    border: 1px solid;
+    border: 1px solid; 
     border-color: #fe7200;
     margin: 10px 0;
 }
-
-.hr {
-    border: 1px solid;
+.hr{
+    border: 1px solid; 
     border-width: 1px 0;
     width: 100%;
     border-color: #fe7200;
@@ -335,16 +327,15 @@ a {
     padding: 40px 0 60px;
 }
 
-header>div,
-header>nav {
+header>div ,header>nav{
     padding: 0px 100px 0px;
 }
 
-header>div {
+header>div{
     padding: 0px 100px 0px;
 }
 
-header>nav {
+header>nav{
     padding: 0px 100px 0px;
 }
 
@@ -427,7 +418,8 @@ header>nav {
     margin-left: 80px;
 }
 
-.footer .top_right {}
+.footer .top_right {
+}
 
 .footer img {
     width: 100%;
@@ -466,10 +458,10 @@ header>nav {
     display: flex;
     margin-bottom: 50px;
     justify-content: center;
-
+    
 }
 
-.footer .item {
+.footer .item{
     display: flex;
     flex-direction: column;
     border-top: 1px solid;
@@ -477,7 +469,7 @@ header>nav {
     padding-top: 20px;
 }
 
-.footer .push:not(:first-child) {
+.footer .push:not(:first-child){
     padding-left: 50px;
 }
 

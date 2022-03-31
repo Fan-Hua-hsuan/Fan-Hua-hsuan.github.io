@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap {
+            --grid-count: 1;
+            --grid-gap: 20px;
+
+        }
+
+        .col {
+            /* height: 200px; */
+            background-color: #ccc;
+            margin: var(--grid-gap);
+        }
+
+        .col img {
+            width: 100%;
+        }
+
+        @media screen and (min-width:768px) {
+            .wrap {
+                display: flex;
+                flex-wrap: wrap;
+                /* background-color: rgb(107, 107, 197); */
+            }
+
+            .col {
+                --grid-count: 2;
+                width: calc(100% / var(--grid-count) - var(--grid-gap)* 2);
+
+            }
+        }
+
+        @media screen and (min-width:992px) {
+            .col {
+                --grid-count: 3;
+            }
+        }
+
+        @media screen and (min-width:1200px) {
+            .col {
+                --grid-count: 4;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="col"><img src="https://picsum.photos/300/200/?random=10">
+            <h3>123456</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis laboriosam rerum sequi voluptate
+                illo? Nulla labore doloremque hic, corporis, suscipit similique, eaque eligendi dolor cum assumenda
+                deserunt est iure illum?</p>
+        </div>
+        <div class="col"><img src="https://picsum.photos/300/200/?random=10">
+            <h3>123456</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis laboriosam rerum sequi voluptate
+                illo? Nulla labore doloremque hic, corporis, suscipit similique, eaque eligendi dolor cum assumenda
+                deserunt est iure illum?</p>
+        </div>
+        <div class="col"><img src="https://picsum.photos/300/200/?random=10">
+            <h3>123456</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis laboriosam rerum sequi voluptate
+                illo? Nulla labore doloremque hic, corporis, suscipit similique, eaque eligendi dolor cum assumenda
+                deserunt est iure illum?</p>
+        </div>
+        <div class="col"><img src="https://picsum.photos/300/200/?random=10">
+            <h3>123456</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis laboriosam rerum sequi voluptate
+                illo? Nulla labore doloremque hic, corporis, suscipit similique, eaque eligendi dolor cum assumenda
+                deserunt est iure illum?</p>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            /* width: 1200px; */
+            border: 1px solid red;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .col{
+            /* width: 280px; */
+            width: 31.111111%;
+            height: 200px;
+            background-color: #ccc;
+            /* margin: 10px; */
+       
+            margin: 1.111111%;
+            
+            /* border: 1px solid red; */
+          
+        }
+        @media screen and (min-width:768px) {
+            .box {
+                background-color: blue;
+                
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+    </div>
+    
+</body>
+</html>
