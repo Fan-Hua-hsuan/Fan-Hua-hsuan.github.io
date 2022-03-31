@@ -1,8 +1,9 @@
-.w_die{
+.w_die {
     width: 960px;
     margin: auto;
 }
-.w_die h2{
+
+.w_die h2 {
     padding-top: 100px;
     justify-self: center;
     text-align: center;
@@ -10,7 +11,7 @@
     font-weight: bold;
 }
 
-.h2_under_line{
+.h2_under_line {
     padding-top: 15px;
     width: 30px;
     margin: auto;
@@ -18,52 +19,113 @@
     border-width: 4px;
 }
 
-.wrap{
+.wrap {
     padding: 50px;
     display: flex;
 }
 
-.wrap .item{
+.wrap .item {
     width: 20%;
     border: 1px solid #ccc;
     margin: 0 15px;
     border-width: 1px;
-    border-bottom-width:3px;
-    border-bottom-color: plum;
+    border-bottom-width: 3px;
+    border-bottom-color: rgb(230, 33, 33);
     text-align: center;
+    cursor: pointer;
 }
 
-.wrap .item:hover{
+.wrap .item:hover {
     background-color: rgb(189, 2, 2);
     color: white;
 }
 
-.product{
+.product {
     width: 960px;
     margin: auto;
     position: relative;
     padding-top: 100px;
 }
- 
-.product:nth-child(odd) .video{
+
+.title {
+    color: white;
+}
+
+.title .theme {
+    display: flex;
+    background-color: #b80d21;
+    padding: 15px 0;
+}
+
+.title .narrative {
+    padding: 10px 15px;
+    background-color: black;
+}
+
+.title .narrative p {
+    font-size: 18px;
+}
+
+.title h1 {
+    margin: auto 0;
+}
+
+.product .title span {
+    font-size: 100px;
+    writing-mode: vertical-lr;
+}
+
+.detail h1 {
+    width: 40%;
+    display: inline;
+    font-size: 24px;
+    font-weight: bold;
+    color: #b80d21;
+}
+
+.detail .red_line {
+    display: inline-block;
+    width: 60%;
+    border: 1px solid;
+    border-color: #b80d21;
+    margin: 10px 0;
+}
+
+.detail li:nth-child(odd) {
+    display: inline;
+    margin-left: -20px;
+    list-style: none;
+    background-color:black;
+    color:#ccc;
+}
+
+.detail li:nth-child(even) {}
+
+.product:nth-child(odd) .video {
     float: right;
     margin-top: 200px;
     padding-right: 100px;
     width: 700px;
     height: 430px;
 }
-.product:nth-child(odd) .title{
+
+.product:nth-child(odd) .title {
     float: left;
-    margin-top: -585px;
+    margin-top: -559px;
     width: 360px;
     height: 390px;
 }
+
 .product:nth-child(odd) .detail {
+    background-color: rgb(207, 207, 207);
+    position: absolute;
     width: 680px;
-    height: 270px;
-    margin-top: -30px;
-    padding-left: 50px;
-} 
+    /* height: 270px; */
+    padding: 20px 50px;
+    margin-top: 590px;
+
+}
+
 .product:nth-child(odd) .shadow {
     float: right;
     margin-top: 100px;
@@ -71,27 +133,30 @@
     width: 440px;
     height: 300px;
     background-color: rgb(211, 211, 211);
-} 
+}
 
-.product:nth-child(even) .video{
+.product:nth-child(even) .video {
     float: left;
     margin-top: 200px;
     padding-right: 100px;
     width: 700px;
     height: 430px;
 }
-.product:nth-child(even) .title{
+
+.product:nth-child(even) .title {
     float: right;
     margin-top: -585px;
     width: 360px;
     height: 390px;
 }
+
 .product:nth-child(even) .detail {
     float: right;
     width: 680px;
     height: 270px;
     margin-top: -30px;
-} 
+}
+
 .product:nth-child(even) .shadow {
     margin-top: 50px;
     margin-bottom: -400px;
@@ -99,4 +164,4 @@
     width: 440px;
     height: 300px;
     background-color: rgb(211, 211, 211);
-} 
+}
