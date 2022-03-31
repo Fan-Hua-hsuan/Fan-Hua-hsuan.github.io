@@ -23,7 +23,7 @@
 
 .wrap {
     width: 100%;
-    padding: 50px 0;
+    padding: 50px 0 0px;
     display: flex;
 }
 
@@ -66,15 +66,20 @@
     background-color: black;
 }
 
-.title .narrative p {
-    font-size: 18px;
-}
 
 .narrative h1{
     font-size: 1.5em;
     font-weight: bold;
+    margin-bottom: 2%;
 }
 
+.title .narrative p {
+    line-height: 30px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin: 0;
+    padding-bottom: 20%;
+}
 .product .title .theme h1 {
     display: inline;
     width: 100%;
@@ -95,35 +100,59 @@
     font-weight: lighter;
     font-size: 7rem;
     writing-mode: vertical-lr;
-    margin-left: -8%;
+    margin-left: -10%;
     font-family:PMingLiU;
+    /* 新細明體 */
 }
 
+.detail .detail_title {
+    display: flex;
+    padding-left: 2.5%;
+}
 .detail h1 {
     /* width: auto; */
     /* display: inline; */
-    font-size: 24px;
-    font-weight: bold;
+    max-width:24% ;
+    font-size: 14.5px;
+    font-weight:bolder;    
     color: #b80d21;
+
 }
 
 .detail .red_line {
-    display: inline-block;
-    width: 60%;
+    width: 75%;
     border: 1px solid;
+    border-width:1px 0 0 0 ;
     border-color: #b80d21;
-    margin: 10px 0;
+    margin: auto 0;
+    margin-left: 1%;
+    max-height: 1px;
+}
+.detail ul {
+   margin: 0;
 }
 
 .detail li:nth-child(odd) {
     display: inline;
     margin-left: -20px;
+    padding: 0.5% ;
     list-style: none;
     background-color:black;
     color:#ccc;
+    font-size: 14.5px;
+
 }
 
-.detail li:nth-child(even) {}
+.detail li:nth-child(even) {
+    margin: 0.5% 0;
+    color: #f51a33;
+}
+
+.detail li:nth-child(even) .text {
+    display: inline;
+    font-size: 2px;
+    color: black;
+}
 
 .product:nth-child(odd) .video {
     background-image: "Toyota/red_car.png";
@@ -137,18 +166,20 @@
 
 .product:nth-child(odd) .title {
     float: left;
-    margin-top: -559px;
-    width: 33%;
+    margin-top: -532px;
+    width: 35%;
 }
 
 .product:nth-child(odd) .detail {
-    background-color: rgb(207, 207, 207);
+    background-color: rgb(228, 228, 228);
     position: absolute;
-    max-width: 680px;
+    max-width: 65%;
     width: auto;
     /* height: 270px; */
-    padding: 20px 50px;
-    margin-top: 590px;
+    padding: 0 1.5%;
+    margin-top: 62.5%;
+    left: 5%;
+
 }
 
 .product:nth-child(odd) .shadow {
