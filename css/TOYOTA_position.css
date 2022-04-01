@@ -59,7 +59,6 @@
     background-color: #b80d21;
     margin: 0 0 -2% 0;
     padding-top: 1%;
-    
 }
 
 .title .narrative {
@@ -89,14 +88,6 @@
     font-weight: lighter;
 }
 
-/* .product .title .theme h1::before{
-    content: '01';
-    font-weight: lighter;
-    font-size: 100px;
-    writing-mode: vertical-lr;
-    font-family:PMingLiU;
-} */
-
 .product .title span {
     font-weight: lighter;
     font-size: 7rem;
@@ -111,8 +102,6 @@
     padding-left: 2.5%;
 }
 .detail h1 {
-    /* width: auto; */
-    /* display: inline; */
     max-width:24% ;
     font-size: 14.5px;
     font-weight:bolder;    
@@ -129,6 +118,7 @@
     margin-left: 1%;
     max-height: 1px;
 }
+
 .detail ul {
    margin: 0;
 }
@@ -222,8 +212,6 @@
     height: 300px;
     background-color: rgb(211, 211, 211);
 }
-
-
 
 /*         ICON           */
 
