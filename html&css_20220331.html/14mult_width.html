@@ -6,12 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        :root{
+            --gap:15px;
+        }
         
         .container{
             min-width: 1200px;
             margin: auto;
+            padding-left: 15px;
+            padding-right: 15px;
         }
-
+        .row{
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: calc(var(--gap)*-1);
+            padding-right: calc(var(--gap)*-1);
+            
+        }
+        [class*='col-']{
+            padding-left: 15px;
+            padding-right: 15px;
+            box-sizing: border-box;
+        }
         .item img{
             width: 100%;
         }  

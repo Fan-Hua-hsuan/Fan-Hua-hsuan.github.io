@@ -106,7 +106,6 @@
     font-size: 14.5px;
     font-weight:bolder;    
     color: #b80d21;
-
 }
 
 .detail .red_line {
@@ -120,7 +119,7 @@
 }
 
 .detail ul {
-   margin: 0;
+    margin: 0;
 }
 
 .detail li:nth-child(odd) {
@@ -134,8 +133,14 @@
 }
 
 .detail li:nth-child(even) {
-    margin: 0.5% 0;
+    /* margin: 0.5% 0;
     color: #f51a33;
+    */
+    list-style: none;
+    
+    padding-left: 2em;
+    position: relative;
+    background-image: radial-gradient(3px at 1em 0.6em, red , transparent 3px);
 }
 
 .detail li:nth-child(even) .text {

@@ -113,13 +113,12 @@ a {
 }
 
 .banner{
-     color: white;
+    color: white;
     width: 960px;
     display: flex;
     margin: auto;
-   padding: 5% 0;
-   margin-bottom: 5%;
-   
+    padding: 5% 0;
+    margin-bottom: 5%;
 }
 .banner_bkimg {
     width: 100%;
@@ -462,8 +461,8 @@ header>nav{
 }
 
 .footer .item{
-    display: flex;
-    flex-direction: column;
+    /* display: flex; */
+    /* flex-direction: column; */
     border-top: 1px solid;
     border-color: #ccc;
     padding-top: 20px;
@@ -484,15 +483,13 @@ header>nav{
 }
 
 .footer .footer-wrap li {
-    white-space: nowrap;
-    display: inline-block;
     margin-bottom: 10px;
     text-align: left;
 }
 
 .footer .footer-wrap a {
     color: #748094;
-    display: inline-block;
+    display: block;
     text-decoration: none;
     margin-top: 10px;
     padding: 0;
