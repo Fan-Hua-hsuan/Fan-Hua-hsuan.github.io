@@ -1,58 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .self {
-            width:480px;
-            margin: auto;
-            border: 1px solid #ccc;
-            border-radius: 10%;
-            text-align: center;
-        }
-
-        .picturestyle {
-            width: 50%;
+        .picturestyle{
         }
     </style>
 </head>
-
 <body>
-    <div class="self">
-
-        <h1>
-        </h1>
-        <img id="image1" src="" alt="" class="picturestyle">
-
-    </div>
+    <h1>
+    </h1>
+    <img id="image1"src="" alt="" class="picturestyle">
     <script>
-        let h1 = document.querySelector("h1");
-        let img = document.getElementById("image1");
-        let moviename = "iron man";
-        let movieurl = "https://github.com/Fan-Hua-hsuan/FileStorage/blob/main/maxresdefault.jpg?raw=true";
-        h1.innerText = moviename;
+        let h1=document.querySelector("h1");
+        let img =document.getElementById("image1");
+        let moviename ="iron man";
+        let movieurl="https://github.com/Fan-Hua-hsuan/FileStorage/blob/main/maxresdefault.jpg?raw=true";
+        h1.innerText=moviename;
         // img.src=movieurl;
 
-        img.setAttribute("src", movieurl);
-        img.setAttribute("alt", "iron man");
-        img.setAttribute("class", "picturestyle");
-        const info = ["姓名","E-mail","學校", "興趣"];
-        const imageArray = [
+        img.setAttribute("src",movieurl);
+        img.setAttribute("alt","iron man");
+        img.setAttribute("class","picturestyle");
+
+        const imageArray=[
             "https://i.ytimg.com/vi/ed9OVKTE1gE/maxresdefault.jpg",
             "https://i.ytimg.com/vi/WE1Q_6A_pQM/maxresdefault.jpg",
 
         ]
 
 
-        imageArray.forEach((url, index) => {
-            document.write(url + "<br>");
-        })
+        imageArray.forEach((url,index)=>{
+            document.write(url+"<br>");
+    })
 
     </script>
 </body>
-
 </html>
