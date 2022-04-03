@@ -442,9 +442,9 @@ header>nav{
 .footer_bluebutton {
     text-decoration: none;
     color: white;
+    font-size: 20px;
     background: #0061FF;
     padding: 10px 100px;
-    font-size: 20px;
     border-radius: 25px;
 }
 
