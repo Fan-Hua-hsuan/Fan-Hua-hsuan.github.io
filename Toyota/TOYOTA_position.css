@@ -1,6 +1,10 @@
 .w_die {
     width: 960px;
     margin: auto; 
+    margin-bottom: 2em;
+}
+.w_die:nth-of-type(odd){
+    padding-bottom: 50px;
 }
 
 .w_die h2 {
@@ -20,7 +24,7 @@
 }
 .wrap {
     width: 100%;
-    padding: 50px 0 ;
+    padding: 20px 0 50px 0;
     display: flex;
 }
 .wrap .item {
@@ -172,4 +176,164 @@ section:nth-of-type(even) .main-txt{
     top:-28px;
     z-index: 0;
     border-radius: 2px;
+}
+
+.video{
+    padding: 50px 0;
+    width: 960px;
+    margin: auto;
+}
+.video img{
+    width: 100%;
+}
+
+.video .more{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+}
+
+.video .more_bg{
+height: 4em;
+display: flex;
+width: 200px;
+background-color: #000;
+right: 0;
+align-items: center;
+}
+
+.video .more_bg_front{
+    position: relative;;
+    background-color: #f00;
+    color: #ccc;
+    font-size: 20px;
+    width: fit-content;
+    font-weight: bold;
+    padding: 10px 5px 10px 50px;
+}
+.video .more_bg_white{
+    position: relative;
+    left: 45px;
+    margin-left: -2em;
+    width: 5em;
+    height: 1px;
+    background-color: #ccc;
+    
+} 
+.video .more_bg_white:hover{
+    margin-left: 2em;
+    
+} 
+.carousel {
+    display: flex;
+}
+.carousel img{
+    width: 500px;
+}
+.carousel .carousel_slg{
+background-image: url("https://fakeimg.pl/1200x300/000");
+    width: 100%;
+    height: 800px;
+}
+
+.carousel .carousel_span {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;   
+    flex-direction: column;
+}
+.carousel .carousel_slg span{ 
+    padding-bottom: 8px;
+    color:#fff ;
+    font-size: 32px;
+    font-weight: bold;
+    /* border: 1px solid; */
+    border-bottom: 4px #F00 solid;
+}
+
+.carousel .carousel_btn{
+    margin-top: 1.5em;
+}
+.carousel_point{
+    font-size: 25px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.carousel_point a{
+text-decoration: none;
+color: #f00;
+}
+.cars{
+    width: 1200px;
+    margin: auto;
+    display: flex;
+}
+
+.car{
+    width: 11%;
+    text-align: center;
+}
+.car p{
+    font-size: 1.5em;
+    padding: 0.5em 0;
+} 
+.car img{
+    padding: 5px;
+}
+.car_btns{
+    margin: auto;
+    padding: 0 -1em;
+    white-space:nowrap;
+}
+.car_btns a{
+    font-size: 0.5em;
+    padding: 2px;
+    width: fit-content;
+    margin: 0 3px;
+    text-decoration: none;
+    border-radius: 10%;
+    color: #fff;
+    background-color: #bb0404;
+}
+
+.Safety_Declaration{
+    text-align: center;
+    margin: 110px 0;
+    color: rgb(151, 144, 144);
+    font-size: small;
+}
+footer{
+    background-color: #333333;
+    color: #fff;
+    text-align: center;
+    
+padding: 30px 0;
+
+}
+.copy_right a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.copy_right a::after{
+    content: '|';
+    color: #fff;
+    padding: 0 5px;
+}
+footer .contact_us{
+    display: flex;    
+    align-items: center;
+    justify-content: center;   
+    padding: 20px 0;
+}
+footer .contact_us img{
+height: auto;
+}
+footer p{
+    font-size: small;
+    color: rgb(151, 144, 144);
 }
