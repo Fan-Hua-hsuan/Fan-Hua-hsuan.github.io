@@ -1,3 +1,18 @@
+.w_die {
+    width: 960px;
+    margin: auto; 
+}
+
+.w_die h2 {
+    padding-top: 100px;
+    padding-bottom: 10px;
+    justify-self: center;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+}
+
 .h2_under_line {
     /* padding-top: 15px; */
     width: 30px;
@@ -145,4 +160,28 @@ section:nth-of-type(even) .main-txt{
     text-indent: 0em;
     margin-right: 1em;
     
+}
+/*         ICON           */
+
+.draw_youtube{
+    cursor: pointer;
+    width: 0;
+    height: 0;
+    border-left: 15px solid #ffffff;
+    border-top:  9px solid transparent;
+    border-bottom: 12px solid transparent;
+    position: relative;
+    margin: auto;
+    z-index: 1;
+}
+
+.draw_youtube_bg{
+    cursor: pointer;
+    width:  60px;
+    height: 35px;
+    background-color: #f51a33;
+    position: relative;
+    top:-28px;
+    z-index: 0;
+    border-radius: 2px;
 }
