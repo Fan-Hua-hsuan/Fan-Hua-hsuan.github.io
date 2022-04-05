@@ -12,21 +12,17 @@
     font-weight: bold;
     margin: 0;
 }
-
 .h2_under_line {
-    /* padding-top: 15px; */
     width: 30px;
     margin: auto;
     border-bottom: 1px solid;
     border-width: 4px;
 }
-
 .wrap {
     width: 100%;
-    padding: 50px 0 0px;
+    padding: 50px 0 ;
     display: flex;
 }
-
 .wrap .item {
     display: block;
     width: 25%;
@@ -47,16 +43,10 @@
     margin-bottom: -6px;
     background-color: rgb(189, 2, 2);
 }
-
 .wrap .item:hover {
-    /* background-color: rgb(189, 2, 2); */
     color: white;
-    /* transition: all 2s 0s  ease;
-    margin-top: -1px;
-    padding-top: 1px; */
 }
-.wrap .item:hover span 
-{   
+.wrap .item:hover span {   
     display: block;
     width: 100%;
     background-color: rgb(189, 2, 2);
@@ -65,6 +55,8 @@
     margin-top: -28px;
     padding:28px 0px 0 2px;
 }
+
+/* 五大特色介紹區 */
 section{
     width: 960px;
     margin: auto;
@@ -101,7 +93,6 @@ section:nth-of-type(even) .main-pic{
 .main-pic .cover{
     width: 660px;
     margin-right: -50px;
-    /* flex-shrink: 0; */
 }
 section:nth-of-type(even) .main-pic .cover{
     margin-right: 0;
@@ -109,7 +100,6 @@ section:nth-of-type(even) .main-pic .cover{
 }
 .btn{
     width: 70px;
-    /* flex-shrink: 0; */
 }
 .cover img,
 .btn img{
