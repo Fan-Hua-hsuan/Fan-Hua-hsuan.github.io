@@ -100,6 +100,7 @@ section:nth-of-type(even) .main-pic .cover{
 }
 .btn{
     width: 70px;
+    cursor: pointer;
 }
 .cover img,
 .btn img{
@@ -151,10 +152,9 @@ section:nth-of-type(even) .main-txt{
     margin-right: 1em;
     
 }
-/*         ICON           */
 
+/*         ICON           */
 .draw_youtube{
-    cursor: pointer;
     width: 0;
     height: 0;
     border-left: 15px solid #ffffff;
@@ -166,7 +166,6 @@ section:nth-of-type(even) .main-txt{
 }
 
 .draw_youtube_bg{
-    cursor: pointer;
     width:  60px;
     height: 35px;
     background-color: #f51a33;
