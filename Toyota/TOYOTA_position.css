@@ -72,10 +72,19 @@ section{
     color: #fff;
     position: relative;
 }
+.main-title span{
+    writing-mode: vertical-lr;
+    padding-top: 5px;
+    margin-left: -8px;
+    font-size: 1.25em;
+    display: inline-block;
+}
 section:nth-of-type(even) .main-title{
     margin-left: auto;
 }
 .main-title h2{
+    display: flex;
+    align-items: center;
     font-size: 40px;
 }
 .main-title .main-title-txt{
