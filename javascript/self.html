@@ -22,15 +22,18 @@
             padding: 0 10px;
             box-sizing: border-box;
         }
-        .img_header{
+
+        .img_header {
             width: 330px;
         }
+
         .img_group {
             width: 960px;
             box-sizing: border-box;
             display: flex;
         }
-        .text{
+
+        .text {
             text-align: left;
             margin: auto;
             padding-left: 315px;
@@ -43,7 +46,7 @@
     <div class="self">
         <img class="img_header">
         <div class="text">
-            <h1></h1>
+            <h1 id="first"></h1>
             <h1></h1>
             <h1></h1>
             <h1></h1>
@@ -53,6 +56,10 @@
             <img>
             <img>
         </div>
+        <!-- 身高:<input type="text" id="height">
+        體重:<input type="text" id="weight">
+        <h1 id="result"></h1>
+        <button onclick="calcauate_bmi()">click me!</button> -->
     </div>
 
     <script>
@@ -80,6 +87,23 @@
         })
 
 
+        function calcauate_bmi() {
+            var a = document.getElementById("first");
+            a.innerHTML = "Hello wrold";
+
+            for (i = 0; i < h_tag.length; i++) {
+                a.innerHTML += i;
+            }
+            var height = document.getElementById("height").value - 0;
+            height = height/100;
+            var weight = document.getElementById("weight").value - 0;
+            var result = document.getElementById("result");
+            var bmi = weight / (height * height) ;
+            console.log(height);
+            console.log(weight);
+            console.log(bmi);
+            result.innerHTML = "BMI => " + bmi;
+        }
         // let img = document.getElementById("image1");
         // let h1 = document.querySelector("h1");
         // let moviename = "iron man";
@@ -92,8 +116,6 @@
         // imageArray.forEach((url, index) => {
         //     document.write(url + "<br>");
         // })
-
-
     </script>
     <script>
         console.log(info);
