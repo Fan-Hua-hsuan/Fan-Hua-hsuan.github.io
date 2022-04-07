@@ -1,0 +1,90 @@
+body{
+    padding-top: 180px;
+}
+.header{
+    width: 100%;
+    position:fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+/* 廣告 */
+.header a.header_x{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    border: solid #F8BF17;
+    border-width: 0.3em 0;
+    padding: 0.5em 0;
+    color: #00142f;
+    background-color: #fff;
+}
+.header a.header_x span{
+    font-size: 1px;
+}
+.header_x::after{
+    content: '×';
+    font-size: 1.7em;
+    font-weight: bold;
+    position: absolute;
+    right: 10px;
+    top: 0.2em;
+}
+/* 語言&幫助 */
+.header_info{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 10px 12em 10px;
+    background-color: #00142d;
+    color: #fff;
+}
+.header_info span{
+    padding: 0 0.4em;
+}
+.header_info a{
+    -webkit-text-size-adjust:100%;
+    font-size: 10px;
+    color: #fff;
+    text-decoration: none;
+    padding: 0 0.8em;
+}
+/* 第一顆球 */
+.header_info a:first-child{
+    font-size: 13px;
+}
+/* 導覽列 */
+.header_nav{
+    width: 100%;
+    display: flex;
+    background-color: #fff;
+    align-items: center;
+    padding: 1.8em 0 1.8em 11em; 
+    /* position: relative; */
+    /* justify-content: space-around; */
+}
+.header_nav .nav_title img{
+    width: 70%;
+}
+.header_nav .nav_title{
+    display: flex;
+    align-items: center;
+}
+.header_nav .title_links{
+    padding-left: 0em;
+}
+.header_nav .title_links a{
+    padding:0 5px;
+    text-decoration: none;
+    color: #00142f;
+}
+.header_nav .nav_btn{
+    position: absolute;
+    background-color: #0061ff;
+    color: #fff;
+    z-index: 99;
+    right: 12%;
+    padding: 12px 17px;
+    font-size: 14px;
+    border-radius: 30px;
+}
