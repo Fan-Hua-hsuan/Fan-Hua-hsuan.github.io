@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let firstname = " 江華",lastname = "溪";
+//將名字+性氏串起來，並且改變中文顯示順序
+        function getFullName(firstname,lastname){
+            return `${lastname}&{firstname}`;
+            }
+        
+let fullname = getFullName(firstname,lastname);
+
+//兩行:分段
+        var h1 = document.getElementById("fullname");
+h1.innerHTML = fullname;
+
+//一行:方法串接
+document.getElementById("fullname").innerHTML = fullname;
+window.onload = 
+//arrow function
+Window.onload = function(){
+    setTimeout(() =>{
+        document.getElementById("fullname").innerHTML = fullname;
+    },3000);
+}
+</script>
+</body>
+</html>

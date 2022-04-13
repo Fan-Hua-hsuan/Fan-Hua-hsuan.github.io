@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="h-100 p-3 text-white bg-warning rounded-3 mb-4">
+        <h1>Level 3 : 讓setMovie(name, url)接收兩個參數</h1>
+        <h2>Level 4 :h1及img放在window.onload事件中再獲取</h2>
+    </div>
+    <h1></h1>
+    <img id="img1" src="" alt="">
+
+
+    <script>
+        let moviename = "Tron光速戰記";
+        const movieUrl = "https://nofilmschool.com/sites/default/files/styles/article_extra_wide/public/tron.jpg";
+
+        let h1,img;
+
+        //想像這是C# console專案 Main        
+        window.onload = function () {
+            h1 = document.querySelector("h1:nth-child(2)");
+            img = document.getElementById("img1");
+
+            setMovie(moviename,movieUrl)
+        }
+
+
+        function setMovie(name,url) {
+            h1.innerText = moviename;
+            h1.innerHTML = `<b>${moviename}</b>`;
+
+            img.src = url;
+            img.setAttribute("src", url);
+
+            let imgUrl = img.getAttribute("src");
+        }
+        
+    </script>
+</body>
+
+</html>
