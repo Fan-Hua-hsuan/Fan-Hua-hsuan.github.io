@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .row{
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+        .container{
+            background-color: #ffa;
+            width: 90%;
+            margin: auto;
+        }
+        .item{
+            height: 55px;
+            background-color: #fcc;
+            outline: 1px solid #f00;
+        }
+        [class*=col-],
+        [class*=row-cols-] >.col{
+            padding-left: 15px;
+            padding-right: 15px;
+            box-sizing: border-box;
+        }
+        /* system1 */
+        .col-1{width: 8.333333%;}/* 1/12 */
+        .col-6{width: 50%;}/* 1/12 */
+        .col-12{width: 100%;}/* 1/12 */
+        /* system2幾欄等寬版面 */
+        .row-cols-1 > .col {width: 100%;}
+        .row-cols-6 > .col {width: 16.666666%;}
+        .row-cols-12 > .col {width: 8.333333%;}
+        
+        @media screen and (min-width:768px) {
+            /* 1 */
+            .col-md-1{width: 8.333333%;}
+            .col-md-2{width: 16.666666%;}
+            .col-md-3{width: 25%;}
+            .col-md-4{width: 33.333333%;}
+            .col-md-5{width: 41.666666%;}
+            .col-md-6{width: 50%;}
+            /* 2 */
+            .row-cols-md-7 > .col{width: 14.285714%;}
+        }
+        @media screen and (min-width:992px) {
+            /* 1 */
+            .col-lg-4{width: 33.333333%;}
+            /* 2 */
+            .row-cols-lg-7 > .col{width: 14.285714%;}
+        }
+        @media screen and (min-width:1200px) {
+            /* 1 */
+            .col-xl-4{width: 33.333333%;}
+            /* 2 */
+            .row-cols-xl-7 > .col{width: 14.285714%;}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        1
+        <div class="row">
+            <div class="col-6">
+                <div class="item"></div>
+            </div>
+            <div class="col-6">
+                <div class="item"></div>
+            </div>
+            <div class="col-6">
+                <div class="item"></div>
+            </div>
+            <div class="col-6">
+                <div class="item"></div>
+            </div>
+            <div class="col-6">
+                <div class="item"></div>
+            </div>
+            <div class="col-6">
+                <div class="item"></div>
+            </div>
+        </div>
+        2
+        <div class="row row-cols-6">
+            <div class="col">
+                <div class="item"></div>
+        </div>
+            <div class="col">
+                <div class="item"></div>
+                
+        </div>
+            <div class="col">
+                <div class="item"></div>
+        </div>
+            <div class="col">
+                <div class="item"></div>
+        </div>
+            <div class="col">
+                <div class="item"></div>
+        </div>
+            <div class="col">
+                <div class="item"></div>
+        </div>
+        </div>
+    </div>
