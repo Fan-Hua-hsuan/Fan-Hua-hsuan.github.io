@@ -66,13 +66,17 @@
         .modal-header {
             background-color: cornflowerblue;
         }
+        #result{
+            margin-left: 20px;
+            font-size: 1.2em;
+        }
     </style>
 </head>
 
 <body>
     <div class="jumbotron bg-info text-center">
         <h1>LOL英雄聯盟圖鑑</h1>
-        <button class="btn btn-danger" id="createhero">從DOM建立英雄人物陣列資料後清除container</button>
+        <button class="btn btn-danger" id="createhero" >從DOM建立英雄人物陣列資料後清除container</button>
         <button class="btn btn-warning" id="listhero">以文字迭代英雄人物資料</button>
         <button class="btn btn-primary" id="tablehero">以表格呈現英雄人物資料</button>
     </div>
@@ -2166,6 +2170,7 @@
         let heroArray = [];
         let container;
         let btnCreateHeroArray, btnListHero, btnTableHero;
+        
 
         window.onload = function () {
             container = document.querySelector("#container");
@@ -2176,11 +2181,12 @@
             btnCreateHeroArray.addEventListener("click", function () {
                 //alert("從DOM建立英雄人物陣列資料後清除container");
 
-                                      // alert("從DOM建立英雄人物陣列資料成功！");
+                alert("從DOM建立英雄人物陣列資料成功！");
 
                 //1.從DOM建立英雄人物資料
-                let heros = document.querySelectorAll(".card");
-
+                heroArray = document.querySelectorAll(".card");// 0 1 2 3 4....
+                let card_title = heroArray[0]
+                
                 //2.清除container
                 document.querySelector("#container").innerHTML = "";
             });
@@ -2190,7 +2196,18 @@
                     alert("請先建立陣列資料");
                     return;
                 }
-                //alert("以文字迭代英雄人物資料！");
+
+                heroArray.forEach((hero_data,index)=> {
+                    let title = hero_data.querySelector(".card-title").textContent;
+                    let text = hero_data.querySelector(".card-text").textContent;
+                    let img = hero_data.querySelector("img").src;
+                    let result = document.getElementById("result");
+                    // result.innerText = "title : " + title  + " id :" + text;
+                    result.innerHTML += `<p>{index：${index} , id：${title}, text：${text}, url：${img}}</p>`;
+                    //console.log(hero_data);
+                });
+
+                alert("以文字迭代英雄人物資料！");
 
 
             });

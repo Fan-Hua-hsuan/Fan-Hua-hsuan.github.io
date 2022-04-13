@@ -44,19 +44,24 @@
 
 <body>
     <div class="self">
-        <img class="img_header">
+        <img class="img_header" id="image1">
         <div class="text">
             <h1 id="first"></h1>
             <h1></h1>
             <h1></h1>
             <h1></h1>
+            <!-- <span></span>
+            <div id="tt"></div> -->
         </div>
         <div class="img_group">
             <img>
             <img>
             <img>
+            <!-- <a>1</a>
+            <a>2</a>
+            <a>3</a>
+            <a>4</a> -->
         </div>
-
     </div>
 
     <script>
@@ -70,18 +75,33 @@
             "https://github.com/Fan-Hua-hsuan/FileStorage/blob/main/orange (3).jpg?raw=true",
         ]
 
-        // 內容
-        let h_tag = document.querySelectorAll("h1");
-        h_tag.forEach((item, index) => {
-            item.innerText = info_title[index] + " : " + info[index];
-            console.log(item);
+        let h_tag =document.querySelectorAll("h1");
+        h_tag.forEach((h1,index)=>{
+            h1.innerText = info_title[index]+"："+info[index];
         })
 
-        //圖片
-        let img_tag = document.querySelectorAll("img");
-        img_tag.forEach((img_item, index) => {
-            img_item.setAttribute("src", imageArray[index]);
-        })
+        let img_tag =document.querySelectorAll("img");
+        img_tag.forEach((img,index)=>{
+            img.setAttribute("src",imageArray[index]);
+        })   
+        // let a_tag =document.querySelectorAll("a");
+        // a_tag.forEach((a,index)=>{
+        //     a.setAttribute("href",imageArray[index]);
+        // })
+
+
+        // 內容
+        // let h_tag = document.querySelectorAll("h1");
+        // h_tag.forEach((item, index) => {
+        //     item.innerText = info_title[index] + " : " + info[index];
+        //     console.log(item);
+        // })
+
+        // //圖片
+        // let img_tag = document.querySelectorAll("img");
+        // img_tag.forEach((img_item, index) => {
+        //     img_item.setAttribute("src", imageArray[index]);
+        // })
 
 
         // let img = document.getElementById("image1");
@@ -89,13 +109,25 @@
         // let moviename = "iron man";
         // let movieurl = "https://github.com/Fan-Hua-hsuan/FileStorage/blob/main/maxresdefault.jpg?raw=true";
         // h1.innerText = moviename;
-        // // img.src=movieurl;
+        // img.src=movieurl;
         // img.setAttribute("src", movieurl);
         // img.setAttribute("alt", "iron man");
         // img.setAttribute("class", "picturestyle");
+
+        // let h = document.querySelector("span");
+        // h.innerText = "hana";
+        
+        // let a = document.querySelectorAll("h1");
+        // a.innerText = "B10731039";
+
+        // a.forEach((h1,index)=>{
+        //     h1.innerText = "B10731039";
+        // })
+
         // imageArray.forEach((url, index) => {
         //     document.write(url + "<br>");
         // })
+
     </script>
     <script>
         console.log(info);
