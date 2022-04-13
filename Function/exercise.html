@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="fullname"></h1>
+
+    <script>
+        let firstname = "江華", lastname = "奚";
+
+        //將名字+姓氏串起來, 並且改變中文顯示順序
+        function getFullName(firstname, lastname) {
+
+            return `${lastname}${firstname}`;
+        }
+
+        let fullname = getFullName(firstname, lastname);
+
+        //兩行：分段
+        //var h1 = document.getElementById("fullname");
+        //h1.innerHTML = fullname;
+
+        //一行：方法串接
+        //document.getElementById("fullname").innerHTML = fullname;
+
+        // window.onload = function(){
+        //     setTimeout(function(){
+        //         document.getElementById("fullname").innerHTML = fullname;
+        //     }, 3000);
+
+        //     //arrow function
+        //     setTimeout(() => {
+        //         document.getElementById("fullname").innerHTML = fullname;
+        //     }, 3000);
+        // }
+
+    </script>
+
+    <script>
+        let first_name = "江華", last_name = "奚";
+
+        let person = {
+            firstname: "江華",
+            lastname: "奚"
+        }
+
+        function getfullname(first_name, last_name) {
+            first_name = "大一";
+            last_name = "王";
+            return `lcoal : ${last_name}${first_name}`;
+        }
+
+        function get_fullname(man){
+            man.firstname = "子瑜";
+            man.lastname = "周";
+            return `local :${man.lastname}${man.firstname}`;
+        }
+
+        window.onload = function () {
+            alert(getfullname(first_name, last_name));
+            
+            alert(`${first_name}, ${last_name}`);
+
+
+            // alert(get_fullname(person));
+            // alert(`${person.lastname}, ${person.firstname}`);
+        }
+    </script>
+</body>
+
+</html>
