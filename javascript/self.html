@@ -56,16 +56,13 @@
             <img>
             <img>
         </div>
-        <!-- 身高:<input type="text" id="height">
-        體重:<input type="text" id="weight">
-        <h1 id="result"></h1>
-        <button onclick="calcauate_bmi()">click me!</button> -->
+
     </div>
 
     <script>
         //變數宣告
         const info_title = ["姓名", "E-mail", "學校", "興趣"];
-        const info = ["范華軒", "xxxx@gmail.com", "中華大學", "吃飯，睡覺，打東東"];
+        const info = ["范華軒", "xxxx@gmail.com", "中華大學", "日文、看書"];
         const imageArray = [
             "https://fan-hua-hsuan.github.io/my_big_header.png",
             "https://github.com/Fan-Hua-hsuan/FileStorage/blob/main/orange (1).jpg?raw=true",
@@ -87,23 +84,6 @@
         })
 
 
-        function calcauate_bmi() {
-            var a = document.getElementById("first");
-            a.innerHTML = "Hello wrold";
-
-            for (i = 0; i < h_tag.length; i++) {
-                a.innerHTML += i;
-            }
-            var height = document.getElementById("height").value - 0;
-            height = height/100;
-            var weight = document.getElementById("weight").value - 0;
-            var result = document.getElementById("result");
-            var bmi = weight / (height * height) ;
-            console.log(height);
-            console.log(weight);
-            console.log(bmi);
-            result.innerHTML = "BMI => " + bmi;
-        }
         // let img = document.getElementById("image1");
         // let h1 = document.querySelector("h1");
         // let moviename = "iron man";
