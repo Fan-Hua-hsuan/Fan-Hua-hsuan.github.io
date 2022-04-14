@@ -1,0 +1,8 @@
+
+        .navbar-nav {
+            align-items: center;
+        }
+
+        .navbar-light .navbar-nav .nav-link{
+            color: #fff;
+        }
