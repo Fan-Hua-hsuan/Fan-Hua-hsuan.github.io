@@ -1,0 +1,69 @@
+.keyart-container {
+  width: 100%;
+  height: 130vh;
+}
+
+.keyart-container .keyart-layer {
+  width: 100%;
+  height: 130vh;
+  background-size: auto 130vh;
+  background-position: bottom center;
+  position: fixed;
+  z-index: -1;
+}
+
+.keyart-container .keyart-layer[id^="parallax"] {
+  position: fixed;
+}
+
+.keyart-container #under-bg {
+  background-color: #ffaf1b;
+  position: absolute;
+}
+
+.keyart-container #parallax-0 {
+  background-image: url(parallax_material/parallax0.png);
+}
+
+.keyart-container #parallax-1 {
+  background-image: url(parallax_material/parallax1.png);
+}
+
+.keyart-container #parallax-2 {
+  background-image: url(parallax_material/parallax2.png);
+}
+
+.keyart-container #parallax-3 {
+  background-image: url(parallax_material/parallax3.png);
+}
+
+.keyart-container #parallax-4 {
+  background-image: url(parallax_material/parallax4.png);
+}
+
+.keyart-container #parallax-5 {
+  background-image: url(parallax_material/parallax5.png);
+}
+
+.keyart-container #parallax-6 {
+  background-image: url(parallax_material/parallax6.png);
+}
+
+.keyart-container #parallax-7 {
+  background-image: url(parallax_material/parallax7.png);
+}
+
+.keyart-container #parallax-8 {
+  background-image: url(parallax_material/parallax8.png);
+}
+
+.after {
+  background-color: #210002;
+  height: 3333px;
+  color: #fff;
+  margin-top: -50px;
+  padding: 111px 222px;
+  font-size: 2px;
+  line-height: 3;
+}
+/*# sourceMappingURL=Parallaxl.css.map */

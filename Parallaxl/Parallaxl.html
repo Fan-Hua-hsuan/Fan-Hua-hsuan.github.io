@@ -1,0 +1,51 @@
+//這是Lab捲動效果的練習-HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Parallaxl.css">
+    <link rel="stylesheet" href="/Reset/reset.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="pre">上方內容(header/nav)</div>
+    
+    <div class="keyart-container">
+        <div class="keyart-layer" id="under-bg" >上方打底,多打幾個字讓自己看</div>
+        <div class="keyart-layer" id="parallax-0" speed="2"></div>
+        <div class="keyart-layer" id="parallax-1" speed="5"></div>
+        <div class="keyart-layer" id="parallax-2" speed="11"></div>
+        <div class="keyart-layer" id="parallax-3" speed="16"></div>
+        <div class="keyart-layer" id="parallax-4" speed="26"></div>
+        <div class="keyart-layer" id="parallax-5" speed="36"></div>
+        <div class="keyart-layer" id="parallax-6" speed="49"></div>
+        <div class="keyart-layer" id="parallax-7" speed="69"></div>
+        <div class="keyart-layer" id="parallax-8" speed="100"></div>
+    </div>
+    <div class="after" >
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure architecto commodi numquam voluptate explicabo magnam deleniti labore harum vel tempora beatae omnis, laborum ut sed, perferendis illo, qui ullam? Dolore qui fugit tenetur? Mollitia quibusdam dolore doloribus libero minus, nihil enim alias numquam, ratione aut placeat nulla nam accusamus, molestiae dolorum aspernatur natus. Ducimus, laboriosam! Nulla eum provident quaerat, eos aperiam mollitia nemo magni sequi dolor aliquam quis ipsum unde explicabo accusamus hic magnam. Excepturi hic quis iusto nisi facere ipsam ratione id modi, impedit doloribus ipsa tenetur molestias necessitatibus cupiditate nulla deleniti sed. Iure rem accusantium eos, natus, cum impedit, architecto nihil veritatis vero iste laboriosam sunt. Porro nostrum voluptates consequuntur harum temporibus accusamus voluptatem recusandae tempora nihil iusto excepturi, voluptate ipsam iste laborum eaque. Odio animi blanditiis doloremque ducimus error libero maiores aut et aperiam quia reprehenderit perferendis hic, a quibusdam, quaerat amet quas consequatur non saepe vero. Cumque totam eligendi nisi alias tenetur in, unde sit explicabo beatae tempora qui fuga, suscipit reiciendis voluptatum, rerum praesentium incidunt saepe necessitatibus neque quas quaerat. Facilis molestiae deserunt, adipisci perferendis laborum et possimus. Laborum, cupiditate quis? Vel commodi, sit quis deleniti beatae aut magnam perspiciatis, unde veritatis animi modi harum sint blanditiis nulla tempore mollitia ex consectetur nam similique nisi illo quibusdam, ab quos. In, accusantium tenetur. Vero et dolorem fugit laborum voluptatem ducimus, minus dolores, delectus, illum asperiores quis! Nemo velit maiores a accusamus eligendi, aspernatur dolores adipisci dolor? Enim, illum molestias quae ipsum, exercitationem, voluptatem itaque quod neque doloremque nesciunt distinctio cumque dolorum quisquam asperiores? Delectus, aliquam velit. Molestias aut, ipsam sint libero voluptas quam amet eum nostrum nobis harum. Dolorum iure quidem sunt, omnis, quibusdam iste numquam, quaerat sint aut magni laudantium vel accusamus? Beatae iure maiores est. Voluptatem atque architecto saepe odio rerum maxime velit dignissimos, porro deserunt esse sunt nobis corporis itaque voluptates tenetur. Eveniet, voluptas quia recusandae iste veniam dolores, accusantium magni illum, magnam asperiores voluptatem cum culpa porro sunt enim non ipsum aliquam sapiente! Optio eligendi cupiditate eius voluptatum iste qui architecto, omnis beatae. Earum, voluptas vero. Libero expedita molestias ipsa sed error provident reiciendis. Natus sapiente voluptatem et? Veritatis veniam aliquid iusto asperiores nisi debitis delectus sapiente ipsum quisquam molestiae repudiandae, cupiditate, molestias sunt itaque alias corrupti laborum et, quas animi possimus porro ad? Autem pariatur obcaecati amet, enim voluptatibus veniam error atque excepturi distinctio optio nemo nesciunt. Optio minus officia esse ea labore distinctio officiis. Beatae sed quod suscipit minus esse adipisci sunt facere sapiente. Odio repudiandae fugiat non minima illo tempora corrupti animi corporis eius at, quas laborum, repellendus molestias nam sit libero ducimus quisquam id vero maxime reiciendis optio autem deserunt necessitatibus. Iure, molestiae et! Nemo quae tempore consequuntur, sapiente illo itaque accusamus beatae, quaerat provident veniam non officiis totam quibusdam magnam tempora placeat laboriosam? Commodi omnis ea doloremque, numquam quis reiciendis eos magnam consequuntur natus dolore animi aut sapiente alias dolorem officia blanditiis eius eaque accusamus cupiditate? Ea cumque culpa reprehenderit dolore mollitia accusantium sunt minus laboriosam. Reprehenderit.
+    </div>
+    <script>
+        let layers = document.querySelectorAll('.keyart-layer');
+        let speed, yPos ,formTop ;
+        //視窗捲動事件
+        window.addEventListener("scroll",function(event,elemnet){
+            //文件重質捲動的像素值
+            // console.log(this)
+            formTop = this.pageYOffset;
+            // console.log("捲動值"+formTop)
+            //篇一個圖層位置
+            for(let layer of layers){
+                speed = layer.getAttribute('speed');
+                // console.log(speed)
+                // 偏移=捲動量*速度,在乘上個基數
+                yPos = formTop * speed *-0.01;
+                
+                layer.style.transform = `translateY(${yPos}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
