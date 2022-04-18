@@ -43,7 +43,7 @@
     color: #fff;
 }
 .my_bgc_gray {
-    background-color: rgb(252, 251, 251);
+    background-color: #f0f0f0da;
 }
 
 .my_border_start_yellow {
@@ -75,6 +75,13 @@ margin-top: 1.5em;
     .nav_align_c {
         align-items: center;
     }
+    .my_icon {
+        display: none;
+    }
+    .nav_align_c{
+        align-items: flex-start;
+    }
+
 }
 
 @media screen and (max-width: 768px) {
@@ -84,6 +91,13 @@ margin-top: 1.5em;
     .my_icon {
         display: none;
     }
+    .nav_align_c{
+        align-items: flex-start;
+    }
+
+}@media screen and (max-width: 768px) {
+ 
+
 }
 footer{
     background-color: rgba(245, 245, 245, 0.5);
