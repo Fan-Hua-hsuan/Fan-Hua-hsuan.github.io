@@ -8,7 +8,7 @@
 
 <body>
     <div class="jumbotron bg-info">
-        <h1>用Array陣列資料結合DOM API動態產生Table</h1>
+        <h1>用Object資料結合DOM API動態產生Table</h1>
     </div>
     <div id="container">
 
@@ -35,30 +35,52 @@
 
 
     <script>
-        let Titles = ['國家', '確診', '死亡', '治癒'];
+        //country, infected, dead, cure
+        // let Titles = ['國家', '確診', '死亡', '治癒'];
 
-        let Taiwan = ['台灣', 41, 1, 12];
-        let China = ['中國', 80134, 2914, 44595];
-        let America = ['美國', 9665, 146, 694];
-        let Japan = ['日本', 665, 16, 294];
+        // let Taiwan = ['台灣', 41, 1, 12];
+        // let China = ['中國', 80134, 2914, 44595];
+        // let America = ['美國', 9665, 146, 694];
 
-        let Global = [Taiwan, China, America,Japan];
+        // let Global = [Taiwan, China, America];
+
+
+        let GlobalCountry = {
+            Taiwan: { country: "台灣", infected: 41, dead: 1, cure: 12 },
+            China: { country: "中國", infected: 80134, dead: 2914, cure: 44595 },
+            America: { country: "美國", infected: 9665, dead: 146, cure: 694 }
+        };
+
+
+        let GlobalCountry2 = {
+            Titles: ['國家', '確診', '死亡', '治癒'],
+            Country: [
+                { country: "台灣", infected: 41, dead: 1, cure: 12 },
+                { country: "中國", infected: 80134, dead: 2914, cure: 44595 },
+                { country: "美國", infected: 9665, dead: 146, cure: 694 }
+            ]
+        };
+
+        let GlobalCountry2dArray = [
+            ['台灣', 41, 1, 12],
+            ['中國', 80134, 2914, 44595],
+            ['美國', 9665, 146, 694]
+        ];
+
+        let GlobalCountry3 = {
+            Publish: "2019/05/30",
+            Version: "1.0",
+            Titles: ['國家', '確診', '死亡', '治癒'],
+            Country: {
+                Taiwan: { country: "台灣", infected: 41, dead: 1, cure: 12 },
+                China: { country: "中國", infected: 80134, dead: 2914, cure: 44595 },
+                America: { country: "美國", infected: 9665, dead: 146, cure: 694 }
+            }
+        };
 
         let container;
         let table, thead, tbody;
-        // ------------------------------------------------
 
-        let Title = {
-            country:'台灣',
-            infected:
-            dead:
-            cure:
-        }
-
-
-
-
-        // ------------------------------------------------
         window.onload = function () {
             container = document.getElementById('container');
 
@@ -67,18 +89,21 @@
             thead = document.createElement('thead');
             tbody = document.createElement('tbody');
 
-            //虛擬碼 Pseudo— Code
+            CreateThead(GlobalCountry2.Titles);
+            GlobalCountry2.country.forEach(country=>{
+                let values = Object.values(country);
+                GlobalCountry2dArray.push(values);
+            });
 
-            //1.建立Thead
-            //(1)建立tr
-            //(2)建立th,設定資料,th加入tr
-            //(3)將tr加入thead
-            //(4)將Thead加入Table
 
+            CreateTbody(GlobalCountry2dArray);
+        }
+
+        function CreateThead(titleArray) {
             //(1)
             let theadTR = document.createElement("tr");
             //(2)建立th,設定資料,th加入tr
-            Titles.forEach((title, index) => {
+            titleArray.forEach((title, index) => {
                 let th = document.createElement("th");
                 th.innerText = title;
                 theadTR.append(th);
@@ -87,98 +112,24 @@
             thead.append(theadTR);
             table.append(thead);
             container.append(table);
-
-            //SimpleTbody();
-
-            CreateTbody();
         }
 
-
-        function SimpleThead() {
-            //(1)
-            let theadTR = document.createElement("tr");
-            //(2)
-            let th1 = document.createElement("th");
-            th1.innerText = Titles[0];
-            let th2 = document.createElement("th");
-            th2.innerText = Titles[1];
-            let th3 = document.createElement("th");
-            th3.innerText = Titles[2];
-            let th4 = document.createElement("th");
-            th4.innerText = Titles[3];
-            //(3)
-            theadTR.append(th1, th2, th3, th4);
-            //(4)
-            thead.append(theadTR);
-            table.append(thead);
-
-            container.append(table);
-        }
-
-        function SimpleTbody() {
-
-            //1.建立Tbody
-            //(1)建立tr
-            //(2)建立td,設定資料,td加入tr
-            //(3)將tr加入Tbody
-            //(4)將Tbody加入Table
-
-            //(1)
-            let tr1 = document.createElement("tr");
-            //(2)建立td,設定資料,td加入tr
-            Taiwan.forEach(item => {
-                let td = document.createElement("td");
-                td.innerText = item;
-
-                tr1.append(td);
-            });
-
-            tbody.append(tr1);
-            table.append(tbody);
-
-            let tr2 = document.createElement("tr");
-            //(2)建立td,設定資料,td加入tr
-            America.forEach(item => {
-                let td = document.createElement("td");
-                td.innerText = item;
-
-                tr2.append(td);
-            });
-
-            tbody.append(tr2);
-            table.append(tbody);
-
-            let tr3 = document.createElement("tr");
-            //(2)建立td,設定資料,td加入tr
-            China.forEach(item => {
-                let td = document.createElement("td");
-                td.innerText = item;
-
-                tr3.append(td);
-            });
-
-            tbody.append(tr3);
-            table.append(tbody);
-        }
-
-        function CreateTbody() {
-            Global.forEach(country => {
-                //(1)
+        function CreateTbody(globalCountry) {
+            globalCountry.forEach(country => {
                 let tr = document.createElement("tr");
                 //(2)建立td,設定資料,td加入tr
-                country.forEach(item => {
+                //['台灣', 41, 1, 12]
+                country.forEach(columndata => {
                     let td = document.createElement("td");
-                    td.innerText = item;
+                    td.innerText = columndata;
 
                     tr.append(td);
                 });
-
                 tbody.append(tr);
-                table.append(tbody);
             });
+
+            table.append(tbody);
         }
-
-
     </script>
 </body>
 
