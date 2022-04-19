@@ -1,0 +1,53 @@
+*{
+    list-style: none;
+    text-decoration: none;
+}
+:root{--gap:10px}
+
+$gap1:20px;
+$gap2:20px;
+
+.contaier{
+
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -$gap1;
+    margin-right: -$gap1;
+}
+
+[class*="col-"],
+[class*="cols-"]>.col{
+    padding-left: $gap1;
+    padding-right: $gap120 ;
+    box-sizing: border-box;
+}
+
+// 1
+.col-5{width: 41.666666%;}
+.col-7{width: 58.333333%;}
+
+// 2
+.col-cols-3>.col{
+    width: 33.333333%;
+}
+// -----------格線-----------
+
+comon
+
+// header
+
+article{
+    aside{
+        img{
+            width: 100%;
+        }
+    }
+}
+main{
+    .col{
+
+    }
+}
