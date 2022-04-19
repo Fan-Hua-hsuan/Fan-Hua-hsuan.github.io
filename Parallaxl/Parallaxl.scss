@@ -1,0 +1,48 @@
+//主視覺
+$keyart-w:100%;
+$keyart-h:130vh;
+.keyart-container{
+        width: $keyart-w;
+        height: $keyart-h;
+    .keyart-layer{
+        width: $keyart-w;
+        height: $keyart-h;
+        //寬度自動配合高度,比例不跑調
+        background-size: auto $keyart-h;
+        
+        //以中央示人
+        background-position: bottom center;
+
+        position: fixed;
+        &[id^="parallax"]{
+            position: fixed;//跟隨視窗
+        }
+        z-index: -1;
+    }
+    $far-color:#ffaf1b;
+    #under-bg{
+        background-color: $far-color;
+        position: absolute;
+    }
+    //背景圖檔
+    #parallax-0{background-image: url(parallax_material/parallax0.png);}
+    #parallax-1{background-image: url(parallax_material/parallax1.png);}
+    #parallax-2{background-image: url(parallax_material/parallax2.png);}
+    #parallax-3{background-image: url(parallax_material/parallax3.png);}
+    #parallax-4{background-image: url(parallax_material/parallax4.png);}
+    #parallax-5{background-image: url(parallax_material/parallax5.png);}
+    #parallax-6{background-image: url(parallax_material/parallax6.png);}
+    #parallax-7{background-image: url(parallax_material/parallax7.png);}
+    #parallax-8{background-image: url(parallax_material/parallax8.png);}
+}
+$keylar-near-color:#210002;
+.after{
+
+        background-color: #210002;
+        height: 3333px;
+        color: #fff;
+        margin-top: -50px;
+        padding: 111px 222px;
+        font-size: 2px;
+        line-height: 3; 
+    }
