@@ -135,16 +135,13 @@ section>h2 {
 }
 
 @media screen and (max-width: 768px) {
-    .navbar-nav a svg {
-        /* display: none; */
-    }
-
-    .my_icon {
-        /* display: none; */
-    }
 
     .nav_align_c {
         align-items: flex-start;
+    }
+    
+    body{
+        
     }
 }
 
