@@ -1,0 +1,13 @@
+{
+    "diffEditor.wordWrap": "inherit",
+    "html.format.wrapAttributes": "auto",
+    "html.autoClosingTags": true,
+    "html.format.indentHandlebars": false,
+    "html.format.preserveNewLines": false,
+    "editor.wordWrap": "off",
+    "emmet.syntaxProfiles": {
+        "html": {
+            "inline_break": 1
+        }
+    }
+}

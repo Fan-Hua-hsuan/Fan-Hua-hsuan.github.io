@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- 未完成 -->
+
+
+    
+    <button id="btnPchome">PCHOME購物</button>
+    <button id="btnMomo">Momo購物</button>
+    <button id="btnYahoo">yahoo購物</button>
+    <button id="btnReload">重新載入網頁</button>
+    <!-- <img id="imgLative" src="https://s4.lativ.com.tw/i/56273/5627303_D_02.jpg" > -->
+
+    <script>
+        let btnPchome, btnMomo, btnYahoo, btnReload;
+        window.onload = function () {
+        btnPchome = document.getElementById("btnPchome");
+        btnMomo = document.getElementById("btnMomo");
+        btnYahoo = document.getElementById("btnYahoo");
+        btnReload = document.getElementById("btnReload");
+        btnPchome.addEventListener('click', () => {
+        window.location = "https://www.pchomeec.tw/";
+        });
+        btnMomo.addEventListener('click', () => {
+        window.location.assign("https://www.momoshop.com.tw/");
+        });
+        btnYahoo.addEventListener('click', () => {
+        location = "https://tw.buy.yahoo.com/";
+        });
+        btnReload.addEventListener('click', () => {
+        location.reload(); //重新載入網⾴
+        });
+
+        imgLative.addEventListener("mouseover",function(event){
+            event.target.style.cursor="poiner";
+            event.target.style.boeder="2px solid red";
+        });
+        imgLative.addEventListener("mouseover",function(event){
+            event.target.style.cursor="poiner";
+            event.target.style.boeder="2px solid white";
+        });
+    
+    
+    }
+       </script> 
+
+
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row pt-5">
+            <div class="col-12 text-center">
+                <button onclick="init()" id="reset">reset</button>
+                <button onclick="show_ans()" id="answer">answer</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <p id="result_info"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <p id="result_ragne"></p>
+            </div>
+        </div>
+        
+        <div class="row p-3">
+            <div class="col-12 text-center">
+                <input type="text" id="input">
+                <!-- <span id="input"></span> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <button onclick="number_enter(1)">1</button>
+                <button onclick="number_enter(2)">2</button>
+                <button onclick="number_enter(3)">3</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <button onclick="number_enter(4)">4</button>
+                <button onclick="number_enter(5)">5</button>
+                <button onclick="number_enter(6)">6</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <button onclick='number_enter(7)'>7</button>
+                <button onclick="number_enter(8)">8</button>
+                <button onclick="number_enter(9)">9</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <button onclick="number_clear()">X</button>
+                <button onclick="number_enter(0)">0</button>
+                <button onclick="cal()">V</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener("keydown", function (event) {
+            if (event.keyCode == 13) {
+                cal();
+            }
+        });
+
+        let result_info = document.getElementById("result_info");
+        let result_ragne = document.getElementById("result_ragne");
+        let input_number = document.getElementById("input");
+        let ans_number = 0;
+        let max_number = 100;
+        let min_number = 0;
+
+        function init() {
+            max_number = 100;
+            min_number = 0;
+            ans_number = Math.floor(Math.random() * 101);
+            result_info.innerText = "亂數準備好了，遊戲開始!";
+            result_ragne.innerText = `目前範圍: ${min_number} ~ ${max_number}`;
+        }
+
+        function show_ans() {
+            let result_info = document.getElementById("result_info");
+            ans_number = Math.floor(Math.random() * 101);
+            result_info.innerText = `Ans : ${ans_number} `;
+        }
+
+        function number_enter(_number) {
+            // textContent ||  text || value
+            let text = input_number.value; // 原本的字 
+            text = text + _number; // 加上現在按的數字 ex '1'+'5' -> '15'
+            input_number.value = text;
+            // console.log("text => " + text);
+        }
+
+        function number_clear() {
+            input_number.value = "";
+        }
+
+        function cal() {
+            let now_number = input_number.value - 0;
+            if (ans_number == now_number) {
+                result_info.innerText = `猜對囉!   答案是${ans_number}!`;
+            } 
+            else if (now_number > max_number || now_number < min_number) {
+                result_info.innerText = "不要超過目前範圍啦!";
+                result_ragne.innerText = `目前範圍: ${min_number} ~ ${max_number}`;
+            }
+            else if (ans_number < now_number) {
+                result_info.innerText = "猜太大囉 小一點啦!";
+                max_number = now_number;
+                result_ragne.innerText = `目前範圍: ${min_number} ~ ${max_number}`;
+            } 
+            else {
+                result_info.innerText = "猜太小囉 大一點啦!";
+                min_number = now_number;
+                result_ragne.innerText = `目前範圍: ${min_number} ~ ${max_number}`;
+            }
+            number_clear();
+        }
+
+        init();
+    </script>
+</body>
+
+</html>
+
+<!-- 
+// function all(do_wath, _number=0) {
+        //     console.log("2513");
+        //     let result_info = document.getElementById("result_info");
+        //     let result_ragne = document.getElementById("result_ragne");
+        //     let input_number = document.getElementById("input");
+        //     if (do_wath == "重啟遊戲") {
+        //         let max_number = 100;
+        //         let min_number = 0;
+        //         let ans_number = Math.floor(Math.random() * 101);
+        //         result_info.innerText = "亂數準備好了，遊戲開始!";
+        //         result_ragne.innerText = `目前範圍: ${min_number} ~ ${max_number}`;
+        //     } else if ("顯示答案") {
+        //         result_info.innerText = `Ans : ${ans_number} `;
+        //     } else if ("輸入數字") {
+        //         let text = input_number.value; // 原本的字 
+        //         text = text + _number; // 加上現在按的數字 ex '1'+'5' -> '15'
+        //         input_number.value = text;
+        //     }
+        // } -->
