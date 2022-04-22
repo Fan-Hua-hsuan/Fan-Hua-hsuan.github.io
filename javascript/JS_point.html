@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        .t:nth-child(even) {
+            background-color: beige;
+        }
+
+        .t:nth-child(odd) {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="rows d-flex justify-content-center ">
+            <div class="row  col-3 p-2">
+                <img src="https://picsum.photos/1200/900/?random=10">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, possimus facilis pariatur rem
+                    fugiat, culpa molestiae maxime exercitationem aliquid laboriosam consectetur minima delectus
+                    accusantium, ad veritatis commodi ut nobis deleniti aut magnam error quisquam. Corporis, ipsa
+                    blanditiis, aperiam ipsam molestias aliquid assumenda inventore magni facilis itaque quod sed,
+                    corrupti quo?</p>
+            </div>
+            <div class="row  col-3 p-2">
+                <img src="https://picsum.photos/1200/900/?random=9">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, possimus facilis pariatur rem
+                    fugiat, culpa molestiae maxime exercitationem aliquid laboriosam consectetur minima delectus
+                    accusantium, ad veritatis commodi ut nobis deleniti aut magnam error quisquam. Corporis, ipsa
+                    blanditiis, aperiam ipsam molestias aliquid assumenda inventore magni facilis itaque quod sed,
+                    corrupti quo?</p>
+            </div>
+            <div class="row  col-3 p-2">
+                <img src="https://picsum.photos/1200/900/?random=8">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, possimus facilis pariatur rem
+                    fugiat, culpa molestiae maxime exercitationem aliquid laboriosam consectetur minima delectus
+                    accusantium, ad veritatis commodi ut nobis deleniti aut magnam error quisquam. Corporis, ipsa
+                    blanditiis, aperiam ipsam molestias aliquid assumenda inventore magni facilis itaque quod sed,
+                    corrupti quo?</p>
+            </div>
+            <div class="row  col-3 p-2">
+                <img src="https://picsum.photos/1200/900/?random=7">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, possimus facilis pariatur rem
+                    fugiat, culpa molestiae maxime exercitationem aliquid laboriosam consectetur minima delectus
+                    accusantium, ad veritatis commodi ut nobis deleniti aut magnam error quisquam. Corporis, ipsa
+                    blanditiis, aperiam ipsam molestias aliquid assumenda inventore magni facilis itaque quod sed,
+                    corrupti quo?</p>
+            </div>
+
+
+        </div>
+        <p id="result">......</p>
+    </div>
+
+
+    <script>
+        function p_change_text() {
+            let ps = document.querySelectorAll("p");
+            ps.forEach((p, index) => {
+                let str = "Get<br/>you!";
+                p.innerText = str; //會把<br/>印出來
+                p.textContent = "Get<br/> you!"; //會???
+                p.innerHTML = "Get<br/>you!"; //會換行
+            })
+        }
+        p_change_text(); // 呼叫
+
+        function pic2p() {
+            let pics = document.querySelectorAll("img");
+            let result = document.getElementById("result");
+            result.innerHTML = "";
+            pics.forEach((pic, index) => {
+                result.innerHTML += pic.src + "<br/>";
+            });
+        }
+        pic2p(); //呼叫
+
+        function new_tag() {
+            for (let index = 0; index < 5; index++) {
+                let result = document.getElementById("result");
+                let span = document.createElement("span");
+                span.setAttribute("class", "t");
+                span.innerHTML = Math.random()+"<br/>";
+                result.append(span);
+            }
+        }
+        new_tag();
+
+    </script>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>
