@@ -1,5 +1,3 @@
-
-</html>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +13,7 @@
 <body>
 
     <canvas id="mkShare"></canvas>
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-primary  table-striped text-center">
         <!-- <thead>
             <tr>
                 <th>排名</th>
@@ -40,9 +38,11 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
+        let companies = ["台積電", "三星電子", "聯電", "格羅方德", "中芯國際", "華虹半導體", "力積電", "世界先進", "高塔半導體", "東部高科"];
+        let data = [53.1, 17.3, 7.2, 6.1, 5.3, 2.6, 1.8, 1.4, 1.4, 1];
         const marketingShare = {
             version: "v1.0",
-            publish: "2021/12/31",
+            publish:"2021/12/31",
             titles: ["排名", "公司名稱", "國別", "市佔率"],
             data: [
                 { Ranking: 1, Name: "台積電", Country: "台灣", Ratio: 53.1 },
@@ -57,30 +57,18 @@
                 { Ranking: 10, Name: "東部高科", Country: "南韓", Ratio: 1 }
             ]
         };
-
-        // Titles: ['國家', '確診', '死亡', '治癒'],
-        //     Country: {
-        //         Taiwan: { country: "台灣", infected: 41, dead: 1, cure: 12 },
-        //         China: { country: "中國", infected: 80134, dead: 2914, cure: 44595 },
-        //         America: { country: "美國", infected: 9665, dead: 146, cure: 694 }
-        //     }
-        let companies = [], data = [];
-        // let companies = ["台積電", "三星電子", "聯電", "格羅方德", "中芯國際", "華虹半導體","力積電", "世界先進", "高塔半導體", "東部高科"];
-        // let data = [53.1, 17.3, 7.2, 6.1, 5.3, 2.6, 1.8,  1.4, 1.4, 1 ];
-
         window.onload = function () {
-            marketingShare.data.forEach(company=>{
-                companies.push(company.Name);
-                data.push(company.Ratio);
-            });
-            drawPieChart(companies, data);
+
+            drawPieChart();
+
+            createTable();
         }
     </script>
 
     <script>
         //第一個參數為公司陣列, 第二個參數為資料陣列
         function drawPieChart() {
-            //Pie Chart圓餅圖
+            //Pie Chart圓餅圖 按照格式印出
             let ctxPie = document.getElementById("mkShare");
             var pieChart = new Chart(ctxPie, {
                 type: 'pie',
@@ -124,10 +112,56 @@
         }
 
         function createTable() {
+            // querySelector<=抓出標籤
+            let Table = document.querySelector("table");
+            // createElement<=建造標籤
+            let thead = document.createElement("thead");
+            let tbody = document.createElement("tbody");
+            let tr = document.createElement("tr");
+            // item是 排名	公司名稱	國別	市佔率
+            //        0        1        2        3 
+            marketingShare.titles.forEach((item,index)=>{
+                // 每次需要th，如果只放上面的話會用一次就不見
+                let th = document.createElement("th");
 
+                // textContent空值item給它資料
+                th.textContent = item;
+                tr.append(th);
+            });
+            // tr在thead下面 append追加串接
+            thead.append(tr);
+            Table.append(thead);
+            //items => { Ranking: 1, Name: "台積電", Country: "台灣", Ratio: 53.1 } ...
+            marketingShare.data.forEach((items,index)=>{
+                let tr = document.createElement("tr");
+                
+                let td = document.createElement("td");
+                //將 items的排名放入 td.textContent(td的內容)
+                td.textContent = items.Ranking;
+                tr.append(td);
+
+                td = document.createElement("td");
+                //將 items的排名放入 td.textContent(td的內容)
+                td.textContent = items.Name;
+                tr.append(td);
+
+                td = document.createElement("td");
+                //將 items的國家放入 td.textContent(td的內容)
+                td.textContent = items.Country;
+                tr.append(td);
+
+                td = document.createElement("td");
+                //將 items的市佔率放入 td.textContent(td的內容)
+                td.textContent = items.Ratio;
+                tr.append(td);
+
+                //將tr 新增至tbody
+                tbody.append(tr);
+            });
+            //將tbody 新增至Table
+            Table.append(tbody);
         }
-
-    </script>
+        </script>
 </body>
 
 </html>
