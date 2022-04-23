@@ -16,18 +16,14 @@
     <div class="container ">
         <div class="row">
             <div class="col-12 text-center">
-                <button type="button" class="btn_width btn btn-outline-secondary" onclick="init()" id="reset">reset</button>
-                <button type="button" class="btn_width btn btn-outline-secondary" onclick="init()" id="reset">ansewr</button>
+                <button class="btn_width btn btn-outline-secondary" onclick="init()" id="reset">reset</button>
+                <button class="btn_width btn btn-outline-secondary" onclick="show_ans()" id="reset">answer</button>
             </div>
         </div>
 
-        <div class="text_space border border-secondary  ">
-            <div class="row">
-                <p id="result_info"></p>
-            </div>
-            <div class="row">
-                <p id="result_range"></p>
-            </div>
+        <div class="text_space border border-secondary ">
+            <p id="result_info"></p>
+            <p id="result_range"></p>
         </div>
 
         <div class="row">
@@ -37,30 +33,30 @@
         </div>
         <div class="row m-1">
             <div class="col-12 text-center mt-1">
-                <button type="button" class="btn btn-outline-secondary" onclick="number_enter">1</button>
-                <button type="button" class="btn btn-outline-secondary" onclick="number_enter">2</button>
-                <button type="button" class="btn btn-outline-secondary" onclick="number_enter">3</button>
+                <button class="btn btn-outline-secondary" onclick="number_enter(1)">1</button>
+                <button class="btn btn-outline-secondary" onclick="number_enter(2)">2</button>
+                <button class="btn btn-outline-secondary" onclick="number_enter(3)">3</button>
             </div>
         </div>
         <div class="row m-1">
             <div class="col-12 text-center ">
-                <button type="button" class="btn btn-outline-secondary" onclick="number_enter">4</button>
-                <button type="button" class="btn btn-outline-secondary" onclick="number_enter">5</button>
-                <button type="button" class="btn btn-outline-secondary" onclick="number_enter">6</button>
+                <button class="btn btn-outline-secondary" onclick="number_enter(4)">4</button>
+                <button class="btn btn-outline-secondary" onclick="number_enter(5)">5</button>
+                <button class="btn btn-outline-secondary" onclick="number_enter(6)">6</button>
             </div>
         </div>
         <div class="row m-1">
             <div class="col-12 text-center ">
-                <button type="button" class="btn btn-outline-secondary" onclick="number_enter">7</button>
-                <button type="button" class="btn btn-outline-secondary" onclick="number_enter">8</button>
-                <button type="button" class="btn btn-outline-secondary" onclick="number_enter">9</button>
+                <button class="btn btn-outline-secondary" onclick="number_enter(7)">7</button>
+                <button class="btn btn-outline-secondary" onclick="number_enter(8)">8</button>
+                <button class="btn btn-outline-secondary" onclick="number_enter(9)">9</button>
             </div>
         </div>
         <div class="row m-1">
             <div class="col-12 text-center ">
-                <button type="button" class="btn btn-secondary" onclick="number_enter">X</button>
-                <button type="button" class="btn btn-outline-secondary" onclick="number_enter">0</button>
-                <button type="button" class="btn btn-secondary" onclick="number_enter">V</button>
+                <button class="btn btn-secondary" onclick="number_clear()">X</button>
+                <button class="btn btn-outline-secondary" onclick="number_enter(0)">0</button>
+                <button class="btn btn-secondary" onclick="cal()">V</button>
             </div>
         </div>
     </div>
@@ -68,7 +64,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
-
+    <script src="random_number.js"> </script>
 </body>
 
 </html>

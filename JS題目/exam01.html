@@ -30,7 +30,7 @@
                 <p id="result_ragne"></p>
             </div>
         </div>
-        
+
         <div class="row p-3">
             <div class="col-12 text-center">
                 <input type="text" id="input">
@@ -66,7 +66,7 @@
             </div>
         </div>
     </div>
-
+    <!-- jS -->
     <script>
         window.addEventListener("keydown", function (event) {
             if (event.keyCode == 13) {
@@ -90,8 +90,6 @@
         }
 
         function show_ans() {
-            let result_info = document.getElementById("result_info");
-            ans_number = Math.floor(Math.random() * 101);
             result_info.innerText = `Ans : ${ans_number} `;
         }
 
@@ -111,21 +109,16 @@
             let now_number = input_number.value - 0;
             if (ans_number == now_number) {
                 result_info.innerText = `猜對囉!   答案是${ans_number}!`;
-            } 
-            else if (now_number > max_number || now_number < min_number) {
+            } else if (now_number > max_number || now_number < min_number) {
                 result_info.innerText = "不要超過目前範圍啦!";
-                result_ragne.innerText = `目前範圍: ${min_number} ~ ${max_number}`;
-            }
-            else if (ans_number < now_number) {
+            } else if (ans_number < now_number) {
                 result_info.innerText = "猜太大囉 小一點啦!";
                 max_number = now_number;
-                result_ragne.innerText = `目前範圍: ${min_number} ~ ${max_number}`;
-            } 
-            else {
+            } else {
                 result_info.innerText = "猜太小囉 大一點啦!";
                 min_number = now_number;
-                result_ragne.innerText = `目前範圍: ${min_number} ~ ${max_number}`;
             }
+            result_ragne.innerText = `目前範圍: ${min_number} ~ ${max_number}`;
             number_clear();
         }
 
