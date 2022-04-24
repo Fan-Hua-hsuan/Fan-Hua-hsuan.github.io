@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 window.addEventListener("keyup", function (event) {
     let keyCode = event.keyCode;
     // console.log(keyCode);
@@ -46,6 +47,56 @@ let show = document.getElementById("show");
 let temp = 0;
 let operation = "";
 let point_state = false;
+=======
+        window.addEventListener("keyup", function (event) {
+            let keyCode = event.keyCode;
+            console.log(keyCode);
+            input_number.focus();
+            switch (keyCode) {
+                //Enter
+                case 13:
+                    equal();
+                    break;
+                case 187:
+                    if(!event.shiftKey){ break; }
+                case 107:
+                    operational_btn_click('+');
+                    break;
+                case 109:
+                case 189:
+                    operational_btn_click('-');
+                    break;
+                case 56:
+                    if(!event.shiftKey){ break; }
+                case 106:
+                    operational_btn_click('*');
+                    break;
+                case 191:
+                case 111:
+                    operational_btn_click('/');
+                    break;
+                case 53:
+                    if(!event.shiftKey){ break; }
+                    operational_btn_click('%');
+                    break;
+                    case 110:
+                        case 190:
+                    number_enter('.');
+                    break;
+                case 8:
+                    minus_a_number();
+                    break;
+                default:
+                    break;
+            }
+        });
+
+        let input_number = document.getElementById("input");
+        let show = document.getElementById("show");
+        let temp = 0;
+        let operation = "";
+        let point_state = false;
+>>>>>>> Stashed changes
 7
 // Enter
 function number_enter(_number) {

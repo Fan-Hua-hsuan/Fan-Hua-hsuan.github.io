@@ -1,0 +1,22 @@
+._container{
+    width: 480px;
+    margin: auto;
+}
+
+button{
+    height: 50px;
+    width: 250px;
+    padding: 0 !important;
+}
+.show_record>div{
+--bs-gutter-x: 0rem;
+--bs-gutter-y: 0;
+}
+
+.btn-outline-secondary{
+    width: 30%;
+}
+.btn_half_radius{
+border-radius: 10px 0px 0px 10px;
+
+}
