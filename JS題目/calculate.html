@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="calculate.css">
+
+    <title>Random number</title>
+</head>
+
+<body>
+    <div class="container col-12 border  border-3 py-5">
+
+        <div class="row mb-2" style="width: 334px;">
+            <div class="col-12 text-end">
+                <span class=" d-inline-block" id="show"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 text-center">
+                <!-- autofocus 一打開網頁就是輸入狀態 -->
+                <input autofocus type="text" id="input">
+            </div>
+        </div>
+
+        <div class="row m-1">
+            <div class="col-12 text-center mt-1">
+                <button  class="btn btn-danger" style="width: 150PX;" onclick="zero()">C</button>
+                <button class="btn btn-warning" onclick="minus_a_number()">></button>
+                <button class="btn btn-primary" onclick="operational_btn_click('+')">+</button>
+            </div>
+        </div>
+
+        <div class="row m-1">
+            <div class="col-12 text-center mt-1">
+                <button class="btn btn-outline-secondary" onclick="number_enter(1)">1</button>
+                <button class="btn btn-outline-secondary" onclick="number_enter(2)">2</button>
+                <button class="btn btn-outline-secondary" onclick="number_enter(3)">3</button>
+                <button class="btn btn-primary" onclick="operational_btn_click('-')">ー</button>
+            </div>
+        </div>
+        <div class="row m-1">
+            <div class="col-12 text-center ">
+                <button class="btn btn-outline-secondary" onclick="number_enter(4)">4</button>
+                <button class="btn btn-outline-secondary" onclick="number_enter(5)">5</button>
+                <button class="btn btn-outline-secondary" onclick="number_enter(6)">6</button>
+                <button class="btn btn-primary" onclick="operational_btn_click('x')">ⅹ</button>
+            </div>
+        </div>
+        <div class="row m-1">
+            <div class="col-12 text-center ">
+                <button class="btn btn-outline-secondary" onclick="number_enter(7)">7</button>
+                <button class="btn btn-outline-secondary" onclick="number_enter(8)">8</button>
+                <button class="btn btn-outline-secondary" onclick="number_enter(9)">9</button>
+                <button class="btn btn-primary" onclick="operational_btn_click('/')">/</button>
+            </div>
+        </div>
+        <div class="row m-1">
+            <div class="col-12 text-center ">
+                <button class="btn btn-success" onclick="equal()">＝</button>
+                <button class="btn btn-outline-secondary" onclick="number_enter(0)">0</button>
+                <button class="btn btn-info" onclick="number_enter('.')">．</button>
+                <button class="btn btn-primary" onclick="operational_btn_click('%')">％</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <script src="calculate.js"> </script>
+</body>
+
+</html>
