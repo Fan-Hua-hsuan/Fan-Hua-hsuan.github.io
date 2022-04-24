@@ -15,25 +15,27 @@
 <body>
     <div class="_container">
         <div class=" d-flex justify-content-center mt-5">
-            <button type="button" class="border btn btn-light" onclick="reset">RESET</button>
-            <button type="button" class="border btn btn-light " onclick="show_ans">ANSWER</button>
-            <button type="button" class="border btn btn-light" onclick="start">START</button>
+            <button type="button" class="border btn btn-light" onclick="reset">開始</button>
+            <button type="button" class="border btn btn-light " onclick="show_ans">放棄重來</button>
+            <button type="button" class="border btn btn-light" onclick="start">看答案</button>
         </div>
 
-        <div class="show_record mt-5">
-            <div class="row border">1234</div>
-            <div class="row border ">1234</div>
-        </div>
-        <div class="show_ans">
-            <div class="input-group  mt-5 rounded d-flex align-items-center">
-                <span class="flex border btn_half_radius "
-                    style="background-color: rgba(204, 204, 204, 0.205); font-size: 15px; height: 100%;">猜答案</span>
-                <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
-                    aria-describedby="button-addon1">
-                <button class="btn btn-outline-secondary " type="button" id="button-addon1">猜</button>
+        <div class="d-flex flex-column bd-highlight mb-3">
+            <div class="p-2 bd-highlight border mt-5 flex-nowrap">
+                <span class="p-1 rounded" style="background-color: rgb(211, 80, 80); color:#fff;">1A1B</span>
+                <p> 1234 </p>
             </div>
-
+            <div class="p-2 bd-highlight border">Flex item 2</div>
+            <div class="p-2 bd-highlight border">Flex item 3</div>
         </div>
+
+        <div class="input-group input-group-sm mt-5">
+            <span class="input-group-text" id="inputGroup-sizing-sm">猜答案</span>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm">
+            <button class="btn btn-outline-secondary" type="button" id="input_number_btn">猜!</button>
+        </div>
+
     </div>
 
 
