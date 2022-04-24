@@ -1,5 +1,6 @@
-        window.addEventListener("keydown", function (event) {
+        window.addEventListener("keyup", function (event) {
             let keyCode = event.keyCode;
+            console.log(keyCode);
             input_number.focus();
             switch (keyCode) {
                 //Enter
@@ -7,6 +8,7 @@
                     equal();
                     break;
                 case 187:
+                    if(!event.shiftKey){ break; }
                 case 107:
                     operational_btn_click('+');
                     break;
@@ -15,6 +17,7 @@
                     operational_btn_click('-');
                     break;
                 case 56:
+                    if(!event.shiftKey){ break; }
                 case 106:
                     operational_btn_click('*');
                     break;
@@ -22,10 +25,12 @@
                 case 111:
                     operational_btn_click('/');
                     break;
-                case 56:
+                case 53:
+                    if(!event.shiftKey){ break; }
                     operational_btn_click('%');
                     break;
-                case 110:
+                    case 110:
+                        case 190:
                     number_enter('.');
                     break;
                 case 8:
@@ -35,6 +40,12 @@
                     break;
             }
         });
+        // window.addEventListener("keyup", function (event) {
+        //     let keyCode = event.keyCode;
+        //     console.log(keyCode);
+
+        // });
+
 
         let input_number = document.getElementById("input");
         let show = document.getElementById("show");
@@ -51,29 +62,30 @@
             //如果有輸入. 算答案時四捨五入至小數點第二位toFixed(2)
             if (_number == '.') {
                 point_state = true;
-            }
                 // 如果已經有輸入. 不在輸入第二個.
-                if (_number == '.' && input_number.value.includes('.')) {
+                if (input_number.value.includes('.')) {
                     _number = '';
                 }
+            }
             let text = input_number.value;
             text += _number;
             setTimeout(() => {
                 input_number.value = text;
-            }, 200);
+            }, 100);
             
         }
 
         function operational_btn_click(_operation) {
+            console.log(input_number.value);
+            temp = input_number.value - 0;
+            if(isNaN(input_number.value-0)){
+                minus_a_number();
+            }
             temp = input_number.value - 0;
             operation = _operation;
             show.innerText = temp + ' ' + operation;
 
-            //延遲 0.1秒 在清空 
-            //因為上面的keycode執行完鍵盤的+-*/才進來 所以慢一點清除
-            setTimeout(() => {
-                input_number.value = "";
-            }, 100);
+            input_number.value = "";
         }
 
         function zero() {
