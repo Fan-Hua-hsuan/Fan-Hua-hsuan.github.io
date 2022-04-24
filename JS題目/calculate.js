@@ -19,7 +19,7 @@ window.addEventListener("keyup", function (event) {
         case 56:
             if (!event.shiftKey) { break; }
         case 106:
-            operational_btn_click('*');
+            operational_btn_click('x');
             break;
         case 191:
         case 111:
