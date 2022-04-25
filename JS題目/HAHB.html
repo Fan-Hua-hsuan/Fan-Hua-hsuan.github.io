@@ -14,31 +14,36 @@
 
 <body>
     <div class="_container">
-        <div class=" d-flex justify-content-center mt-5">
-            <button type="button" class="border btn btn-light" onclick="reset">開始</button>
-            <button type="button" class="border btn btn-light " onclick="show_ans">放棄重來</button>
-            <button type="button" class="border btn btn-light" onclick="start">看答案</button>
+        <div class="how_to_play mt-5 lh-base border p-4">
+        <h1 style="font-size: 30px;">遊戲規則:</h1>
+            <p>先按開始鍵，再輸入四個數字猜數。如果猜對一個數字且位置相同，則得1A。如果猜對一個數字，但是位置不同，則得1B。目標是猜數得4A。</p>
+        </div>
+        <div class="d-flex justify-content-center mt-5">
+            <button id="btn1" type="button" class="border " onclick="start()" style="background-color: rgba(54, 50, 50, 0.842);color: #fff;">開 始 遊 戲</button>
+            <button id="btn2" type="button" class="border" onclick="reset()" >放 棄 重 來</button>
+            <button type="button" class="border  " onclick="show_ans()">看 答 案</button>
         </div>
 
-        <div class="d-flex flex-column bd-highlight mb-3">
-            <div class="p-2 bd-highlight border mt-5 flex-nowrap">
-                <span class="p-1 rounded" style="background-color: rgb(211, 80, 80); color:#fff;">1A1B</span>
-                <p> 1234 </p>
+        <div class="d-flex flex-column bd-highlight mb-3 my_div mt-5 ">
+            <!-- <div class="p-2 bd-highlight border d-flex align-items-center">
+                <span class="px-1 rounded fail " >1A1B</span>
+                <p class="m-0"> 1234 </p>
             </div>
-            <div class="p-2 bd-highlight border">Flex item 2</div>
-            <div class="p-2 bd-highlight border">Flex item 3</div>
+            <div class="p-2 bd-highlight border d-flex align-items-center">
+                <span class="px-1 rounded win" >1A1B</span>
+                <p class="m-0"> 1234 </p>
+            </div> -->
         </div>
+
+        <div class="row col-12" id="mydiv"></div>
 
         <div class="input-group input-group-sm mt-5">
-            <span class="input-group-text" id="inputGroup-sizing-sm">猜答案</span>
-            <input type="text" class="form-control" aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm">
-            <button class="btn btn-outline-secondary" type="button" id="input_number_btn">猜!</button>
+            <span class="input-group-text" id="inputGroup-sizing-sm" >猜答案</span>
+            <input data-hana type="text" class="form-control" id="guess_input">
+            <button class="btn btn-outline-secondary" type="button" onclick="guess()">猜!</button>
         </div>
 
     </div>
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
