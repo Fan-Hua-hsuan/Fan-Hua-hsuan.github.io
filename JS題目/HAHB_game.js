@@ -6,15 +6,19 @@ let ans = "";
 function start() {
 
     ans = "";
+    let repeat_state = false;
     //四個數字
     for (let i = 0; i < 4; i++) {
-        rand_n = Math.floor(Math.random() * 9);
-        //檢查重複 重複就產生到不重複
-        for (let j = 0; j < ans.length; j++) {
-            while (ans[j] == rand_n) {
-                rand_n = Math.floor(Math.random() * 9);
+        do {
+            repeat_state = false;
+            rand_n = Math.floor(Math.random() * 9);
+            //檢查重複 重複就產生到不重複
+            for (let j = 0; j < ans.length; j++) {
+                if (ans[j] == rand_n) {
+                    repeat_state = true;
+                }
             }
-        }
+        } while (repeat_state);
         ans += rand_n;
     }
     console.log(ans);
