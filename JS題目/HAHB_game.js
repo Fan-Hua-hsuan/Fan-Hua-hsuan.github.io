@@ -3,14 +3,16 @@ let mydiv = document.querySelector(".my_div");
 let ans = "";
 
 window.addEventListener("keyup", function (event) {
+
     let keyCode = event.keyCode;
     // console.log(keyCode);
     switch (keyCode) {
         //Enter
         case 13:
             guess();
-            break;}
-            });
+            break;
+    }
+});
 
 
 function start() {
@@ -18,7 +20,7 @@ function start() {
     document.getElementById("btn3").removeAttribute("disabled");
     document.getElementById("guess_input").removeAttribute("disabled");
     document.getElementById("btn_guess").removeAttribute("disabled");
-
+    input.focus();
     ans = "";
     let repeat_state = false;
     //四個數字
@@ -39,14 +41,21 @@ function start() {
     }
     console.log(ans);
 
-    document.getElementById("btn2").removeAttribute("disabled");
 }
 
 function reset() {
     //location.reload();
-    alert(`答案是: ${ans}`);
+    swal({
+        title: `答案是: ${ans}`,
+        type: "warning"
+    })
+
     mydiv.innerHTML = "";
-    start();
+    document.getElementById("btn2").setAttribute("disabled", "");
+    document.getElementById("btn3").setAttribute("disabled", "");
+    document.getElementById("guess_input").setAttribute("disabled", "");
+    document.getElementById("btn_guess").setAttribute("disabled", "");
+
 }
 
 function guess() {
@@ -55,6 +64,17 @@ function guess() {
     let B = 0;
 
     //防呆
+    if (document.getElementById("btn2").getAttribute("disabled") == '') {
+        swal({
+            title: "請你住手!!✋",
+            text: "<h2 style='color:red'>你按開始遊戲沒?</h2>",
+            showConfirmButton: false,
+            html: true,
+            timer: 2000
+        })
+        return 0;
+    }
+
     if (numbers.length != 4) {
         alert("請輸入四個數字");
         return 0;
@@ -98,12 +118,16 @@ function guess() {
 
     if (A == 4) {
         span_tag.classList.add("win");
-        alert("你贏了!");
-
-        document.getElementById("btn2").setAttribute("disabled", "disabled");
-        document.getElementById("btn3").setAttribute("disabled", "disabled");
-        document.getElementById("guess_input").setAttribute("disabled", "disabled");
-        document.getElementById("btn_guess").setAttribute("disabled", "disabled");
+        // alert("你贏了!");
+        //"warning", "error", "success" , "info"
+        swal("Good job!", "你贏了", "success");
+        // swal("Good job!", "你贏了", "error");
+        // swal("Good job!", "你贏了", "warning");
+        // swal("Good job!", "你贏了", "info");
+        document.getElementById("btn2").setAttribute("disabled", "");
+        document.getElementById("btn3").setAttribute("disabled", "");
+        document.getElementById("guess_input").setAttribute("disabled", "");
+        document.getElementById("btn_guess").setAttribute("disabled", "");
 
 
     } else {
@@ -122,9 +146,17 @@ function guess() {
 
 function show_ans() {
     if (ans != 0) {
-        alert(`答案是: ${ans} !`);
+        swal({
+            title: `答案是: ${ans}`,
+            type: "warning"
+        })
+
     } else {
-        alert("你．還．沒．按．開．始．!");
+        // alert("你．還．沒．按．開．始．!");
+        swal({
+            title: "你．還．沒．按．開．始．!",
+            type: "error"
+        })
     }
 
 }
