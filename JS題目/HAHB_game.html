@@ -15,25 +15,25 @@
 <body>
     <div class="_container">
         <div class="how_to_play mt-5 lh-base border p-4">
-        <h1 style="font-size: 30px;">遊戲規則:</h1>
+            <h1 style="font-size: 30px;">遊戲規則:</h1>
             <p>先按開始鍵，再輸入四個數字猜數。如果猜對一個數字且位置相同，則得1A。如果猜對一個數字，但是位置不同，則得1B。目標是猜數得4A。</p>
         </div>
         <div class="d-flex justify-content-center mt-5">
-            <button id="btn1" type="button" class="border " onclick="start()" style="background-color: rgba(54, 50, 50, 0.842);color: #fff;">開 始 遊 戲</button>
-            <button id="btn2" type="button" class="border" onclick="reset()" disabled >放 棄 重 來</button>
+            <button id="btn1" type="button" class="border " onclick="start()"
+                style="background-color: rgba(54, 50, 50, 0.842);color: #fff;">開 始 遊 戲</button>
+            <button id="btn2" type="button" class="border" onclick="reset()" disabled>放 棄 重 來</button>
             <button id="btn3" type="button" class="border  " onclick="show_ans()" disabled>看 答 案</button>
         </div>
+        <table class="d-flex flex-column bd-highlight mb-3 my_div mt-5  border" style="overflow:auto; height: 100px;">
 
-        <div class="d-flex flex-column bd-highlight mb-3 my_div mt-5 ">
-
-        </div>
-
+        </table>
         <div class="row col-12" id="mydiv"></div>
 
         <div class="input-group input-group-sm mt-5">
-            <span class="input-group-text" id="inputGroup-sizing-sm" >猜答案</span>
+            <span class="input-group-text" id="inputGroup-sizing-sm">猜答案</span>
             <input data-hana type="text" class="form-control" id="guess_input" disabled>
-            <button class="btn btn-outline-secondary" type="button" onclick="guess()" id="btn_guess" disabled>猜!</button>
+            <button class="btn btn-outline-secondary" type="button" onclick="guess()" id="btn_guess"
+                disabled>猜!</button>
         </div>
 
     </div>

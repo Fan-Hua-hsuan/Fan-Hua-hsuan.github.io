@@ -100,9 +100,9 @@ function guess() {
 
     span_tag.textContent = `${A}A ${B}B`;
     p_tag.textContent = input.value;
-    div_tag.append(span_tag);
-    div_tag.append(p_tag);
-    mydiv.append(div_tag);
+    div_tag.prepend(span_tag);
+    div_tag.prepend(p_tag);
+    mydiv.prepend(div_tag);
 
     console.log(`${A}A ${B}B`);
     input.value = "";
