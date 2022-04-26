@@ -2,6 +2,16 @@ let input = document.getElementById("guess_input");
 let mydiv = document.querySelector(".my_div");
 let ans = "";
 
+window.addEventListener("keyup", function (event) {
+    let keyCode = event.keyCode;
+    // console.log(keyCode);
+    input_number.focus();
+    switch (keyCode) {
+        //Enter
+        case 13:
+            equal();
+            break;}
+
 
 function start() {
     document.getElementById("btn2").removeAttribute("disabled");
@@ -24,9 +34,11 @@ function start() {
             }
         } while (repeat_state);
         ans += rand_n;
+
+
     }
     console.log(ans);
-    
+
     document.getElementById("btn2").removeAttribute("disabled");
 }
 
@@ -88,11 +100,11 @@ function guess() {
         span_tag.classList.add("win");
         alert("你贏了!");
 
-        document.getElementById("btn2").setAttribute("disabled","disabled");
-        document.getElementById("btn3").setAttribute("disabled","disabled");
-        document.getElementById("guess_input").setAttribute("disabled","disabled");
-        document.getElementById("btn_guess").setAttribute("disabled","disabled");
-    
+        document.getElementById("btn2").setAttribute("disabled", "disabled");
+        document.getElementById("btn3").setAttribute("disabled", "disabled");
+        document.getElementById("guess_input").setAttribute("disabled", "disabled");
+        document.getElementById("btn_guess").setAttribute("disabled", "disabled");
+
 
     } else {
         span_tag.classList.add("fail");
