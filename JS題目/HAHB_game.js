@@ -22,6 +22,7 @@ function start() {
     document.getElementById("btn_guess").removeAttribute("disabled");
     input.focus();
     ans = "";
+    input.value="";
     let repeat_state = false;
     //四個數字
     for (let i = 0; i < 4; i++) {
@@ -66,7 +67,7 @@ function guess() {
     //防呆
     if (document.getElementById("btn2").getAttribute("disabled") == '') {
         swal({
-            title: "請你住手!!✋",
+            title: "請你住手!! ✋",
             text: "<h2 style='color:red'>你按開始遊戲沒?</h2>",
             showConfirmButton: false,
             html: true,
@@ -75,10 +76,7 @@ function guess() {
         return 0;
     }
 
-    if (numbers.length != 4) {
-        alert("請輸入四個數字");
-        return 0;
-    }
+   
     for (let i = 0; i < numbers.length; i++) {
         _count = 0;
         for (let j = 0; j < numbers.length; j++) {
@@ -87,7 +85,14 @@ function guess() {
             }
         }
         if (_count >= 2) {
-            alert("請輸入四個不重複的數字");
+
+            swal({
+                title: "請你住手!!✋",
+                text: "<h2 style='color:red'>請輸入四個不重複的數字</h2>",
+                html: true,
+                timer: 2000
+            })
+            // alert("請輸入四個不重複的數字");
             return 0;
         }
     }
@@ -136,8 +141,8 @@ function guess() {
 
     span_tag.textContent = `${A}A ${B}B`;
     p_tag.textContent = input.value;
-    div_tag.prepend(span_tag);
     div_tag.prepend(p_tag);
+    div_tag.prepend(span_tag);
     mydiv.prepend(div_tag);
 
     console.log(`${A}A ${B}B`);
