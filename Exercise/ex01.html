@@ -18,14 +18,15 @@
 <body>
 
     <div class="container">
-        <div class="random_btn  mt-4 m-auto flex-column d-flex text-center ">
+        <!-- 1 -->
+        <!-- <div class="random_btn  mt-4 m-auto flex-column d-flex text-center ">
             <p class="justify-content-start ">按了後隨機產生亂數</p>
             <span id="click_random_show" class=" mb-5 border justify-content-center"
                 style="height: 100px;font-size: 50px; "></span>
 
             <button type="button" onclick="click_random()" class="border btn btn-primary btn_ramdom p-3">Click
                 me!</button>
-        </div>
+        </div> -->
 
 
         <!-- 2 -->
@@ -41,10 +42,30 @@
         <!-- 3 -->
         <div class="random_btn  mt-5 m-auto flex-column d-flex text-center ">
             <p class="justify-content-start ">按了之後產生五個亂數</p>
-            <span id="click_random_show_2" class=" mb-5 border justify-content-center"
+            <span id="click_random_show_3" class=" mb-5 border justify-content-center"
                 style="height: 100px;font-size: 50px; "></span>
 
-            <button type="button" onclick="click_random_nums()" class="border btn btn-primary btn_ramdom p-3">Click
+            <button type="button" onclick="click_random_num5()" class="border btn btn-primary btn_ramdom p-3">Click
+                me!</button>
+        </div>
+
+        <!-- 4 -->
+        <div class="random_btn  mt-5 m-auto flex-column d-flex text-center ">
+            <p class="justify-content-start ">同上，不過要排序後再顯示</p>
+            <span id="click_random_show_4" class=" mb-5 border justify-content-center"
+                style="height: 100px;font-size: 50px; "></span>
+
+            <button type="button" onclick="click_random_num5_sort()" class="border btn btn-primary btn_ramdom p-3">Click
+                me!</button>
+        </div>
+
+        <!-- 5 -->
+        <div class="random_btn_p  mt-5 m-auto flex-column d-flex text-center ">
+            <p class="justify-content-start ">同上，並分別顯示在不同的p裡</p>
+            <span id="click_random_show_5" class=" mb-5 border justify-content-center"
+                style="height: 100px;font-size: 50px; "></span>
+
+            <button type="button" onclick="click_random_num5_sort()" class="border btn btn-primary btn_ramdom p-3">Click
                 me!</button>
         </div>
 
@@ -56,21 +77,81 @@
     </script>
 
     <script>
+        // 1
         function click_random() {
             let num = Math.floor(Math.random() * 1000);
             let show_random = document.getElementById("click_random_show");
             show_random.innerText = num;
         }
-
+        // 2
         function click_random_nums() {
+            let show_random = document.getElementById("click_random_show_2");
             let num = Math.floor(Math.random() * 1000);
             let nums = Math.floor(Math.random() * 1000);
-            console.log(num)
+            // console.log(num)
             if (num > nums) {
-                click_random_show_2.innerText = `${num} > ${nums}`
+                show_random.innerText = `${num} > ${nums}`
             } else {
-                click_random_show_2.innerText = `${num} < ${nums}`
+                show_random.innerText = `${num} < ${nums}`
             }
+        }
+        // 3
+        function click_random_num5() {
+            // let numbers= new Array(5);
+            let show_random = document.getElementById("click_random_show_3");
+
+            let numbers = [];
+            for (let index = 0; index < 5; index++) {
+                // if(numbers[])
+
+                // numbers += Math.floor(Math.random() * 9)+",";
+                // numbers[index] = Math.floor(Math.random() * 9)+1;
+                numbers.push(Math.floor(Math.random() * 9) + 1);
+                show_random.innerText = numbers;
+            }
+
+
+            console.log(numbers);
+        }
+        // 4
+        function click_random_num5_sort() {
+            let show_random = document.getElementById("click_random_show_4");
+            let numbers = new Array(5);
+            for (let index = 0; index < 5; index++) {
+                // if(numbers[])
+                numbers[index] = Math.floor(Math.random() * 9) + 1;
+                // show_random.innerText = numbers;
+            }
+            numbers.sort();
+            show_random.innerText=numbers;
+        }
+        // function click_random_num5() {
+        //     let show_random = document.getElementById("click_random_show_4");
+
+        //     let numbers = new Array(5);
+        //     for (let index = 0; index < 5; index++) {
+        //         // if(numbers[])
+        //         numbers[index] = Math.floor(Math.random() * 9) + 1;
+        //         click_random_show_3.innerText = numbers;
+        //     }
+        // }
+
+        // 5
+        function click_random_num5_sort() {
+            let show_random = document.getElementById("click_random_show_5");
+            let numbers = new Array(5);
+            for (let index = 0; index < 5; index++) {
+                // if(numbers[])
+                numbers[index] = Math.floor(Math.random() * 9) + 1;
+            }
+            numbers.sort();
+            // show_random.innerText=numbers; 
+            let p_tag = document.createElement("p");
+            p_tag.innerText=numbers;
+
+            // let random_btn_p=document.querySelector(".random_btn_p");
+            show_random.append(p_tag);
+
         }
     </script>
 </body>
