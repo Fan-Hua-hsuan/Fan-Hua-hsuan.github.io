@@ -5,12 +5,12 @@ let ans = "";
 window.addEventListener("keyup", function (event) {
     let keyCode = event.keyCode;
     // console.log(keyCode);
-    input_number.focus();
     switch (keyCode) {
         //Enter
         case 13:
-            equal();
+            guess();
             break;}
+            });
 
 
 function start() {
