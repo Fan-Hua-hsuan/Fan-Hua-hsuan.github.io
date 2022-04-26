@@ -2184,8 +2184,10 @@
                 alert("從DOM建立英雄人物陣列資料成功！");
 
                 //1.從DOM建立英雄人物資料
-                heroArray = document.querySelectorAll(".card");// 0 1 2 3 4....
-                let card_title = heroArray[0]
+                // heroArray = document.querySelectorAll(".card");// 0 1 2 3 4....
+                heroArray = document.querySelectorAll("[card-index]");// 0 1 2 3 4....
+
+                let card_title = heroArray[0];
                 
                 //2.清除container
                 document.querySelector("#container").innerHTML = "";
