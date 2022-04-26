@@ -22,6 +22,8 @@ function start() {
         ans += rand_n;
     }
     console.log(ans);
+    
+    document.getElementById("btn2").removeAttribute("disabled");
 }
 
 function reset() {

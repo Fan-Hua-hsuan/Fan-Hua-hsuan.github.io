@@ -20,8 +20,8 @@
         </div>
         <div class="d-flex justify-content-center mt-5">
             <button id="btn1" type="button" class="border " onclick="start()" style="background-color: rgba(54, 50, 50, 0.842);color: #fff;">開 始 遊 戲</button>
-            <button id="btn2" type="button" class="border" onclick="reset()" >放 棄 重 來</button>
-            <button type="button" class="border  " onclick="show_ans()">看 答 案</button>
+            <button id="btn2" type="button" class="border" onclick="reset()" disabled>放 棄 重 來</button>
+            <button type="button" class="border  " onclick="show_ans()" disabled>看 答 案</button>
         </div>
 
         <div class="d-flex flex-column bd-highlight mb-3 my_div mt-5 ">
@@ -32,8 +32,8 @@
 
         <div class="input-group input-group-sm mt-5">
             <span class="input-group-text" id="inputGroup-sizing-sm" >猜答案</span>
-            <input data-hana type="text" class="form-control" id="guess_input">
-            <button class="btn btn-outline-secondary" type="button" onclick="guess()">猜!</button>
+            <input data-hana type="text" class="form-control" id="guess_input" disabled>
+            <button class="btn btn-outline-secondary" type="button" onclick="guess()" disabled>猜!</button>
         </div>
 
     </div>
