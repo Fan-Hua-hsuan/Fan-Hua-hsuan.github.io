@@ -46,6 +46,7 @@ function start() {
 
 function reset() {
     //location.reload();
+    
     swal({
         title: `答案是: ${ans}`,
         type: "warning"
