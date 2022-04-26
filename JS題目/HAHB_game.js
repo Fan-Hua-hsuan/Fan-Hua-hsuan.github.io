@@ -4,6 +4,10 @@ let ans = "";
 
 
 function start() {
+    document.getElementById("btn2").removeAttribute("disabled");
+    document.getElementById("btn3").removeAttribute("disabled");
+    document.getElementById("guess_input").removeAttribute("disabled");
+    document.getElementById("btn_guess").removeAttribute("disabled");
 
     ans = "";
     let repeat_state = false;
@@ -30,6 +34,7 @@ function reset() {
     //location.reload();
     alert(`答案是: ${ans}`);
     mydiv.innerHTML = "";
+    start();
 }
 
 function guess() {
@@ -82,6 +87,12 @@ function guess() {
     if (A == 4) {
         span_tag.classList.add("win");
         alert("你贏了!");
+
+        document.getElementById("btn2").setAttribute("disabled","disabled");
+        document.getElementById("btn3").setAttribute("disabled","disabled");
+        document.getElementById("guess_input").setAttribute("disabled","disabled");
+        document.getElementById("btn_guess").setAttribute("disabled","disabled");
+    
 
     } else {
         span_tag.classList.add("fail");
