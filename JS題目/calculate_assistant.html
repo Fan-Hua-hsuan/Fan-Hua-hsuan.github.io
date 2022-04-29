@@ -49,13 +49,13 @@
         // let ans[];
         //-----------^^準備工作
         window.onload = ()=>{
-        btn_restart.addEventListener('click',restart)
-        btn_peek.addEventListener('click',peek)
-        btn_submit.addEventListener('click',submit)
-        //$g('span').innerText = `${min} ~ ${max}`
-        ul_guessHistory.previousElementsibling.innerText =`${min} ~ ${max}`
-        //重新開始 也是開始的步驟
-        restart()
+            btn_restart.addEventListener('click',restart)
+            btn_peek.addEventListener('click',peek)
+            btn_submit.addEventListener('click',submit)
+            //$g('span').innerText = `${min} ~ ${max}`
+            ul_guessHistory.previousElementsibling.innerText =`${min} ~ ${max}`
+            //重新開始 也是開始的步驟
+            restart()
         }
         
         function restart(){

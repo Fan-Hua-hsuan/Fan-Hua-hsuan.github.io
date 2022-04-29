@@ -8,6 +8,7 @@ function $g(selector){
     else
     return nodeList
 }
+
 function $c(tagName){
         return document.createElement(tagName)
 }
