@@ -1,0 +1,15 @@
+{
+    "iPad Pro":[],
+    "iPad Air":[],
+    "iPad":[    
+        {"id":"","price":"","color":"","storage":"","network":"","description":""},
+        {"id":"","price":"","color":"","storage":"","network":"","description":""},
+        {"id":"","price":"","color":"","storage":"","network":"","description":""},
+        {"id":"","price":"","color":"","storage":"","network":"","description":""},
+        {"id":"","price":"","color":"","storage":"","network":"","description":""},
+        {"id":"","price":"","color":"","storage":"","network":"","description":""},
+        {"id":"","price":"","color":"","storage":"","network":"","description":""},
+        {"id":"","price":"","color":"","storage":"","network":"","description":""}
+    ],
+    "iPad mini":[]
+}
