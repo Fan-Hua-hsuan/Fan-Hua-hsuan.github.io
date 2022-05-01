@@ -2,7 +2,7 @@ var person = {name:"Kevin",age:32,height:175,weight:68};
 
 var car = {name:"BMW",color:"Red"};
 
-person.carname =
+person.carname =0;
 
 
 console.log(person);

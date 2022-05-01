@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>XHR</h1>
+
+    <button id="button1">Request JSON</button>
+    <button id="button2">button2</button>
+    <button id="btnIteration">Iteration Data</button>
+    <div id="msg"></div>
+
+    <script>
+
+        
+        const url = "https://raw.githubusercontent.com/apprunner/FileStorage/master/iPadAir2020_Data.json";
+
+        let btn1, btnIteration, msg;
+
+        window.onload = function () {  
+            btn1 = document.getElementById("button1");
+            btn1.addEventListener("click", requestJSON1);
+
+            btn2 = document.getElementById("button2");
+            btn2.addEventListener("click", requestJSON2);
+
+            btnIteration = document.getElementById("btnIteration");
+            btnIteration.addEventListener("click", IterationData);
+
+            msg = document.getElementById("msg");
+        }
+        let xhr = new XMLHttpRequest();
+
+        function requestJSON1(){
+
+            xhr.onload=function(){
+                msg.innerText = this.responseText;
+                console.log(this);
+                console.log(xhr);
+
+            }
+
+            xhr.open("GET",url);
+
+            xhr.send();
+        }
+
+        function requestJSON2(){
+
+            xhr.onload=function(){
+                let ipadArray = this.response;
+                msg.innerText = this.responseText;
+                console.log(this);
+                console.log(xhr);
+                debugger;
+
+            }
+
+            xhr.open("GET",url);
+            xhr.responseType="json";
+            xhr.send();
+        }
+        function IterationData(){
+            xhr.onload=function(){
+                let ipadArray = JSON.parse(this.responseText);
+
+                ipadArray.forEach((ipad, index) =>{
+                    msg.append(JSON.stringify(ipad),document.createElement("br"));
+                });
+
+            }
+
+            xhr.open("GET",url);
+
+            xhr.send();
+        
+        }
+        function requestJSON() {
+            let xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                if(xhr.readyState==4 && xhr.status==200){
+                    msg.textContent = this.responseText;
+                }else{
+                    msg.textContent = '發生錯誤,HTTP reponse代碼:' + 
+                    xhr.status;
+                }
+            }
+        }
+        
+    
+    </script>
+</body>
+
+</html>
