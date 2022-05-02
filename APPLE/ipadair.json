@@ -1,235 +1,25 @@
-[{
-        "id": 1,
-        "productname": "棉質七分袖針織衫-女",
-        "price": "399",
-        "imageurl": "https://s1.lativ.com.tw/i/56288/56288_M_01_0_n.jpg"
-    },
-    {
-        "id": 2,
-        "productname": "純棉寬版條紋T恤-女",
-        "price": "299",
-        "imageurl": "https://s2.lativ.com.tw/i/56649/56649011/5664901_360.jpg"
-    },
-    {
-        "id": 3,
-        "productname": "純棉寬版條紋T恤-女",
-        "price": "299",
-        "imageurl": "https://s3.lativ.com.tw/i/56649/56649021/5664902_360.jpg"
-    },
-    {
-        "id": 4,
-        "productname": "純棉寬版條紋T恤-女",
-        "price": "299",
-        "imageurl": "https://s4.lativ.com.tw/i/56649/5664903_M_03_0_n.jpg"
-    },
-    {
-        "id": 5,
-        "productname": "純棉寬版條紋T恤-女",
-        "price": "299",
-        "imageurl": "https://s1.lativ.com.tw/i/56649/56649041/5664904_360.jpg"
-    },
-    {
-        "id": 6,
-        "productname": "莫代爾V領文字上衣-02-女",
-        "price": "299",
-        "imageurl": "https://s2.lativ.com.tw/i/57545/57545_M_01_n.jpg"
-    },
-    {
-        "id": 7,
-        "productname": "BROWN & FRIENDS竹節棉T恤-女",
-        "price": "299",
-        "imageurl": "https://s3.lativ.com.tw/i/57548/5754801_M_02_0_n.jpg"
-    },
-    {
-        "id": 8,
-        "productname": "BROWN & FRIENDS竹節棉T恤-女",
-        "price": "299",
-        "imageurl": "https://s4.lativ.com.tw/i/57548/57548021/5754802_360.jpg"
-    },
-    {
-        "id": 9,
-        "productname": "雪紡細肩帶背心-女",
-        "price": "299",
-        "imageurl": "https://s1.lativ.com.tw/i/56653/56653_M_16_n.jpg"
-    },
-    {
-        "id": 10,
-        "productname": "莫代爾印花家居套裝-女",
-        "price": "490",
-        "imageurl": "https://s2.lativ.com.tw/i/56680/5668003_M_02_0_n.jpg"
-    },
-    {
-        "id": 11,
-        "productname": "莫代爾連袖文字家居洋裝-女",
-        "price": "399",
-        "imageurl": "https://s3.lativ.com.tw/i/57539/57539_M_01_n.jpg"
-    },
-    {
-        "id": 12,
-        "productname": "純棉長洋裝-女",
-        "price": "299",
-        "imageurl": "https://s4.lativ.com.tw/i/57324/57324_M_01_n.jpg"
-    },
-    {
-        "id": 13,
-        "productname": "輕涼印花七分家居褲-女",
-        "price": "249",
-        "imageurl": "https://s1.lativ.com.tw/i/57544/57544_M_01_n.jpg"
-    },
-    {
-        "id": 14,
-        "productname": "史努比系列莫代爾家居套裝-女",
-        "price": "490",
-        "imageurl": "https://s2.lativ.com.tw/i/56682/5668201_M_02_n.jpg"
-    },
-    {
-        "id": 15,
-        "productname": "史努比系列莫代爾家居套裝-女",
-        "price": "490",
-        "imageurl": "https://s3.lativ.com.tw/i/56682/56682021/5668202_360.jpg"
-    },
-    {
-        "id": 16,
-        "productname": "史努比系列莫代爾家居套裝-女",
-        "price": "490",
-        "imageurl": "https://s4.lativ.com.tw/i/56682/56682031/5668203_360.jpg"
-    },
-    {
-        "id": 17,
-        "productname": "史努比系列莫代爾家居套裝-女",
-        "price": "490",
-        "imageurl": "https://s1.lativ.com.tw/i/56682/56682041/5668204_360.jpg"
-    },
-    {
-        "id": 18,
-        "productname": "透膚無袖針織衫-女",
-        "price": "399",
-        "imageurl": "https://s2.lativ.com.tw/i/57532/57532_M_01_n.jpg"
-    },
-    {
-        "id": 19,
-        "productname": "迪士尼系列莫代爾家居套裝-女",
-        "price": "490",
-        "imageurl": "https://s3.lativ.com.tw/i/56681/5668101_M_02_n.jpg"
-    },
-    {
-        "id": 20,
-        "productname": "迪士尼系列莫代爾家居套裝-女",
-        "price": "490",
-        "imageurl": "https://s4.lativ.com.tw/i/56681/56681021/5668102_360.jpg"
-    },
-    {
-        "id": 21,
-        "productname": "迪士尼系列莫代爾家居套裝-女",
-        "price": "490",
-        "imageurl": "https://s1.lativ.com.tw/i/56681/56681031/5668103_360.jpg"
-    },
-    {
-        "id": 22,
-        "productname": "迪士尼系列莫代爾家居套裝-女",
-        "price": "490",
-        "imageurl": "https://s2.lativ.com.tw/i/56681/56681041/5668104_360.jpg"
-    },
-    {
-        "id": 23,
-        "productname": "彈性九分褲-女",
-        "price": "490",
-        "imageurl": "https://s3.lativ.com.tw/i/56433/56433_M_01_n.jpg"
-    },
-    {
-        "id": 24,
-        "productname": "百褶短褲-女",
-        "price": "399",
-        "imageurl": "https://s4.lativ.com.tw/i/57634/57634_M_01_n.jpg"
-    },
-    {
-        "id": 25,
-        "productname": "牛仔短裙-女",
-        "price": "399",
-        "imageurl": "https://s1.lativ.com.tw/i/56535/56535_M_01_n.jpg"
-    },
-    {
-        "id": 26,
-        "productname": "迪士尼系列嫘縈短褲-女",
-        "price": "249",
-        "imageurl": "https://s2.lativ.com.tw/i/56769/56769011/5676901_360.jpg"
-    },
-    {
-        "id": 27,
-        "productname": "迪士尼系列嫘縈短褲-女",
-        "price": "249",
-        "imageurl": "https://s3.lativ.com.tw/i/56769/5676902_M_02_n.jpg"
-    },
-    {
-        "id": 28,
-        "productname": "特彈牛仔褲-女",
-        "price": "590",
-        "imageurl": "https://s4.lativ.com.tw/i/TagPicture/56235/56235_M_01_tag_n.jpg"
-    },
-    {
-        "id": 29,
-        "productname": "彈力修身五分褲-女",
-        "price": "399",
-        "imageurl": "https://s1.lativ.com.tw/i/57553/57553_M_01_n.jpg"
-    },
-    {
-        "id": 30,
-        "productname": "皮克斯系列嫘縈短褲-女",
-        "price": "249",
-        "imageurl": "https://s2.lativ.com.tw/i/56593/5659301_M_02_n.jpg"
-    },
-    {
-        "id": 31,
-        "productname": "皮克斯系列嫘縈短褲-女",
-        "price": "249",
-        "imageurl": "https://s3.lativ.com.tw/i/56593/56593021/5659302_360.jpg"
-    },
-    {
-        "id": 32,
-        "productname": "百褶長褲-女",
-        "price": "490",
-        "imageurl": "https://s4.lativ.com.tw/i/56708/56708_M_15_n.jpg"
-    },
-    {
-        "id": 33,
-        "productname": "多色八分緊身褲-女",
-        "price": "399",
-        "imageurl": "https://s1.lativ.com.tw/i/56262/56262_M_01_0_n.jpg"
-    },
-    {
-        "id": 34,
-        "productname": "前開衩九分褲-女",
-        "price": "590",
-        "imageurl": "https://s2.lativ.com.tw/i/56715/56715_M_01_0_n.jpg"
-    },
-    {
-        "id": 35,
-        "productname": "嫘縈印花家居短褲-女",
-        "price": "249",
-        "imageurl": "https://s3.lativ.com.tw/i/57536/57536011/5753601_360.jpg"
-    },
-    {
-        "id": 36,
-        "productname": "嫘縈印花家居短褲-女",
-        "price": "249",
-        "imageurl": "https://s4.lativ.com.tw/i/57536/5753602_M_02_n.jpg"
-    },
-    {
-        "id": 37,
-        "productname": "嫘縈印花家居短褲-女",
-        "price": "249",
-        "imageurl": "https://s1.lativ.com.tw/i/57536/57536031/5753603_360.jpg"
-    },
-    {
-        "id": 38,
-        "productname": "嫘縈印花家居短褲-女",
-        "price": "249",
-        "imageurl": "https://s2.lativ.com.tw/i/57536/57536041/5753604_360.jpg"
-    },
-    {
-        "id": 39,
-        "productname": "棉質束口褲-女",
-        "price": "490",
-        "imageurl": "https://s3.lativ.com.tw/i/56354/56354_M_01_0_n.jpg"
-    }
+[
+    { "id":"A001", "price": 17900, "storage":"64GB", "network": "Wi-Fi", "picture":"gray.png" ,"color": "太空灰色"},
+    { "id":"A002", "price": 17900, "storage":"64GB", "network": "Wi-Fi", "picture":"silver.png" ,"color": "銀色" },
+    { "id":"A003", "price": 17900, "storage":"64GB", "network": "Wi-Fi", "picture":"pink.png" ,"color": "玫瑰金色"},
+    { "id":"A004", "price": 17900, "storage":"64GB", "network": "Wi-Fi", "picture":"green.png" ,"color": "綠色" },
+    { "id":"A005", "price": 17900, "storage":"64GB", "network": "Wi-Fi", "picture":"blue.png" ,"color": "天藍色"},
+    
+    { "id":"B001", "price": 22900, "storage":"256GB", "network": "Wi-Fi", "picture":"gray.png" ,"color": "太空灰色"},
+    { "id":"B002", "price": 22900, "storage":"256GB", "network": "Wi-Fi", "picture":"silver.png" ,"color": "銀色" },
+    { "id":"B003", "price": 22900, "storage":"256GB", "network": "Wi-Fi", "picture":"pink.png" ,"color": "玫瑰金色"},
+    { "id":"B004", "price": 22900, "storage":"256GB", "network": "Wi-Fi", "picture":"green.png" ,"color": "綠色" },
+    { "id":"B005", "price": 22900, "storage":"256GB", "network": "Wi-Fi", "picture":"blue.png" ,"color": "天藍色"},
+    
+    { "id":"C001", "price": 22900, "storage":"64GB", "network": "Cellular", "picture":"gray.png" ,"color": "太空灰色"},
+    { "id":"C002", "price": 22900, "storage":"64GB", "network": "Cellular", "picture":"silver.png" ,"color": "銀色" },
+    { "id":"C003", "price": 22900, "storage":"64GB", "network": "Cellular", "picture":"pink.png" ,"color": "玫瑰金色"},
+    { "id":"C004", "price": 22900, "storage":"64GB", "network": "Cellular", "picture":"green.png" ,"color": "綠色"},
+    { "id":"C005", "price": 22900, "storage":"64GB", "network": "Cellular", "picture":"blue.png" ,"color": "天藍色"},
+    
+    { "id":"D001", "price": 27900, "storage":"256GB", "network": "Cellular", "picture":"gray.png" ,"color": "太空灰色"},
+    { "id":"D002", "price": 27900, "storage":"256GB", "network": "Cellular", "picture":"silver.png" ,"color": "銀色" },
+    { "id":"D003", "price": 27900, "storage":"256GB", "network": "Cellular", "picture":"pink.png" ,"color": "玫瑰金色"},
+    { "id":"D004", "price": 27900, "storage":"256GB", "network": "Cellular", "picture":"green.png" ,"color": "綠色"},
+    { "id":"D005", "price": 27900, "storage":"256GB", "network": "Cellular", "picture":"blue.png","color": "天藍色" }
 ]

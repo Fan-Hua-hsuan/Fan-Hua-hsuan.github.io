@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jimmy_test</title>
+</head>
+
+<body>
+    <button id="button1">btn1</button>
+    <button id="button2">btn2</button>
+    <button id="btnIteration">btnIteration</button>
+    <p id="msg">tt
+    </p>
+
+
+    <script>
+        const url = "https://raw.githubusercontent.com/apprunner/FileStorage/master/iPadAir2020_Data.json";
+
+        let btn1, btnIteration, msg;
+
+        window.onload = function () {
+            btn1 = document.getElementById("button1");
+            // btn1.addEventListener("click", requestJSON1);
+
+            btn2 = document.getElementById("button2");
+            // btn2.addEventListener("click", requestJSON2);
+
+            btnIteration = document.getElementById("btnIteration");
+            btnIteration.addEventListener("click", get_json);
+
+            msg = document.getElementById("msg");
+        }
+
+        let xhr = new XMLHttpRequest();
+        let ipad_json;
+
+
+
+        function get_json() {
+            xhr.onload = function () {
+                //將json網址 讀取之後轉成json格式
+                ipad_json = JSON.parse(this.responseText);
+                //ex.抓第一筆id ipad[0].id
+                //ex. foreach 裡抓第一筆id ipad.id
+                ipad_json.forEach((value, index) => {
+                    // msg.append(JSON.stringify(ipad), document.createElement("br"));
+                    // _color = ["gray","png"]
+                    _color = value.picture.split(".");
+                    // _color = "gray"
+                    _color = _color[0];
+                    console.log(index + "--" + value.id);
+                    
+                });
+            }
+            xhr.open("GET", url);
+            xhr.send();
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>
