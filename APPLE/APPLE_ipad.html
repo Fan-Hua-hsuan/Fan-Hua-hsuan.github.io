@@ -57,6 +57,23 @@
             </div>
             <div id="select_color_stlye" class="col-6 text-center">
                 <!-- <div class="col-6 border" onclick="change_img('gray')"><img src="gray.jpg" class="img_style"><p>gray</p></div> -->
+
+            </div>
+            <!-- 因為要讓左邊空白所以留一個空的col-6 擠空間 -->
+            <div class="col-6 "></div>
+            <div class="col-6 pt-2">
+                <div class="row d-flex ">
+                    <div class="col-4 storage border p-5" onclick="storage(64) ">64
+                    </div>
+                    <div class="col-4 storage border p-5" onclick="storage(256) ">256
+                    </div>
+                </div>
+                <div class="row d-flex">
+                    <div class="col-4 storage border p-5" onclick="connect('Wi-Fi') ">Wi-Fi
+                    </div>
+                    <div class="col-4 storage border p-5" onclick="connect('Cellular') ">Wi-Fi + 行動網路
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -65,8 +82,9 @@
         </script>
         <script src="/APPLE/APPLE_ipad.js"></script>
 
-    <!-- 4 儲存裝置區 -->
+        <!-- 4 儲存裝置區 -->
         <div class="storage"></div>
+
     </div>
 </body>
 
