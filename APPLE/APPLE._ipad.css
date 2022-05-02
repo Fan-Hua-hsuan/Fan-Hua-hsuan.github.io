@@ -1,0 +1,12 @@
+.container{
+    width: 960PX;
+    display: flex;
+    justify-content: center;
+    font-size: 10px;
+}
+
+.show_price{
+    height: 50px;
+    width: 100%;
+    align-items: center;
+}
