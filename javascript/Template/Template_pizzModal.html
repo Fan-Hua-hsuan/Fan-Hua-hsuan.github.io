@@ -161,12 +161,13 @@
             cloneCard.querySelector('img').src = _imageurl;
             return cloneCard;
         }
+        
         function setModal(_name, _imageurl) {
             let modal = modalTemplate.cloneNode(true);
             modal.querySelector('h5').innerText = _name;
             modal.querySelector('#pizzaImage').src = _imageurl;
             modal.querySelector('#description').innerText = _name;
-            row.append(modal);
+            row.append(modal); 
         }
 
 

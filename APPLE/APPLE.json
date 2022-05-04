@@ -1,25 +1,25 @@
 [
     { "id":"A001", "price": 18900, "storage":"64GB", "network": "Wi-Fi", "picture":"gray.png" ,"color": "太空灰色"},
-    { "id":"A002", "price": 18900, "storage":"64GB", "network": "Wi-Fi", "picture":"silver.png" ,"color": "銀色" },
-    { "id":"A003", "price": 18900, "storage":"64GB", "network": "Wi-Fi", "picture":"rose.png" ,"color": "玫瑰金色"},
-    { "id":"A004", "price": 18900, "storage":"64GB", "network": "Wi-Fi", "picture":"green.png" ,"color": "綠色" },
+    { "id":"A002", "price": 18900, "storage":"64GB", "network": "Wi-Fi", "picture":"starlight.png" ,"color": "銀色" },
+    { "id":"A003", "price": 18900, "storage":"64GB", "network": "Wi-Fi", "picture":"pink.png" ,"color": "玫瑰金色"},
+    { "id":"A004", "price": 18900, "storage":"64GB", "network": "Wi-Fi", "picture":"Purple.png" ,"color": "綠色" },
     { "id":"A005", "price": 18900, "storage":"64GB", "network": "Wi-Fi", "picture":"blue.png" ,"color": "天藍色"},
     
     { "id":"B001", "price": 23900, "storage":"256GB", "network": "Wi-Fi", "picture":"gray.png" ,"color": "太空灰色"},
-    { "id":"B002", "price": 23900, "storage":"256GB", "network": "Wi-Fi", "picture":"silver.png" ,"color": "銀色" },
-    { "id":"B003", "price": 23900, "storage":"256GB", "network": "Wi-Fi", "picture":"rose.png" ,"color": "玫瑰金色"},
-    { "id":"B004", "price": 23900, "storage":"256GB", "network": "Wi-Fi", "picture":"green.png" ,"color": "綠色" },
+    { "id":"B002", "price": 23900, "storage":"256GB", "network": "Wi-Fi", "picture":"starlight.png" ,"color": "銀色" },
+    { "id":"B003", "price": 23900, "storage":"256GB", "network": "Wi-Fi", "picture":"pink.png" ,"color": "玫瑰金色"},
+    { "id":"B004", "price": 23900, "storage":"256GB", "network": "Wi-Fi", "picture":"Purple.png" ,"color": "綠色" },
     { "id":"B005", "price": 23900, "storage":"256GB", "network": "Wi-Fi", "picture":"blue.png" ,"color": "天藍色"},
     
     { "id":"C001", "price": 23200, "storage":"64GB", "network": "Cellular", "picture":"gray.png" ,"color": "太空灰色"},
-    { "id":"C002", "price": 23200, "storage":"64GB", "network": "Cellular", "picture":"silver.png" ,"color": "銀色" },
-    { "id":"C003", "price": 23200, "storage":"64GB", "network": "Cellular", "picture":"rose.png" ,"color": "玫瑰金色"},
-    { "id":"C004", "price": 23200, "storage":"64GB", "network": "Cellular", "picture":"green.png" ,"color": "綠色"},
+    { "id":"C002", "price": 23200, "storage":"64GB", "network": "Cellular", "picture":"starlight.png" ,"color": "銀色" },
+    { "id":"C003", "price": 23200, "storage":"64GB", "network": "Cellular", "picture":"pink.png" ,"color": "玫瑰金色"},
+    { "id":"C004", "price": 23200, "storage":"64GB", "network": "Cellular", "picture":"Purple.png" ,"color": "綠色"},
     { "id":"C005", "price": 23200, "storage":"64GB", "network": "Cellular", "picture":"blue.png" ,"color": "天藍色"},
     
     { "id":"D001", "price": 28200, "storage":"256GB", "network": "Cellular", "picture":"gray.png" ,"color": "太空灰色"},
-    { "id":"D002", "price": 28200, "storage":"256GB", "network": "Cellular", "picture":"silver.png" ,"color": "銀色" },
-    { "id":"D003", "price": 28200, "storage":"256GB", "network": "Cellular", "picture":"rose.png" ,"color": "玫瑰金色"},
-    { "id":"D004", "price": 28200, "storage":"256GB", "network": "Cellular", "picture":"green.png" ,"color": "綠色"},
+    { "id":"D002", "price": 28200, "storage":"256GB", "network": "Cellular", "picture":"starlight.png" ,"color": "銀色" },
+    { "id":"D003", "price": 28200, "storage":"256GB", "network": "Cellular", "picture":"pink.png" ,"color": "玫瑰金色"},
+    { "id":"D004", "price": 28200, "storage":"256GB", "network": "Cellular", "picture":"Purple.png" ,"color": "綠色"},
     { "id":"D005", "price": 28200, "storage":"256GB", "network": "Cellular", "picture":"blue.png","color": "天藍色" }
 ]
