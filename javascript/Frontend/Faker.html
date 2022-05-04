@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script> -->
+
+</head>
+<body>
+
+    <h1>Faker.js</h1>
+
+    <ul></ul>
+    <!-- Name: <input type="text" id="name" />
+    Email: <input type="text" id="email" />
+    <button onclick="generator()">Generator</button>
+    <script>
+    function generator() {
+        document.getElementById( "name" ).value = faker.name.findName(); // 產生姓名
+        document.getElementById( "email" ).value = faker.internet.email(); // 產生信箱
+    }
+    </script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js" integrity="sha512-/seDHxVfh1NvFUscAj8GsHQVZJvr2jjAoYsNL7As2FCaFHUHYIarl3sRCvVlFgyouVNiRgHIebyLKjpgd1SLDw==" crossorigin="anonymous"></script> -->
+
+
+
+    <script src="/js/faker.js"></script>
+    <script>
+        let randomName = faker.name.findName(); // Caitlyn Kerluke
+        let randomEmail = faker.internet.email(); // Rusty@arne.info
+        let randomCard = faker.helpers.createCard(); // random contact card containing many properties
+
+        faker.locale = "zh_TW";
+
+
+        let ul;
+        const usersArray = [];
+
+        window.onload = function () {
+            ul = document.querySelector("ul");
+
+
+            for (let i = 0; i < 100; i++) {
+                var firstName = faker.name.firstName(),
+                    lastName = faker.name.lastName();
+                //Date of Birth
+                var dob = faker.date.past(50, new Date("Sat Sep 20 1992 21:35:02 GMT+0200 (CEST)"));
+                dob = dob.getFullYear() + "-" + (dob.getMonth() + 1) + "-" + dob.getDate();  // First month is "1"
+
+                let user = {
+                    Name: faker.name.findName(firstName, lastName),
+                    Birthday: dob,
+                    Gender: faker.name.gender(),
+                    Email: faker.internet.email(),
+                    Title: faker.name.title(),
+                    JobTitle: faker.name.jobTitle(),
+                    Address: faker.address.streetAddress(),
+                    City: faker.address.city(),
+                    ZipCode: faker.address.zipCode(),
+                    PhoneNumber: faker.phone.phoneNumber()
+                };
+
+                usersArray.push(user);
+            }
+
+            console.log(usersArray);
+
+            usersArray.forEach((user, index) => {
+                let userJson = JSON.stringify(user);
+
+                let li = document.createElement("li");
+                li.innerText = `${index+1}. ${userJson}`;
+
+                ul.append(li);
+            });
+        }
+
+        
+
+
+    </script>
+
+</body>
+</html>
