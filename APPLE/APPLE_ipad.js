@@ -51,11 +51,11 @@ function color_div() {
         // _color = "gray"
         _color = _color[0];
         color.push(_color);
-        console.log(_color);
     });
     
     //刪除重複的東西
     color = [...new Set(color)];
+        console.log(color);
     color.forEach((value, index) => {
 
         let d = document.createElement('div');
