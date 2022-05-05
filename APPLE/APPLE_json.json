@@ -1,0 +1,11 @@
+[
+    {
+        "productName":"ipad",
+        "other" :[
+        {"price": 17900,"storage": "64GB","network": "Wi-Fi"},
+        {"price": 22900,"storage": "64GB","network": "Cellular"},
+        {"price": 22900,"storage": "256GB","network": "Wi-Fi"},
+        {"price": 27900,"storage": "256GB","network": "Cellular"}
+        ]
+    }
+]

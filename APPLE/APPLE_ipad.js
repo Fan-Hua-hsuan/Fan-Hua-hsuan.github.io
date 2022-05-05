@@ -52,10 +52,10 @@ function color_div() {
         _color = _color[0];
         color.push(_color);
     });
-    
+
     //刪除重複的東西
     color = [...new Set(color)];
-        console.log(color);
+    console.log(color);
     color.forEach((value, index) => {
 
         let d = document.createElement('div');
@@ -85,7 +85,7 @@ function change_price(_storage, _network) {
     price = price[0].price;
     console.log(price);
     let show_price = document.getElementById("show_price");
-    show_price.innerText = 'NT$ '+price;
+    show_price.innerText = 'NT$ ' + price;
 }
 
 function storage_div() {
@@ -121,3 +121,5 @@ function storage_div() {
 
     });
 }
+
+
