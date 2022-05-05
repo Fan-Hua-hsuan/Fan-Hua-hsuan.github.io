@@ -1,5 +1,5 @@
 //自己github上的資料
-const url = "https://fan-hua-hsuan.github.io/APPLE/ipadair.json";
+const url = "https://fan-hua-hsuan.github.io/APPLE/APPLE_json.json";
 // 宣告空間
 let ipad_json;
 let storage = [];
@@ -12,25 +12,8 @@ window.onload = function () {
         //將json網址 讀取之後轉成json格式
         ipad_json = JSON.parse(this.responseText);
         console.log(ipad_json);
-        //ex.抓第一筆id ipad[0].id
-        //ex. foreach 裡抓第一筆id ipad.id
-        ipad_json.forEach((value, index) => {
-            //gray.png
-            // console.log(value);
-            // msg.append(JSON.stringify(ipad), document.createElement("br"));
-            // _color = ["gray","png"]
-            _color = value.picture.split(".");
-            // _color = "gray"
-            _color = _color[0];
-            // example: 運用時機
-            // let i = document.getElementById("ipad_img");
-            // let ii = document.getElementById("ipad_img");
-            // i.src = _color +'.png';
-            // ii.src = _color +'.jpg';
-            // console.log(index + "--" + value.id);
-        });
-        storage_div();
         color_div();
+        storage_div();
     }
     //打開網址
     xhr.open("GET", url);
