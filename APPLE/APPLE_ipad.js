@@ -3,7 +3,8 @@ const url = "https://fan-hua-hsuan.github.io/APPLE/APPLE_json.json";
 // 宣告空間
 let ipad_json;
 let storage = [];
-let network = [];
+let networks = [];
+let storage_gb = "64GB";
 
 //網頁載完之後 才載入json資料
 window.onload = function () {
@@ -11,9 +12,10 @@ window.onload = function () {
     xhr.onload = function () {
         //將json網址 讀取之後轉成json格式
         ipad_json = JSON.parse(this.responseText);
-        console.log(ipad_json);
+        // console.log(ipad_json);
         color_div();
         storage_div();
+        network_div();
     }
     //打開網址
     xhr.open("GET", url);
@@ -28,17 +30,13 @@ function change_img(_color) {
 function color_div() {
     // let color = ["gray", "pink", "Purple", "blue", "starlight"];
     let color = [];
-    ipad_json.forEach((value, index) => {
-        //gray.png
-        _color = value.picture.split(".");
-        // _color = "gray"
-        _color = _color[0];
-        color.push(_color);
+    ipad_json[0].color.forEach((value, index) => {
+        color.push(value);
     });
 
     //刪除重複的東西
     color = [...new Set(color)];
-    console.log(color);
+    // console.log(color);
     color.forEach((value, index) => {
 
         let d = document.createElement('div');
@@ -46,7 +44,7 @@ function color_div() {
         let p = document.createElement('p');
         i.setAttribute("src", color[index] + '.jpg');
         p.innerText = color[index];
-        d.classList.add("col-5", "border", "text-center", "m-2", "rounded-3");
+        d.classList.add("col-5", "border", "text-center", "m-2", "my_rounded");
         i.classList.add("img_style");
 
         d.addEventListener("click", function () {
@@ -63,46 +61,96 @@ function color_div() {
 
 }
 
+//取得 符合儲存空間&網路的價格
+function get_price(_storage,_network) {
+    let price = ipad_json[0].other.filter(x => x.storage == _storage && x.network == _network)[0].price;
+    // 回傳值
+    return price;
+}
+// 抓金額
 function change_price(_storage, _network) {
-    let price = ipad_json.filter(k => k.storage == _storage && k.network == _network);
-    price = price[0].price;
-    console.log(price);
+    let price = get_price(_storage ,_network);
+    // console.log(price);
     let show_price = document.getElementById("show_price");
     show_price.innerText = 'NT$ ' + price;
 }
 
 function storage_div() {
-    ipad_json.forEach((value, index) => {
+    // 一開始要抓出陣列的值並存進去
+    ipad_json[0].other.forEach((value, index) => {
+        // 用push新增進去陣列
         storage.push(value.storage);
-        network.push(value.network);
     });
     //刪除重複的東西
     storage = [...new Set(storage)];
-    network = [...new Set(network)];
-
-    storage.forEach((value, index) => {
-        //篩出符合條件的價錢 
-        let price = ipad_json.filter(k => k.storage == value && k.network == "Wi-Fi");
-        //因為目前的json塞出來會有很多條符合且價錢相同的 所以直接拿第一筆的價錢
-        // console.log(price);
-        price = price[0].price;
-        // console.log(price);
+    //抓id
+    let storage_div = document.getElementById('storage');
+    // 迭代出每一項
+    storage.forEach(value => {
         let d = document.createElement('div');
         let p = document.createElement('p');
-        // p.innerText = value;
-        //因為要使用html標籤所以用innerHTML
-        p.innerHTML = `<b>${value}</b><br/><br/>NT$ ${price}`;
-        d.classList.add("col-5", "border", "text-center", "m-2", "rounded-3");
-        d.addEventListener("click", function () {
-            // 點擊改變Price
-            change_price(value, "Wi-Fi");
-        });
-        // GB
+                    //  我想知道金額，所以我把這邊的值丟過去算，再存回去
+        let _price = get_price(value ,"Wi-Fi");
+        // console.log(value)
+        // 增加d的class
+        d.classList.add('border', 'col-5', 'm-2', 'text-center', "my_rounded");
+        //顯示出GB && 金額
+        p.innerHTML = `${value}<br/>NT$ ${_price}`;
+        // d新增p
         d.append(p);
-        let storage = document.getElementById("storage");
-        storage.append(d);
-
+        storage_div.append(d);
+        //點到d產生的反應，通常放在最後面比較好:)
+        d.addEventListener("click", function () {
+            change_price(value, "Wi-Fi");
+            // 把值存起來
+            storage_gb = value;
+            // 抓會變動價格的ID
+            let WiFi_price =document.getElementById("Wi-Fi_price");
+            // 把點擊後獲得的金額判斷完後存入_price
+            let _price = get_price(value ,"Wi-Fi");
+            // 把抓到的ID，放入想要顯示的資料
+            WiFi_price.innerHTML=`Wi-Fi</br>NT$ ${_price}` ;
+            // 把抓到的ID，放入想要顯示的資料
+            let Cellular_price =document.getElementById("Cellular_price");
+            //把欲想買的4G?wifi?點擊後，判斷值是否為"Cellular"?然後抓到金額
+            _price = get_price(value ,"Cellular");
+            // console.log(value)
+            // 放入金額
+            Cellular_price.innerHTML=`Cellular</br>NT$ ${_price}` ;
+        });
     });
 }
 
+function network_div() {
+    // 抓陣列
+    ipad_json[0].other.forEach(value => {0
+        networks.push(value.network);
+    });
+    //刪除重複的東西
+    networks = [...new Set(networks)];
+    // console.log(networks);
+    //抓network的id
+    let network_div = document.getElementById('network');
 
+    networks.forEach(network => {
+        // 建div
+        let d = document.createElement('div');
+        // 建p
+        let p = document.createElement('p');
+        let _price = get_price(storage_gb ,network);
+        // 加ID上去
+        p.setAttribute('id',network+'_price')
+        // 顯示網路 && 金額
+        p.innerHTML = `${network}<br/>NT$ ${_price}`;
+        // 加class
+        d.classList.add('border', 'col-5', 'm-2', 'text-center', "my_rounded");
+        // d 裡放p
+        d.append(p);
+        // 父層加d
+        network_div.append(d);
+        // d的事件聆聽，點擊改價錢
+        d.addEventListener("click", function () {
+            change_price(storage_gb , network);
+        });
+    });
+}

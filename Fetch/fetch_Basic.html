@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Fetch API</h1>
+    <input type="text" id="url" size="120">
+    <button id="btn1">fetch</button>
+    <button id="btn2">fetch with url parameter</button>
+    <div id="msg"></div>
+
+    <script>
+    </script>
+
+<script type="module">
+        let urlIpad = "https://raw.githubusercontent.com/apprunner/FileStorage/master/iPad_DataFixed.json";
+        import { $g } from "../modules/helpers.js";
+
+        //url = "https://www.msn.com/zh-tw";
+
+        window.onload = function () {
+            $g("input").value = urlIpad;
+            $g("#btn1").addEventListener("click", fetchJson);
+            
+        
+        }
+
+        function fetchResource() {
+           urlIpad = $g("input").value;
+
+           fetch()
+           .then(Response=>Response.text())
+           .then(result=>{
+               $g("#msg").innerHtml=result;
+           })
+           .catch()
+           .finally();
+        }
+
+        function fetchJson(url) {
+          alert("button2")
+        }
+    </script>
+
+</body>
+
+</html>
