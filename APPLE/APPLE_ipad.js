@@ -9,17 +9,32 @@ let storage_gb = "64GB";
 //網頁載完之後 才載入json資料
 window.onload = function () {
     let xhr = new XMLHttpRequest();
+    //スッテプ4、 要請許可を戴いてからすること↓
     xhr.onload = function () {
-        //將json網址 讀取之後轉成json格式
-        ipad_json = JSON.parse(this.responseText);
-        // console.log(ipad_json);
-        color_div();
-        storage_div();
-        network_div();
+        //4 -> xhr 下載完成 && 200 -> 網頁接收完成  ( xhr.status == 200 等於 xhr.statusText == "OK" )
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            //將json網址 讀取之後轉成json格式
+            // ipad_json = JSON.parse(this.responseText);
+
+            // 因為使用 xhr.responseType = "json" 所以不用像上面那行轉換格式;
+            ipad_json = this.response;
+            // console.log(ipad_json);
+            color_div();
+            storage_div();
+            network_div();       
+
+            // ipad_json[0]['buy'] = "jimmy";
+        } else {
+            alert('發⽣錯誤，HTTP response代碼：' + xhr.status);
+        }
     }
-    //打開網址
+    //スッテプ1、 打開網址
     xhr.open("GET", url);
+    //スッテプ2、設定回應格式為json
+    xhr.responseType = "json";
+    //スッテプ3、要請を求める
     xhr.send();
+
 }
 
 function change_img(_color) {
@@ -62,14 +77,14 @@ function color_div() {
 }
 
 //取得 符合儲存空間&網路的價格
-function get_price(_storage,_network) {
+function get_price(_storage, _network) {
     let price = ipad_json[0].other.filter(x => x.storage == _storage && x.network == _network)[0].price;
     // 回傳值
     return price;
 }
 // 抓金額
 function change_price(_storage, _network) {
-    let price = get_price(_storage ,_network);
+    let price = get_price(_storage, _network);
     // console.log(price);
     let show_price = document.getElementById("show_price");
     show_price.innerText = 'NT$ ' + price;
@@ -84,13 +99,13 @@ function storage_div() {
     //刪除重複的東西
     storage = [...new Set(storage)];
     //抓id
-    let storage_div = document.getElementById('storage');
+    let _storage_div = document.getElementById('storage');
     // 迭代出每一項
     storage.forEach(value => {
         let d = document.createElement('div');
         let p = document.createElement('p');
-                    //  我想知道金額，所以我把這邊的值丟過去算，再存回去
-        let _price = get_price(value ,"Wi-Fi");
+        //  我想知道金額，所以我把這邊的值丟過去算，再存回去
+        let _price = get_price(value, "Wi-Fi");
         // console.log(value)
         // 增加d的class
         d.classList.add('border', 'col-5', 'm-2', 'text-center', "my_rounded");
@@ -98,32 +113,33 @@ function storage_div() {
         p.innerHTML = `${value}<br/>NT$ ${_price}`;
         // d新增p
         d.append(p);
-        storage_div.append(d);
+        _storage_div.append(d);
         //點到d產生的反應，通常放在最後面比較好:)
         d.addEventListener("click", function () {
             change_price(value, "Wi-Fi");
             // 把值存起來
             storage_gb = value;
             // 抓會變動價格的ID
-            let WiFi_price =document.getElementById("Wi-Fi_price");
+            let WiFi_price = document.getElementById("Wi-Fi_price");
             // 把點擊後獲得的金額判斷完後存入_price
-            let _price = get_price(value ,"Wi-Fi");
+            let _price = get_price(value, "Wi-Fi");
             // 把抓到的ID，放入想要顯示的資料
-            WiFi_price.innerHTML=`Wi-Fi</br>NT$ ${_price}` ;
+            WiFi_price.innerHTML = `Wi-Fi</br>NT$ ${_price}`;
             // 把抓到的ID，放入想要顯示的資料
-            let Cellular_price =document.getElementById("Cellular_price");
+            let Cellular_price = document.getElementById("Cellular_price");
             //把欲想買的4G?wifi?點擊後，判斷值是否為"Cellular"?然後抓到金額
-            _price = get_price(value ,"Cellular");
+            _price = get_price(value, "Cellular");
             // console.log(value)
             // 放入金額
-            Cellular_price.innerHTML=`Cellular</br>NT$ ${_price}` ;
+            Cellular_price.innerHTML = `Cellular</br>NT$ ${_price}`;
         });
     });
 }
 
 function network_div() {
     // 抓陣列
-    ipad_json[0].other.forEach(value => {0
+    ipad_json[0].other.forEach(value => {
+        0
         networks.push(value.network);
     });
     //刪除重複的東西
@@ -137,9 +153,9 @@ function network_div() {
         let d = document.createElement('div');
         // 建p
         let p = document.createElement('p');
-        let _price = get_price(storage_gb ,network);
+        let _price = get_price(storage_gb, network);
         // 加ID上去
-        p.setAttribute('id',network+'_price')
+        p.setAttribute('id', network + '_price')
         // 顯示網路 && 金額
         p.innerHTML = `${network}<br/>NT$ ${_price}`;
         // 加class
@@ -150,7 +166,14 @@ function network_div() {
         network_div.append(d);
         // d的事件聆聽，點擊改價錢
         d.addEventListener("click", function () {
-            change_price(storage_gb , network);
+            change_price(storage_gb, network);
         });
     });
+    
+            // 'HA HA HA'
+            document.createTextNode('HA HA HA');
+            //
+            
+            console.log(network_div.cloneNode());
+            console.log(network_div.cloneNode(true));
 }

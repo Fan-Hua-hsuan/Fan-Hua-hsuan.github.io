@@ -18,14 +18,18 @@
 </head>
 
 <body>
+    <!-- 底下是bootstrap的輪播片 visibility:hidden 先設定隱藏 等下面json載完在顯示 二哥留-->
     <div id="championsCarousel" class="carousel slide" data-ride="carousel" style='visibility:hidden'>
         <ol class="carousel-indicators">
+            <!-- (畫面中間的小槓槓) 要輪播幾個就設幾個li 並且設定data-slide-to  class="active"預設顯示 二哥留-->
             <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
             <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
             <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
         </ol>
         <div class="carousel-inner">
+            <!-- 要輪播幾個 就要設幾個 <div class="carousel-item active">...</div> 
+                class="active"預設顯示 data-interval='3000'3秒換下一個 二哥留-->
             <div class="carousel-item active">
                 <img src="" class="d-block w-100" alt="..." data-interval='3000'>
                 <div class="carousel-caption d-none d-md-block">
@@ -87,12 +91,14 @@
 
         window.onload = function () {
             fetch(url)
+                //抓取回傳json的內容 二哥留
                 .then(response=>response.json())
                 .then(result=>{
                     championsObject = result.data;
                     namesArray = Object.keys(championsObject);
                     debugger;
-                    setSliders();   //設定Sliders資料
+                    setSliders();   //設定Sliders資料 
+                    //等資料回傳 在把畫面顯示 二哥留
                     document.querySelector('#championsCarousel').style.visibility = 'visible';
                 })
                 .catch(ex=>{
@@ -105,20 +111,22 @@
             let carouselItems = document.querySelectorAll(".carousel-item");
 
             carouselItems.forEach((item, index)=>{
+                //0~151之間隨機抓取  二哥留
+                let name = namesArray[getRandom(0, 151)];
                 //1.設定圖片 -img
-                item.querySelector("img").src=`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${namesArray[index]}_0.jpg`;
-
+                item.querySelector("img").src=`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${name}_0.jpg`;
+                
                 //2.設定英雄名稱 -h5
-                let name = namesArray[index];
+                //let name = namesArray[index];
                 item.querySelector("h5").innerText = championsObject[name].id + " - " + championsObject[name].name;
 
                 //3.設定英雄說明 - p
                 item.querySelector("p").innerText = championsObject[name].blurb;
             });
         }
-
-        function fetchJSON(url){
-
+        //產生亂數 min 至 max 之間 二哥留
+        function getRandom(min, max){
+            return Math.floor(Math.random() * (max-min) + min);
         }
 
     </script>

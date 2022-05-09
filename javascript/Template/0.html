@@ -59,34 +59,32 @@
 
 <body>
     <div class='container-fluid'>
-        <div class='jumbotron bg-success'>
-            <h1>Pizza Template</h1>
+        <div class='jumbotron bg-info'>
+            <h1>Pizza Card Template</h1>
         </div>
 
         <div class='row'>
 
         </div>
     </div>
-
-    <!--template == 樣版  網頁顯示不出來(預設/default)-->
-    <template id='cardPizza'>
+    <template id="cardPizza">
         <div class="card" style="width: 18rem;">
             <img src="" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title"></h5>
-                <p class="card-text"></p>
-                <button href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModel">詳細內容</a>
+                <h5 class="card-title">標題</h5>
+                <p class="card-text">價錢</p>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">詳細內容</a>
             </div>
         </div>
     </template>
 
-    <!-- Model -->
-    <div class="modal fade" id="exampleModel" tabindex="-1" role="dialog" aria-labelledby="exampleModelLabel"
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModelLabel">Model title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -103,6 +101,8 @@
         </div>
     </div>
 
+
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
@@ -113,21 +113,26 @@
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
     </script>
 
+
+
     <script>
-        var pizzaArray = [{
+        const pizzaArray = [{
                 id: "1",
                 name: "炭火肉食披薩",
-                imageurl: "https://www.0800076666.com.tw/Files/MenuPizza/62/%E7%82%AD%E7%81%AB%E8%82%89%E9%A3%9F.png"
+                imageurl: "https://www.0800076666.com.tw/Files/MenuPizza/62/%E7%82%AD%E7%81%AB%E8%82%89%E9%A3%9F.png",
+                price: "L $349   S$249"
             },
             {
                 id: "2",
                 name: "美式嗆司臘腸披薩",
-                imageurl: "https://www.0800076666.com.tw/Files/MenuPizza/26/%E7%BE%8E%E5%BC%8F%E5%97%86%E5%8F%B8%E8%87%98%E8%85%B8.png"
+                imageurl: "https://www.0800076666.com.tw/Files/MenuPizza/26/%E7%BE%8E%E5%BC%8F%E5%97%86%E5%8F%B8%E8%87%98%E8%85%B8.png",
+                price: "L $349   S$249"
             },
             {
                 id: "3",
                 name: "龍蝦沙拉披薩",
-                imageurl: "https://www.0800076666.com.tw/Files/MenuPizza/30/%E9%BE%8D%E8%9D%A6%E6%B2%99%E6%8B%89.png"
+                imageurl: "https://www.0800076666.com.tw/Files/MenuPizza/30/%E9%BE%8D%E8%9D%A6%E6%B2%99%E6%8B%89.png",
+                price: "L $349   S$249"
             },
             {
                 id: "4",
@@ -137,84 +142,69 @@
             {
                 id: "5",
                 name: "墨西哥嗆辣披薩",
-                imageurl: "https://www.0800076666.com.tw/Files/MenuPizza/28/%E5%A2%A8%E8%A5%BF%E5%93%A5%E8%BE%A3%E6%A4%92.png"
+                imageurl: "https://www.0800076666.com.tw/Files/MenuPizza/28/%E5%A2%A8%E8%A5%BF%E5%93%A5%E8%BE%A3%E6%A4%92.png",
+                price: "L $349   S$249"
             },
             {
                 id: "6",
                 name: "西西里燻雞披薩",
-                imageurl: "https://www.0800076666.com.tw/Files/MenuPizza/32/%E7%87%BB%E9%9B%9E.png"
+                imageurl: "https://www.0800076666.com.tw/Files/MenuPizza/32/%E7%87%BB%E9%9B%9E.png",
+                price: "L $349   S$249"
             },
             {
                 id: "7",
                 name: "海鮮披薩",
-                imageurl: "https://www.0800076666.com.tw/Files/MenuPizza/33/%E6%B5%B7%E9%AE%AE.png"
+                imageurl: "https://www.0800076666.com.tw/Files/MenuPizza/33/%E6%B5%B7%E9%AE%AE.png",
+                price: "L $349   S$249"
             },
             {
                 id: "8",
                 name: "地中海漁夫披薩",
-                imageurl: "https://www.0800076666.com.tw/Files/MenuPizza/64/%E5%9C%B0%E4%B8%AD%E6%B5%B7%E6%BC%81%E5%A4%AB.png"
+                imageurl: "https://www.0800076666.com.tw/Files/MenuPizza/64/%E5%9C%B0%E4%B8%AD%E6%B5%B7%E6%BC%81%E5%A4%AB.png",
+                price: "L $349   S$249"
             },
             {
                 id: "9",
                 name: "夏威夷披薩",
-                imageurl: "https://www.0800076666.com.tw/Files/MenuPizza/35/%E5%A4%8F%E5%A8%81%E5%A4%B7.png"
+                imageurl: "https://www.0800076666.com.tw/Files/MenuPizza/35/%E5%A4%8F%E5%A8%81%E5%A4%B7.png",
+                price: "L $349   S$249"
             }
         ];
 
         let row, cardTemplate;
     </script>
-    <script type='module'>
-        //引用函式-錢錢g  --> セレクターオール
+
+
+    <script type="module">
         import { $g } from '/javascript/Template/helper.js';
-
-        window.onload = function () {
-            row = $g('.row');
-            cardTemplate = $g('#cardPizza');
-        
-            pizzaArray.forEach((pizza,index) =>  {
-                let my_card = getCard(pizza.name, pizza.imageurl);
-                row.append(my_card);
-            });
+    //    當在module裡面宣告的變數 console都看不見因為這裡並非全域區塊
+        row=$(".row")
+        cardTemplate=$g("#cardPizza")
+        window.onload = function () {     
+            pizzaArray.forEach((pizza,index)=>{
+                row.append(getCard(pizzaArray[index].name ,pizzaArray[index].imageurl))
+            })
+    
+        }
+        function setModel(title,imgurl,description){
+            let model=$g("#exampleModal")
+            model.querySelector("h5").innerText=title
+            model.querySelector("#pizzaImage").src=imgurl
+            model.querySelector("#description").innerText=description
+            return model;
         }
 
-        function setModel(_name, _imageurl) {
-            let modal = $g('#exampleModel');
-            modal.querySelector('h5').innerText = _name;
-            modal.querySelector('#pizzaImage').src = _imageurl;
-            modal.querySelector('#description').innerText = _name;
-        }
-
-        function getCard(_name, _imageurl) {
-            //把整段標籤複製 一定要加true才會包含兒子
-            let cloneCard = cardTemplate.content.cloneNode(true);
-            // 選擇h5，將內容改為_name的內容!!
-            cloneCard.querySelector('h5').innerText = _name;
-            // 選擇img，將內容改為_imageurl的內容!!
-            cloneCard.querySelector('img').src = _imageurl;
-            // 選擇.btn，加入點擊的事件聆
+        function getCard(title, imgurl) {
+            let cloneCard=cardTemplate.content.cloneNode(true);
+            cloneCard.querySelector("img").src=imgurl
+            cloneCard.querySelector("h5").innerText=title
+            
             cloneCard.querySelector(".btn").addEventListener("click",()=>{
-                //呼叫setModel
-                setModel(_name , _imageurl)
-            });
+                setModel(title , imgurl, title)
+            })
+
             return cloneCard;
-        }
-        
-
-
-        // function setModel() {
-        //     let modal = $g('#exampleModel');
-        //     modal.querySelector('h5').innerText = "炭火肉食披薩";
-        //     // modal.querySelector('.modal-body').innerHTML = "<h1>炭火肉食披薩<h1>";
-        //     modal.querySelector('#pizzaImage').src = "https://www.0800076666.com.tw/Files/MenuPizza/62/%E7%82%AD%E7%81%AB%E8%82%89%E9%A3%9F.png";
-        //     modal.querySelector('#description').innerText = "炭火肉食披薩";
-        // }
-
-        // function getCard() {
-        //     let cloneCard = cardTemplate.content.cloneNode(true);
-        //     cloneCard.querySelector('h5').innerText = "炭火肉食披薩";
-        //     cloneCard.querySelector('img').src = "https://www.0800076666.com.tw/Files/MenuPizza/62/%E7%82%AD%E7%81%AB%E8%82%89%E9%A3%9F.png";
-        //     return cloneCard;
-        // }
+    }
 
     </script>
 </body>
