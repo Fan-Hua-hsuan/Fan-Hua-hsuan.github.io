@@ -28,28 +28,31 @@ window.onload = function () {
             alert('發⽣錯誤，HTTP response代碼：' + xhr.status);
         }
     }
-    //スッテプ1、 打開網址
+    //スッテプ1、URLをオープン
     xhr.open("GET", url);
-    //スッテプ2、設定回應格式為json
+    //スッテプ2、応えるスタイルはjsonを設定する
     xhr.responseType = "json";
     //スッテプ3、要請を求める
     xhr.send();
 
 }
-
+// カーラーを切替
 function change_img(_color) {
+    // まず、置くとこゲットする
     let ipad_img = document.getElementById('ipad_img');
+    // 
     ipad_img.setAttribute('src', _color + '.png');
 }
 
 function color_div() {
     // let color = ["gray", "pink", "Purple", "blue", "starlight"];
     let color = [];
+    // jsonからカーラーをcolorに保存
     ipad_json[0].color.forEach((value, index) => {
         color.push(value);
     });
 
-    //刪除重複的東西
+    //同じものを削除↓
     color = [...new Set(color)];
     // console.log(color);
     color.forEach((value, index) => {
@@ -170,10 +173,6 @@ function network_div() {
         });
     });
     
-            // 'HA HA HA'
-            document.createTextNode('HA HA HA');
-            //
-            
             console.log(network_div.cloneNode());
             console.log(network_div.cloneNode(true));
 }
