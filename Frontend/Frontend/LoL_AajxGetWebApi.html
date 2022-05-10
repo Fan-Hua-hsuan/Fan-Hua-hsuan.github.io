@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+</head>
+<body>
+    <div class="jumbotron">
+        <h1> Ajax - GET</h1>
+        <h2>Include - xhr, fecth, jQuery</h2>
+    </div>
+
+    <button id="btnXhr" class="btn btn-primary" >XHR</button>
+    <button id="btnFetch" class="btn btn-warning" >Fetch</button>
+    <button id="btnJquery" class="btn btn-info" >jQuery</button>
+    <button id="btnReset" class="btn btn-danger" >Reset</button>
+
+    <hr>
+    <div id="msg"></div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+    <script>
+        const lolUrl = "https://localhost:44325/api/lol/AllHeros";
+
+
+        let btnXhr, btnFetch, btnJquery, btnReset, msg;
+
+        window.onload = function () {
+            btnXhr = document.getElementById("btnXhr");
+            btnFetch = document.getElementById("btnFetch");
+            btnJquery = document.getElementById("btnJquery");
+            btnReset = document.getElementById("btnReset");
+            msg = document.getElementById("msg");
+
+            btnXhr.addEventListener("click", xhrGet);
+            btnFetch.addEventListener("click", fetchGet);
+            btnJquery.addEventListener("click", jqueryGet);
+
+            //btnXhr.addEventListener("click", () => { AjaxService.xhrGet(lolUrl) });
+            //btnFetch.addEventListener("click", () => { AjaxService.fetchGet(lolUrl) });
+            //btnJquery.addEventListener("click", () => { AjaxService.jqueryGet(lolUrl) });
+
+            btnReset.addEventListener("click", Reset);
+        }
+
+        heros = {};
+
+        let xhr = new XMLHttpRequest();
+        function xhrGet() {
+            xhr.onload = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    heros = this.response;
+
+                    msg.innerText = JSON.stringify(heros);
+                    console.log(heros);
+                }
+                else {
+                    msg.innerText = `發生錯誤: ${xhr.status}, ${xhr.statusText}`;
+                }
+            }
+
+            xhr.open("GET", lolUrl);
+            xhr.responseType = "json";
+            xhr.send();
+        }
+
+        function fetchGet() {
+            fetch(lolUrl)
+                .then(response => {
+                    //檢查response是否ok ?
+                    if (response.ok) {
+                        return response.text();
+                    } else {
+                        throw new Error(`發生錯誤: ${response.status}, ${response.statusText}`);
+                    }
+                })
+                .then(result => {
+                    heros = result;
+
+                    msg.innerText=heros;
+                    console.log(heros);
+                })
+                .catch(ex => {
+                    msg.innerText = ex;
+                })
+                .finally();
+        }
+
+        function jqueryGet() {
+            //寫法一
+            $.ajax({
+                url: lolUrl,
+                method: "GET", // > 1.9, Default預設為GET
+                //type: "GET",  // < 1.9
+                //contentType: "application/json;charset=UTF-8",  //從前端傳送給後端的資料MIME Type, GET方法呼叫時不可加這個
+                dataType: "json",   //期望從Server傳回來的資料型別text/json
+                success: function (response) {
+                    heros = response;
+
+                    msg.innerText = JSON.stringify(heros);
+                    console.log(heros);
+                },
+                error: function (ex) {
+                    msg.innerText = `發生錯誤, ${ex.status}, ${ex.statusText}, ${ex.responseText} `;
+                }
+            });
+
+            //寫法二
+            /*
+            var jqXhr = $.ajax(lolUrl)
+                .done(function (response) {
+                    championObject = response;
+                    heros = championObject.data;
+
+                    msg.append(JSON.stringify(heros));
+                    console.log(championObject);
+                })
+                .fail(function (ex) {
+                    msg.innerText = "發生錯誤, HTTP Response代碼: " + ex.statusText;
+                })
+                .always(function () {
+
+                });
+                */
+        }
+
+
+        function Reset() {
+            msg.innerHTML = "";
+        }
+
+        const AjaxService = {
+            xhrGet: function (url) {
+                xhr = new XMLHttpRequest();
+                xhr.onload = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        championObject = this.response;
+                        heros = championObject.data;
+
+                        msg.append(JSON.stringify(heros));
+                        console.log(championObject);
+                    }
+                    else {
+                        msg.innerText = "發生錯誤, HTTP Response代碼: " + xhr.status;
+                    }
+                }
+
+                xhr.open("GET", url);
+                xhr.responseType = "json";
+                xhr.send();
+            },
+
+            fetchGet: function (url) {
+                fetch(lolUrl)
+                    .then(response => {
+                        //檢查response是否ok ?
+                        if (response.ok) {
+                            return response.text();
+                        } else {
+                            throw new Error(`發生錯誤: ${response.status}, ${response.statusText}`);
+                        }
+                    })
+                    .then(result => {
+                        championObject = result;
+                        heros = championObject.data;
+
+                        msg.append(JSON.stringify(heros));
+                        console.log(championObject);
+                    })
+                    .catch(ex => {
+                        msg.innerText = ex;
+                    })
+                    .finally();
+            },
+
+            jqueryGet: function (url) {
+                var jqXhr = $.ajax(url)
+                    .done(function (response) {
+                        championObject = response;
+                        heros = championObject.data;
+
+                        msg.append(JSON.stringify(heros));
+                        console.log(championObject);
+                    })
+                    .fail(function (ex) {
+                        debugger;
+                        msg.innerText = "發生錯誤, HTTP Response代碼: " + ex.statusText;
+                    })
+                    .always(function () {
+
+                    });
+
+            }
+        }
+    </script>
+</body>
+</html>

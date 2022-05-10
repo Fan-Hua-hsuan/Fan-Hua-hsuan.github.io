@@ -1,9 +1,11 @@
-.storage{
-    border-radius: 20px;
-    width: 45%;
-    margin: 10px;
-}
 .container{
     width: 960px;
-    
 }
+.img_style{
+    width: 20%;
+}
+
+.my_rounded{
+    border-radius: 10px;
+}
+

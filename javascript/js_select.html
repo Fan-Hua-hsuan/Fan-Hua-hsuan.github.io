@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .self {
+            width: 960px;
+            margin: auto;
+            border: 1px solid #ccc;
+            border-radius: 10%;
+            text-align: center;
+            padding-bottom: 50px;
+        }
+
+        img {
+            border-radius: 10%;
+            width: 33%;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+
+        .img_header {
+            width: 330px;
+        }
+
+        .img_group {
+            width: 960px;
+            box-sizing: border-box;
+            display: flex;
+        }
+
+        .text {
+            text-align: left;
+            margin: auto;
+            padding-left: 315px;
+            /* display: inline-block; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="self">
+        <img class="img_header" id="image1">
+        <div class="text">
+            <h1></h1>
+            <h1></h1>
+            <h1></h1>
+            <h1></h1>
+        </div>
+        <div>
+            <img>
+            <img>
+            <img>
+        </div>
+    </div>
+
+    <script>
+        //變數宣告
+        const info_title = ["姓名", "E-mail", "學校", "興趣"];
+        const info = ["范華軒", "xxxx@gmail.com", "中華大學", "日文、看書"];
+        const imageArray = [
+            "https://fan-hua-hsuan.github.io/my_big_header.png",
+            "https://github.com/Fan-Hua-hsuan/FileStorage/blob/main/orange (1).jpg?raw=true",
+            "https://github.com/Fan-Hua-hsuan/FileStorage/blob/main/orange (2).jpg?raw=true",
+            "https://github.com/Fan-Hua-hsuan/FileStorage/blob/main/orange (3).jpg?raw=true",
+        ]
+    </script>
+    <script>
+        let h1s = document.querySelectorAll('h1');
+        h1s.forEach((h1, index) => {
+            h1.innerHTML = info_title[index] + ' :  ' + info[index];
+            console.log(info_title[index])
+        });
+        let imgs = document.querySelectorAll('img');
+        imgs.forEach((img, index) => {
+            img.setAttribute("src", imageArray[index])
+            console.log(img)
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Fetch API</h1>
+    <input type="text" id="url" size="120">
+    <button id="btn1">fetch</button>
+    <button id="btn2">fetch with url parameter</button>
+    <div id="msg"></div>
+
+    <script>
+        let urlIpad = "https://raw.githubusercontent.com/apprunner/FileStorage/master/iPad_DataFixed.json";
+    </script>
+
+    <script type="module">
+        import { $g } from "../Modules/helps.js";
+
+        //url = "https://www.msn.com/zh-tw";
+
+        window.onload = function () {
+            $g("input").value = urlIpad;
+            //幫id=btn1 新增點擊事件 執行 fetchResource 函式 
+            $g("#btn1").addEventListener("click", fetchResource);
+            //幫id=btn2 新增點擊事件 執行 fetchResource 函式(傳參數寫法) 
+            $g("#btn2").addEventListener("click", fetchJson.bind(event, $g("input").value));
+            //兩個函式差在 一個是直接抓取全域變數urlIpad的值 (有可能上面改到 這函式就gg了) 
+            // 一個是傳入 url  
+            
+        }
+
+        function fetchResource() {
+            //fetch 整體步驟 -> fetch 送出請求 -> then 取得回應 -> then 要將回應拿來做什麼  --> end 
+            //catch   -> 如果錯誤的話會執行什麼 
+            //finally -> 最後一定會執行的  
+            //抓取 input 的值 
+            urlIpad = $g("input").value;
+            //1. 送出 請求 
+            fetch(urlIpad)
+            //2. 抓取回應 的文字 
+            .then(response=>response.text())
+            //3. 將文字 放在 ID=msg的標籤裡  
+            .then(result=>{
+                //還沒找到為什麼用$g 寫不進網頁  先用一般語法 
+                // $g("#msg").innerHtml=result; 
+                document.querySelector('#msg').innerHTML=result;
+            })
+            .catch()
+            .finally();
+        }
+
+        function fetchJson(url) {
+            fetch(url)
+            .then(Response=>Response.text())
+            .then(result=>{
+                // $g("#msg").innerHtml=result;
+                document.querySelector('#msg').innerHTML=result;
+            });
+        }
+    </script>
+
+</body>
+
+</html>

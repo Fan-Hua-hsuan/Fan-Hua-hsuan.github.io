@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>H</title>
+    <style></style>
+</head>
+
+<body>
+
+    <input type="text">
+    <br>
+
+    <button id="reset">C</button>
+    <button id="back">>></button>
+    <button id="equal">=</button>
+    <br>
+
+    button.num{$}*10<br>
+    <button class="num">1</button>
+    <button class="num">2</button>
+    <button class="num">3</button>
+    <br>
+
+    <button class="num">4</button>
+    <button class="num">5</button>
+    <button class="num">6</button>
+    <br>
+
+    <button class="num">7</button>
+    <button class="num">8</button>
+    <button class="num">9</button>
+    <br>
+
+    <button class="num">0</button>
+    <button id="dot">.</button>
+    <br>
+
+    button.op*5<br>
+    <button class="op">+</button>
+    <button class="op">-</button>
+    <button class="op">*</button>
+    <button class="op">/</button>
+    <button class="op">%</button>
+
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <script>
+        //靜態UI (宣告在全域)
+        const input = document.querySelector('input')
+        const btn_reset = document.querySelector('#reset')
+        const btn_back = document.querySelector('#back')
+        const btn_equal = document.querySelector('#equal')
+
+        const btn_dot = document.querySelector('#dot')
+
+        const btns_num = document.querySelectorAll('.num')
+        const btns_op = document.querySelectorAll('.op')
+
+        //Data：暫無
+
+        //清空、後退
+        btn_reset.onclick = () => {
+            reset()
+        }
+        btn_back.onclick = () => {
+            let tmp = input.value
+
+            input.value =
+                // tmp.substring(0, tmp.length - 1)     會將負數看成0，...
+                tmp.slice(0, -1)  //負數會不斷 + L ，直到補正為止
+        }
+
+        // 數字、小數點
+        btns_num.forEach( btn => {
+            btn.onclick = ()=>{
+                input.value += btn.innerHTML
+            }
+        })
+        btn_dot.onclick = () => {
+            //先防呆：
+            //1. 若已經有小數點，就無效
+            if( input.value.includes('.') ) 
+                return
+
+            //2. 空的，要先補0
+            if(input.value == '')
+                input.value = '0'
+
+            input.value += btn_dot.innerHTML
+        }
+
+        //運算子、等號：
+        //版本一：eval 有資安問題
+        // document.body.innerHTML=""
+        //location.href = "http://youtube.com"   //帶你到精神時光屋
+        // document.cookie="virus=Troy" //改cookie
+        
+        btns_op.forEach( btn =>{
+            btn.onclick = ()=>{
+                input.value += btn.innerHTML
+            }
+        })
+
+        btn_equal.onclick = () => {
+            //轉成數字
+            let ans = eval( input.value )
+            input.value = ans
+        }
+
+    </script>
+    <script>
+        reset()
+
+        function reset() {
+            input.value = ""
+        }
+    </script>
+</body>
+
+</html>

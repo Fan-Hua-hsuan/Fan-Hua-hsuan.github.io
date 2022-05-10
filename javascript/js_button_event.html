@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="button1" onclick="Event1('btn1')">123456</button>
+    <button id="button2">4444444</button>
+    <button id="button3">79797989</button>
+    <script>
+        let n = 5;
+
+        function Event1(str) {
+            alert(str);
+        }
+
+        var btn2 = document.getElementById('button2');
+        btn2.onclick = function () {
+            // const info_title = ["姓名", "E-mail", "學校", "興趣"];
+            // info_title.forEach(value =>{
+            //     debugger;
+            // })
+            alert(n);
+        }
+
+        var btn3 = document.getElementById('button3');
+        btn3.addEventListener('click', function () {
+            n = n + 5;
+        })
+    </script>
+    <script type="module">
+
+        import { $ce } from "../Modules/helps.js";
+        
+        let p = $ce("p", "hello");
+        //$ce 執行過程
+        //function $ce(element, text){
+        // let element = "p";
+        // let text = "hello";
+        // let el = document.createElement("p");
+        // if(typeof ("hello") !== "undefined" && typeof ("hello") !== "" && typeof ("hello") !== null){
+        //     el.innerText = "hello";
+        // return el;
+        // let p =  el;
+        // }
+        console.log(p);
+        
+    </script>
+</body>
+
+</html>
