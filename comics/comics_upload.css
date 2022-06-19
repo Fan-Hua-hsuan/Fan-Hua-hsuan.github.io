@@ -1,3 +1,68 @@
-.nav_style{
+.nav_style {
     background-color: #000;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #fff;
+}
+.comic_works_icon::before{
+    content:"1";
+    background-color: rgb(116, 121, 121);
+    border-radius: 50%;
+    padding: 5px;
+    margin: 5px;
+}
+.comic_episodes::before{
+    content:"2";
+    background-color: rgb(144, 227, 227);
+    border-radius: 50%;
+    padding: 5px;
+    margin: 5px;
+}
+/* 超連結取消預設 */
+.text_decoration_none{
+    text-decoration: none;
+    color: #fff;
+}
+.comic_works_episodes_icon{
+    background: #000;
+}
+
+/* >於 940 更改 */
+@media screen and (min-width: 992px) {
+    .nav_align_c {
+        align-items: center;
+    }
+
+    .nav_item_greentea {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+/* lg  */
+@media screen and (max-width: 992px) {
+    .nav_align_c {
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .nav_align_c {
+        align-items: flex-start;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .nav_btn {
+        color: #ffe484;
+        border-color: #ffe484;
+    }
+
+    .nav_btn:hover {
+        background-color: #ffe484;
+        color: rgb(21, 25, 29);
+    }
 }

@@ -1,5 +1,5 @@
-.bg_purple {
-    background-color: #7952b3;
+.nav_style{
+    background-color: #000;
 }
 
 .my_btn_white {
@@ -63,6 +63,8 @@ section>h2 {
 .card-img-top {
     cursor: pointer;
 }
+
+
 
 /* >於 940 更改 */
 @media screen and (min-width: 992px) {

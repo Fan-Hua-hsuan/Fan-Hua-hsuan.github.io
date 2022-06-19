@@ -4,40 +4,74 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/comics/comics_upload.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/43e7f58e79.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/comics/comics_upload.css">
     <title>作品::KAKAO WEBTOON</title>
 </head>
 
 <body>
     <header class="nav_style">
-        <div class="container ">
-            <nav class="navbar navbar-expand-lg ">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                    <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="#">星期排序</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">分類</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">人氣排行榜</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link text-white" href="#">投稿新星專區</a>
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <button type="button" class="btn btn-outline-light">上傳作品</button>
-                    <button type="button" class="btn btn-light mx-3">我名字出現在這</button>
-                </form>
-            </nav>
-            
-        </div>
-    </header>
+        <div class="container  ">
+            <nav class="navbar navbar-expand-lg navbar-light ">
+                <a class="navbar-brand " href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" class="d-block my-1"
+                        viewBox="0 0 118 94" role="img">
+                    </svg>
+                </a>
+                <button class="navbar-toggler " type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar " style="color:#fff">
 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" class="" viewBox="0 0 30 30"
+                            role="img">
+                            <path stroke='rgb(255, 255, 255)' d='M4 7 h22 M4 15 h22 M4 23 h22' fill="white"></path>
+                        </svg>
+                    </span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav_align_c  ">
+                        <div class="nav_item_greentea">
+                            <li class="nav-item ">
+                                <a class="nav-link  " aria-current="page" href="#">星期排序</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link  " aria-current="page" href="#">分類</a>
+                            </li>
+                        </div>
+                        <div class="nav_item_greentea">
+                            <li class="nav-item ">
+                                <a class="nav-link  " aria-current="page" href="#">人氣排行榜</a>
+                            </li>
+                        </div>
+                        <div class="nav_item_greentea ">
+                            <li class="nav-item ">
+                                <a class="nav-link  " aria-current="page" href="#">投稿新星專區</a>
+                            </li>
+                        </div>
+                    </ul>
+                    <button class="btn btn-outline-warning mybtn m-2 nav_btn" type="submit">上傳作品</button>
+                </div>
+        </div>
+        </nav>
+    </header>
+    <!-- // 作品 分集 -->
+    <div class=" d-flex justify-content-center p-3   text-white comic_works_episodes_icon">
+        <a href="#" class="comic_works_icon mx-5 text-decoration-none text-white">作品</a>
+        <a href="#" class="comic_episodes mx-5 text-decoration-none text-white"> 分集</a>
+    </div>
+
+    <!-- 幫助區 -->
+    <div class="d-flex justify-content-around align-items-center  border-bottom  nav_style">
+        <p class="mb-0" style="color: #fff">上傳作品之前請先閱讀相關規定! </p>
+        <div class="p-3"></span>
+            <a class="m-4 text_decoration_none" href="#">上傳規定 ></a>
+            <a class="m-4 text_decoration_none" href="#">Q & A ></a>
+        </div>
+    </div>
     <script src="/comics/comics_upload.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
