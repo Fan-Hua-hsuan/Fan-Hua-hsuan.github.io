@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //MDN 查Promise
+        //Promise建構時，要給一個Excutor引數
+        var a = new Promise(() => {})
+        console.log(a);
+
+        //Promise狀態有三:
+        //pending擱置代辦
+        //fulfilled 已實現
+        //rejected 已拒絕
+
+        console.log('')
+        console.log('--1 實驗 Executor會先執行完，才建構Promise物件')
+        let b = new Promise((resolve, reject) => {
+            if (true)
+                resolve('成功');
+            else
+                reject('失敗')
+        })
+        console.log(b)
+
+        //----MDN async
+        console.log('')
+        console.log('--2 實驗 async函式必定回傳 Promise物件')
+        async function f1() {}
+        let f2 = async () => {
+            return 1
+        } //具名方法的另一種宣告方式
+        console.log('無回傳:', f1())
+        console.log('有回傳:', f2())
+
+        //---await 等待
+        // 1.async 內部[可以]用async表達式
+        // 2.await運算子[只能在async function 內使用]
+        // 3.await<表達式>，表達式[可以]是一個Promise物件
+        // 
+        // 
+
+        console.log('');
+        console.log('--4 實驗 await 可用來等待Promise')
+        let resolveAfter1Sec =
+            new Promise((resolve,rej)=>{
+                setTimeout(()=>{
+                    resolve("一豪秒後完成了")
+                },1);
+            })
+
+            //以前:沒學到 asunc await
+            function call() {
+                console.log('##以前')
+                let result;
+
+                resolveAfter1Sec
+                    .then((value)=>{
+                        result = value;
+                        console.log('then裡面',result);
+                        
+                    })
+
+                    //不會卡住
+                    console.log('後面',result)
+            }
+            call()
+
+            //async await(await 會讓非同步用起來像同步)
+            async function asyncCall() {
+                console.log('##現在 async await')
+                let result = await resolveAfter1Sec
+                    .then((value)=>{
+                        return value;
+                    })
+                    //await 會等 Promise鏈 整條解析完
+
+                    //await 會先卡住方法，等解析完才繼續
+                    console.log('await後面',result)
+            }
+            asyncCall();
+    </script>
+</body>
+
+</html>

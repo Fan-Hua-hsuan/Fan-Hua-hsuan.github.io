@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        console.log('--5 如何:等待多個 非同步操作完成，在進行下一步')
+        //先準備 結果變數 和多個Promise物件
+        let dataArray = []
+
+        function p1() {
+            return new Promise((resolve, r) => {
+                setTimeout(() => )
+            })
+        }
+
+        function p2() {
+            return new Promise((resolve, r) => {
+                setTimeout(() => {
+                    dataArray.push(3)
+                    dataArray.push(4)
+                    resolve();
+                }, 2222);
+            })
+        }
+        //比較幾種方案:
+        //1.Promise鏈
+        p1() //2秒
+            .then(() => ps()) //再2秒
+            .then(() => {
+                console.log(dataArray) //共4秒
+                dataArray = []
+            })
+
+        Promise.all([p1(), p2()]) //多執行緒分工
+            .then(() => {
+                console.log(dataArray) //2秒
+                dataArray = []
+            })
+
+        //3.await
+
+        async function awaitPromise() {
+            await Promise.all([p1(),p2()])
+
+            console.log(dataArray);
+            dataArray=[];
+        }
+
+        setTimeout(()=>{
+            awaitPromise()
+        },4444)
+        
+        const url="https://ddragon.leagueoflegends.com/cdn/12.8.1/data/zh_TW/champion.json";
+        //實戰觀念:
+        //1.fetch 會回傳Promise物件
+        //2.可以在封裝方法，變得更方便
+
+        //封裝 取json資料:
+        function myfetchJson(url) {
+            return fetch(url)
+            .then(response =>response.json())
+            //JSON字串 => JS物件
+        }
+
+        //myfetchJson(url)
+        //         .then((obj)=>{})
+
+        let heroArray=[];
+
+        //await 還可以搭配迴圈
+        async function a() {
+            for(let i =0;i<3;i++){
+                await myfetchJson(url)
+                .then( obj =>{
+                    var newArr = Object.values
+                    (obj.data)
+
+                    heroArray =
+                    heroArray.concat(newArr)
+
+                })
+            }
+        }
+
+        a().then(()=>{
+            console.log(heroArray)
+        })
+
+        //--再封裝得更徹底
+        function myfetchJson() {
+            console.log()
+        }
+    </script>
+</body>
+
+</html>
