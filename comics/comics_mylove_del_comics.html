@@ -65,12 +65,22 @@
             .check_btn_bag_red::before {
                 background-color: rgb(255, 0, 0);
             }
+
+            .btn_lock {
+                cursor: not-allowed;
+                border-radius: 20px;
+                width: 40%;
+            }
+
+            .btn_dark {
+                color: #fff;
+            }
         </style>
     </head>
 
     <body style="background-color: #000;">
         <div class="d-flex flex-row-reverse ">
-            <button type="button" class="btn-close btn-close-white m-2" aria-label="Close" onclick="window.close();"></button>
+            <button type="button" class="btn-close btn-close-white m-2" aria-label="Close"></button>
         </div>
 
         <div class="container col-12" style="max-width: 800px;">
@@ -145,79 +155,125 @@
 
                 </div>
 
-                <!-- 重要 -->
-                <div class="d-flex justify-content-center fixed-bottom " id="div_btns" >
-                    <button id="del_btn" type="button" class="m-auto btn btn-dark border fixed-bottom my-4 px-4 py-2 "
-                        style="border-radius: 20px; width: 40%;" onclick="remove_all()">刪除0個作品</button>
+            </div>
+            <!-- 重要 -->
+            <div class="d-flex justify-content-center fixed-bottom " id="div_btns">
+                <button id="del_btn" type="button" class="m-auto btn btn_dark fixed-bottom my-4 px-4 py-2 "
+                    onclick="remove_all(false)">刪除0個作品</button>
+            </div>
+            <section id="double_check_block" style="background-color:#1c1c1c; width: 100%;height: 150px; "
+                class=" fixed-bottom ">
+                <div class="text-center" style="margin-top:30px;">
+                    <p style="color: #fff;">del_number</p>
                 </div>
+                <div class="d-flex justify-content-center ">
+                    <button id="" type="button" class="btn border btn-dark m-4 px-4 py-2 col-2"
+                        style="border-radius: 20px; display: inline-block;"
+                        onclick="cancel_double_check_block()">取消</button>
+                    <button id="" type="button" class="btn btn-light m-4 px-4 py-2 col-2"
+                        style="border-radius: 20px; display: inline-block; " onclick="remove_all(true)">確定</button>
+                </div>
+            </section>
 
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-                    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-                    crossorigin="anonymous">
-                </script>
-                <script>
-                    let div_btns = document.querySelector('#div_btns')
-                    //放待刪除的陣列
-                    var arr_to_be_del = [];
-                    var a;
 
-                    //檢查id 有沒有被選過 沒有的話新增至帶刪除的array
-                    function check_del_array(div_id) {
-                        let del_btn = document.getElementById('del_btn');
-                        let repaet_index = -1;
-                        let repeat = false;
-                        arr_to_be_del.forEach((item, index) => {
-                            if (item == div_id) {
-                                repeat = true;
-                                repaet_index = index;
-                            }
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                crossorigin="anonymous">
+            </script>
+            <script>
+                let double_check_block = document.getElementById('double_check_block');
+                let div_btns = document.querySelector('#div_btns');
+                let del_btn = document.querySelector('#del_btn');
+
+                //放待刪除的陣列
+                var arr_to_be_del = [];
+
+                function init() {
+                    double_check_block.style.transform = "translateY(100%)";
+                    del_btn.classList.add("btn_lock");
+                    del_btn.setAttribute("disabled", '');
+                }
+
+                //檢查id 有沒有被選過 沒有的話新增至帶刪除的array
+                function check_del_array(div_id) {
+                    let repaet_index = -1;
+                    let repeat = false;
+                    arr_to_be_del.forEach((item, index) => {
+                        if (item == div_id) {
+                            repeat = true;
+                            repaet_index = index;
+                        }
+                    });
+                    //沒重複
+                    if (repeat) {
+                        arr_to_be_del.splice(repaet_index, 1);
+                    } else { //有重複
+                        arr_to_be_del.push(div_id);
+                    }
+                    update_text();
+                    return repeat;
+                }
+
+                function cancel_double_check_block() {
+                    double_check_block.style.transform = "translateY(100%)";
+                }
+
+                function update_text() {
+                    let del_btn = document.getElementById('del_btn');
+                    let p = double_check_block.querySelector('p');
+                    let length = arr_to_be_del.length;
+                    del_btn.textContent = `刪除 ${length} 個作品`;
+                    p.innerText = `是否要刪除${length}個收藏的作品？`;
+                    if (length == 0) {
+                        del_btn.setAttribute("disabled", '');
+                        del_btn.setAttribute("style", "background-color: #333333");
+                    } else {
+                        del_btn.removeAttribute("disabled");
+                        del_btn.setAttribute("style", "background-color: #ff3042");
+                    }
+                }
+
+                //選取圖片 新增至待刪除的陣列裡 並顯示刪除幾個作品
+                function select_img(img_node) {
+                    let div_id = img_node.getAttribute("id");
+                    let del_btn = document.getElementById('del_btn');
+                    let div_cover = img_node.querySelector('div');
+                    //offsetHeight 當下標籤的高度
+                    let height = img_node.querySelector('img').offsetHeight + 1;
+                    // console.log(height);
+                    //不重複的話 新增到要刪除的陣列 並給上灰灰的
+                    if (!check_del_array(div_id)) {
+                        div_cover.classList.add("gray_block");
+                        img_node.querySelector('div').setAttribute('style', `height: ${height}px;`);
+                        img_node.querySelector('.check_btn').classList.add("check_btn_bag_red");
+                    } else {
+                        div_cover.classList.remove("gray_block");
+                        img_node.querySelector('.check_btn').classList.remove("check_btn_bag_red");
+                        img_node.querySelector('div').setAttribute('style', `height: 0px;`);
+                    }
+                }
+
+                //刪除圖片 
+                function remove_all(double_check = false) {
+                    // console.log(double_check)
+                    if (double_check) {
+                        arr_to_be_del.forEach(del_item_id => {
+                            let del_tag = document.getElementById(del_item_id).parentNode.parentNode;
+                            del_tag.remove();
+                            console.log(del_item_id + '刪除成功~');
                         });
-                        //沒重複
-                        if (repeat) {
-                            arr_to_be_del.splice(repaet_index, 1);
-                        } else { //有重複
-                            arr_to_be_del.push(div_id);
-                        }
-                        del_btn.textContent = `刪除 ${arr_to_be_del.length} 個作品`;
-                        return repeat;
+                        //全部刪除 直接重新宣告成空的
+                        arr_to_be_del = [];
+                        double_check_block.style.transform = "translateY(100%)";
+                    } else {
+                        double_check_block.style.transform = "translateY(0%)";
                     }
+                    update_text();
+                }
 
-
-                    //選取圖片 新增至待刪除的陣列裡 並顯示刪除幾個作品
-                    function select_img(img_node) {
-                        // a = img_node;
-                        let div_id = img_node.getAttribute("id");
-                        let del_btn = document.getElementById('del_btn');
-                        let div_cover = img_node.querySelector('div');
-                        let height = img_node.querySelector('img').offsetHeight + 1;
-                        // console.log(height);
-                        //不重複的話 新增到要刪除的陣列 並給上灰灰的
-                        if (!check_del_array(div_id)) {
-                            div_cover.classList.add("gray_block");
-                            img_node.querySelector('div').setAttribute('style', `height: ${height}px;`);
-                            img_node.querySelector('.check_btn').classList.add("check_btn_bag_red");
-                        } else {
-                            div_cover.classList.remove("gray_block");
-                            img_node.querySelector('.check_btn').classList.remove("check_btn_bag_red");
-                        }
-                    }
-
-                    //刪除圖片 
-                    function remove_all() {
-                        let del_btn = document.getElementById('del_btn');
-                        if(true){
-
-                            arr_to_be_del.forEach(del_item_id => {
-                                let del_tag = document.getElementById(del_item_id);
-                                del_tag.remove();
-                                console.log(del_item_id + '刪除成功~');
-                            });
-                            //全部刪除 直接重新宣告成空的
-                            arr_to_be_del = [];
-                            del_btn.textContent = `刪除 ${arr_to_be_del.length} 個作品`;
-                        }
-                    }
-                </script>
+                init();
+            </script>
     </body>
 
     </html>
