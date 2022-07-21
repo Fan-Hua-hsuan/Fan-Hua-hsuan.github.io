@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<title>Hello, world!</title>
+</head>
+
+<body>
+
+        <div id="app">
+            <div class="row">
+                <div class="form-group">
+                    <label for="username">Account</label>
+                    <input type="text" class="form-control" name="username" v-bind:class="{ 'is-invalid': usernameError }"
+                        v-model="username" placeholder="Username">(最多10個字)
+                    <div class="invalid-feedback">
+                        {{ userErrMsg }}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="text" class="form-control" name="password" v-bind:class="{ 'is-invalid': passwordError }"
+                        v-model="password" placeholder="Password">(至少6位，小於15位，必須包含大小寫和數字)
+                    <div class="invalid-feedback">
+                        {{ passErrMsg }}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="">CheckPassword</label>
+                    <input type="text" class="form-control" name="Checkpassword" v-bind:class="{ 'is-invalid': passwordError }"
+                        v-model="Checkpassword" placeholder="Password">
+                    <div class="invalid-feedback">
+                        {{ passErrMsg }}
+                    </div>
+                </div>
+            </div>
+            <button v-on:click="SendMsg">送出</button>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.7/dist/vue.js"></script>
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    username: '',
+                    usernameError: false,
+                    userErrMsg: '',
+                    password: '',
+                    passwordError: false,
+                    passErrMsg: '',
+                    Checkpassword:'',
+                    CheckpasswordError:false,
+                },
+                watch: {
+                    username: function () {
+                        var isText = /^[a-zA-Z0-9]+$/;
+                        if (!isText.test(this.username)) {
+                            this.usernameError = true;
+                            this.userErrMsg = '請勿包含特殊字元';
+                        } else if (this.username.length > 10) {
+                            this.usernameError = true;
+                            this.userErrMsg = '請勿超過10個字';
+                        } else {
+                            this.usernameError = false;
+                        }
+                    },
+                    password: function () {
+                        var isText = /^[a-zA-Z0-9]+$/;
+                        var inclde = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/;
+                        if (!isText.test(this.password)) {
+                            this.passwordError = true;
+                            this.passErrMsg = '請勿包含特殊字元';
+                        } else if (this.password.length < 6) {
+                            this.passwordError = true;
+                            this.passErrMsg = '請勿少於6個字';
+                        } else if (this.password.length > 15) {
+                            this.passwordError = true;
+                            this.passErrMsg = '請勿超過15個字';
+                        } else if (!include.test(this.password)) {
+                            this.passwordError = true;
+                            this.passErrMsg = '至少包括一個大小寫字母或數字';
+                        } else {
+                            this.passwordError = false;
+                        }
+                    },
+                    Checkpassword: function () {
+                        if (!isText.test(this.Checkpassword)) {
+                            this.passwordError = true;
+                            this.passErrMsg = '密碼與第一次不吻合';
+                        } else {
+                            this.passwordError = false;
+                        }
+                    },
+                }
+            });
+        </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+</script>
+
+</body>
+
+</html>

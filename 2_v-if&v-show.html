@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .d-none {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <button v-on:click="change">切換</button>
+        <br>
+        <h1 v-if="isVisiable">BuildSchool</h1>
+        <img v-else src="https://picsum.photos/300/200/?random=10" alt="">
+
+        <h2 v-show="isVisiable">Vueeeeee</h2>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.7/dist/vue.js"></script>
+    <script>
+        // #region 
+        // btn 切換 h1, img 顯示
+        // const btn = document.querySelector('button')
+        // const h1 = document.querySelector('h1')
+        // const img = document.querySelector('img')
+        // let isDisplay = true
+        // btn.addEventListener('click', () => {
+        // isDisplay = !isDisplay
+        // if (isDisplay) {
+        // h1.classList.add('d-none')
+        // img.classList.remove('d-none')
+        // } else {
+        // h1.classList.remove('d-none')
+        // img.classList.add('d-none')
+        // }
+        // })
+        // #endregion 
+
+        const app = new Vue({
+            //獲得id
+            el: '#app',
+            //宣告狀態
+            data: {
+                isVisiable: true
+            },
+            //方法
+            methods: {
+                change() {
+                    this.isVisiable = !this.isVisiable
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

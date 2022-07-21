@@ -1,0 +1,32 @@
+img {
+    margin-bottom: 10px;
+    max-width: 100%;
+}
+
+.img_col_move {
+    transition: all 2s 0s ease-out;
+}
+
+.img1 {
+    transform: translateY(50px);
+
+}
+
+.img2 {
+    transform: translateY(100px);
+
+}
+
+.img3 {
+    transform: translateY(150px);
+
+}
+
+.img4 {
+    transform: translateY(200px);
+}
+
+#div_btns {
+    transition: all 0.2s 0s ease-out;
+    transform: translateY(100px);
+}
